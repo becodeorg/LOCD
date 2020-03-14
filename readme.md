@@ -24,18 +24,30 @@ The delivery mode must be either :
 
 ## 2 Target audiences
 
-### Learner
+### Learner UX
 
-Learner wants to learn coding by doing in order to one day become a frontend integrator.
+Learner wants to learn coding by doing in order to one day become a frontend integrator. The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
 
-### Trainer
+![](/Volumes/AlexSD/github-projects/LOCD/LOCD/study & ux/ux/Learner-ux.png)
 
-Trainer wants to write content (theory and exercises) efficiently and rapidly.
+What is different than Svelte: there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study & ux/ux/LOCD-LUX.pdf)
 
-The Trainer's UX will be to create a folder structure and add content to it using MarkDown. When done or to preview, (s)he should run a command that parses the content and re-generates LOCD html+css+javascript code into a standalone folder - ready for the testing.
+### Trainer UX
 
-Another command allows the trainer to "build" the package as a zip file, ready for Kolibri Studio.
+**Trainer wants to write content (theory and exercises) efficiently and rapidly.**
 
+Trainer has at least junior-level coding knowledge and can follow instructions to "build" the application.
 
+The Trainer's UX will mostly be 
+
+- to create a folder structure and add content to it using MarkDown. 
+
+- to preview its work, (s)he should run a command that parses the content and re-generates LOCD html+css+javascript code into a standalone folder - ready for the testing.
+
+- to deliver its work, trainer must "build" the package as a zip file, ready for Kolibri Studio.
+
+## Technical solution
+
+Gatsby ? Sapper ?
 
 
