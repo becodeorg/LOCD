@@ -49,5 +49,7 @@ The Trainer's UX will mostly be
 
 ## Technical solution
 
-Gatsby ? Sapper ? 
-[Here is how](https://github.com/sveltejs/svelte/tree/master/site/content/tutorial/01-introduction) Svelte stores the MarkDown content 
+- Gatsby ? 
+- Sapper ? 
+- [Here is how](https://github.com/sveltejs/svelte/tree/master/site/content/tutorial/01-introduction) Svelte stores the MarkDown content 
+- [Mixu MD Styles](https://github.com/mixu/markdown-styles) ?
