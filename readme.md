@@ -26,9 +26,9 @@ The delivery mode must be either :
 
 Learner wants to learn coding by doing in order to one day become a frontend integrator. The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
 
-![](./study & ux/ux/Learner-ux.png)
+![](./study/ux/Learner-ux.png)
 
-What is different than Svelte: there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study & ux/ux/LOCD-LUX.pdf)
+What is different than Svelte: there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study/ux/LOCD-LUX.pdf)
 
 ### Trainer UX
 
