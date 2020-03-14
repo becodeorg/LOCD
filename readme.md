@@ -28,7 +28,7 @@ Learner wants to learn coding by doing in order to one day become a frontend int
 
 ![](./study/ux/Learner-ux.png)
 
-What is different than Svelte: 
+How is this different to Svelte ?
 
 - there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study/ux/LOCD-LUX.pdf)
 - no backend necessary
