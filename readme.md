@@ -20,15 +20,13 @@ The delivery mode must be either :
 
 - Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient and it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the Code]([https://github.com/sveltejs/svelte/tree/master/site](https://github.com/sveltejs/svelte/tree/master/site)).
 
-
-
 ## 2 Target audiences
 
 ### Learner UX
 
 Learner wants to learn coding by doing in order to one day become a frontend integrator. The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
 
-![](/Volumes/AlexSD/github-projects/LOCD/LOCD/study & ux/ux/Learner-ux.png)
+![](./study & ux/ux/Learner-ux.png)
 
 What is different than Svelte: there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study & ux/ux/LOCD-LUX.pdf)
 
@@ -49,5 +47,3 @@ The Trainer's UX will mostly be
 ## Technical solution
 
 Gatsby ? Sapper ?
-
-
