@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Js Execute</title>
+
+    <script>
+        function updateIframe(iFrame, newContent) {
+            var ifrm = document.getElementById(iFrame);
+            ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+            ifrm.postMessage(newContent, '*');
+        }
+    </script>
+</head>
+
+<body>
+    <textarea id="code" rows="10" cols="50">
+        <h1>Hello!</h1>
+    </textarea>
+    <br />
+    <button onclick="Execute()">Click To execute the above written JS</button>
+
+    <iframe id="result" src="blank.html" frameborder="0"></iframe>
+    <script>
+        function Execute() {
+            var content = document.getElementById('code');
+            var hbody = content.value;
+            updateIframe('result', hbody);
+        }
+    </script>
+</body>
+
+</html>
