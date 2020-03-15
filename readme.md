@@ -12,19 +12,21 @@ The client machine should be a simple computer with a fairly recent browser.
 
 The delivery mode must be either :
 
-- a  USB Key containing the Browser Setup package and the LCDO web application (package as a folder containing only static html, css and javascript files, along with static assets like audio, video, images and fonts).
+- a  USB Key containing a Browser Setup executable and the LCDO package (a folder containing only static html, css and javascript files, along with static assets like audio, video, images and fonts).
 
-- a html5 package, as a zip, available to be used on kolibri Studio
+- a html5 package, as a zip, available to be used on [kolibri Studio]([https://studio.learningequality.org/](https://studio.learningequality.org/)
 
 ## Example
 
-- Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient and it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the Code]([https://github.com/sveltejs/svelte/tree/master/site](https://github.com/sveltejs/svelte/tree/master/site)).
+- Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient as it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the code]([https://github.com/sveltejs/svelte/tree/master/site](https://github.com/sveltejs/svelte/tree/master/site).
 
-## 2 Target audiences
+## Target audiences
 
-### Learner UX
+### 1. Learner UX
 
-Learner wants to learn coding by doing in order to one day become a frontend integrator. The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
+**Learner wants to learn coding by doing in order to one day become a frontend integrator.**
+
+The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
 
 ![](./study/ux/Learner-ux.png)
 
@@ -33,7 +35,7 @@ How is this different to Svelte ?
 - there is a maximize button allowing to give the entire space to the Theory/Instructions zone. [See Mockup](./study/ux/LOCD-LUX.pdf)
 - no backend necessary
 
-### Trainer UX
+### 2. Trainer UX
 
 **Trainer wants to write content (theory and exercises) efficiently and rapidly.**
 
