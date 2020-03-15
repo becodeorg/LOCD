@@ -47,9 +47,14 @@ The Trainer's UX will mostly be
 
 - to deliver its work, trainer must "build" the package as a zip file, ready for Kolibri Studio.
 
-## Technical solution
+## The solution
 
+We need a **Static Site Generator** tool that can use an html file (for the code editor template) and the chapter pages as markdown files (for the content) as inputs, and outputs as many html pages as there are chapters in the lesson.
+
+Each html page will need to have the navigation arrows populated with links to the previous/next page. It will also need to have the dropdown populated with as many `<option>`tags as there are pages in the lesson.
+
+The right way to structure the markdown so that the system can infer the course internal structure (Chapter > Pages) is probably to have each chapter as a folder, and each page as a chapter sub-folder.
+
+- [Hugo]([https://gohugo.io/](https://gohugo.io/) ?
 - Gatsby ? 
-- Sapper ? 
-- [Here is how](https://github.com/sveltejs/svelte/tree/master/site/content/tutorial/01-introduction) Svelte stores the MarkDown content 
 - [Mixu MD Styles](https://github.com/mixu/markdown-styles) ?
