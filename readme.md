@@ -14,7 +14,7 @@ The delivery mode must be either :
 
 - a  USB Key containing a Browser Setup executable and the LCDO package (a folder containing only static html, css and javascript files, along with static assets like audio, video, images and fonts).
 
-- a html5 package, as a zip, available to be used on [kolibri Studio](https://studio.learningequality.org/](https://studio.learningequality.org/)
+- a html5 package, as a zip, available to be used on [kolibri Studio](https://studio.learningequality.org/)
 
 ## Example
 
