@@ -49,12 +49,20 @@ The Trainer's UX will mostly be
 
 ## The solution
 
+### 1. Content
+
+The right way to structure the markdown so that the system can infer the course internal structure (Chapter > Pages) is probably to have each chapter as a folder, and each page as a chapter sub-folder.
+
+### 2. Template
+
+see prototype above. How to build it will depend on the chosen SSG. Just keep in mind that it must not need a local server (no npm, no node, no ... ). It must run as "file://" urls.
+
+### 3. Static Site Generator
+
 We need a **Static Site Generator** tool that can use an html file (for the code editor template) and the chapter pages as markdown files (for the content) as inputs, and outputs as many html pages as there are chapters in the lesson.
 
 Each html page will need to have the navigation arrows populated with links to the previous/next page. It will also need to have the dropdown populated with as many `<option>`tags as there are pages in the lesson.
 
-The right way to structure the markdown so that the system can infer the course internal structure (Chapter > Pages) is probably to have each chapter as a folder, and each page as a chapter sub-folder.
-
 - [Hugo]([https://gohugo.io/](https://gohugo.io/) ?
-- Gatsby ? 
+
 - [Mixu MD Styles](https://github.com/mixu/markdown-styles) ?
