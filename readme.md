@@ -18,7 +18,7 @@ The delivery mode must be either :
 
 ## Example
 
-- Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient as it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the code](https://github.com/sveltejs/svelte/tree/master/site).
+- [Svelte online Tutorial](https://svelte.dev/tutorial/): it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient as it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the code](https://github.com/sveltejs/svelte/tree/master/site).
 
 ## Target audiences
 
@@ -28,7 +28,7 @@ The delivery mode must be either :
 
 The screen is 90% similar to Svelte Tutorial . There is a "theory/instructions" zone on the left, and the right is divided with above: the code editor, and below, the code renderer, including a console.
 
-![](./study/ux/Learner-ux.png)
+![Mockup of Learner's interface](./study/ux/Learner-ux.png)
 
 How is this different to Svelte ?
 
@@ -63,7 +63,7 @@ see prototype above. How to build it will depend on the chosen SSG. Just keep in
 
 We need a **Static Site Generator** tool that can use an html file (for the code editor template) and the chapter pages as markdown files (for the content) as inputs, and outputs as many html pages as there are chapters in the lesson.
 
-Each html page will need to have the navigation arrows populated with links to the previous/next page. It will also need to have the dropdown populated with as many `<option>`tags as there are pages in the lesson.
+Each html page will need to have the navigation arrows populated with links to the previous/next page. It will also need to have the dropdown populated with as many `<option>` tags as there are pages in the lesson.
 
 - [Hugo](https://gohugo.io/) ?
 
