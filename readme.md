@@ -14,11 +14,11 @@ The delivery mode must be either :
 
 - a  USB Key containing a Browser Setup executable and the LCDO package (a folder containing only static html, css and javascript files, along with static assets like audio, video, images and fonts).
 
-- a html5 package, as a zip, available to be used on [kolibri Studio]([https://studio.learningequality.org/](https://studio.learningequality.org/)
+- a html5 package, as a zip, available to be used on [kolibri Studio](https://studio.learningequality.org/](https://studio.learningequality.org/)
 
 ## Example
 
-- Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient as it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the code]([https://github.com/sveltejs/svelte/tree/master/site](https://github.com/sveltejs/svelte/tree/master/site).
+- Svelte online Tutorial: [https://svelte.dev/tutorial/](https://svelte.dev/tutorial/) : it contains the entire learning material and presents it next to a "practice" zone. Having both theory and exercise in the same screen is very cognitively efficient as it encourages the learner to try directly. Unfortunately, the tool requires a local server to run. [See the code](https://github.com/sveltejs/svelte/tree/master/site).
 
 ## Target audiences
 
@@ -65,6 +65,6 @@ We need a **Static Site Generator** tool that can use an html file (for the code
 
 Each html page will need to have the navigation arrows populated with links to the previous/next page. It will also need to have the dropdown populated with as many `<option>`tags as there are pages in the lesson.
 
-- [Hugo]([https://gohugo.io/](https://gohugo.io/) ?
+- [Hugo](https://gohugo.io/) ?
 
 - [Mixu MD Styles](https://github.com/mixu/markdown-styles) ?
