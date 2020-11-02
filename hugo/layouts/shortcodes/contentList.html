@@ -1,0 +1,8 @@
+{{ range .Site.Data.exercises.html}}				
+	{{range $key, $value:= .}}
+		<li>{{$key}}</li>
+		{{ range $value }}
+			<li>{{.}}</li>
+		{{ end }}
+	{{end}}
+{{ end }}

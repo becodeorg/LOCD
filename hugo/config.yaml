@@ -1,0 +1,25 @@
+baseURL: "./"
+languageCode: "en-us"
+title: "LOCD Learning on your own!"
+pluralizelisttitles: "false"
+
+
+disableKinds: ['taxonomy', 'taxonomyTerm','section']
+
+
+# sectionPagesMenu: "main"
+
+
+# menu:
+#   main:
+#   - identifier: HTML5
+#     name: HTML5
+#     title: HTML5
+#     url: /html/
+#     weight: 1
+
+#   - identifier: Css-start
+#     name: Css-start
+#     title: Css-start
+#     url: /css/
+#     weight: 4

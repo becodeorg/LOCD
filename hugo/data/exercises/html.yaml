@@ -1,0 +1,53 @@
+---
+chapters:
+
+# -------Intro-------
+  intro: 
+    order: 1
+    folder : intro
+    subFolders: false
+
+    exercises:
+      - HTML
+      - intro
+      - TEST123
+      - why-html
+
+    subChapters:
+      folder:
+      exercises:
+
+# -------Semantics-------
+  semantics: 
+    order: 2
+    folder: semantics
+    subFolders: false
+
+    exercises:
+      - basic-semantics
+      - chinese-letter
+      - exercise-quotes
+
+    subChapters:
+      folder:
+      exercises:
+        
+
+# -------TestFolder-------
+  testfolder : 
+    order: 3
+    folder: test
+    subFolders: true
+
+    exercises:
+      - basic-semantics
+      - chinese-letter
+
+    subChapters:
+      1 - positioning:
+        folder: positioning
+        exercises:
+        - how
+        - to
+
+  

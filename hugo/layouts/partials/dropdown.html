@@ -1,0 +1,35 @@
+
+
+
+<li class="drop__topic">{{.type}}</li>
+{{$type:=.type}}
+{{/*  Loop through the chapters given in the YAML file by its order number  */}}
+{{ range sort (.path.chapters) "order" }}
+	{{$chapter:= .}}
+	<li ><div class="drop__chapter">{{$chapter.order}} - {{$chapter.folder}}</div></li>
+	{{/*  If there are no subFolders, grab single files  */}}
+	{{if eq $chapter.subFolders false}}
+		{{ range $exercise:=.exercises }}
+		{{ $exercise:= lower $exercise }}
+		{{ $title := replace $exercise "-" " " }}
+			{{$adress := print "content/" $type "/" $chapter.folder "/" $exercise ".md"}}
+				{{if (fileExists $adress)}}
+					<li><a class="drop__exercise" href="/{{$type}}/{{$chapter.folder}}/{{$exercise}}/">{{$title}}</a></li>
+				{{end}}
+			{{ end }}  
+		{{/*  When there are subfolders */}}
+	{{else}}
+		{{range $key, $subChapter:= $chapter.subChapters}}
+			<li><div class="drop__sub">{{$key}}</div></li>
+			{{ range $exercise:=$subChapter.exercises }}
+				{{$adress := print "content/" $type "/" $chapter.folder "/" $subChapter.folder "/" $exercise ".md"}}
+				{{if (fileExists $adress)}}
+					<li><a class="drop__exercise--sub" href="/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/">{{$exercise}}</a></li>
+				{{end}}
+			{{ end }}
+		{{end}}
+	{{end}}
+{{end}}
+		
+
+
