@@ -1,0 +1,54 @@
+
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
+	font-weight: 300;
+	src:url('../fonts/overpass-latin-300.woff2') format('woff2');
+        // url('../../fonts/overpass-regular.otf') format('opentype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+/* overpass-600normal - latin */
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
+	font-weight: 600;
+	src:url('../fonts/overpass-latin-600.woff2') format('woff2'),
+        // url('../../fonts/overpass-regular.otf') format('opentype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+
+}
+
+/* fira-mono-400normal - latin */
+@font-face {
+	font-family: 'Fira Mono';
+	font-style: normal;
+	font-weight: 400;
+	src:url('../fonts/fira-mono-latin-400.woff2') format('woff2');
+}
+
+html{
+    font-size: 62.5%; // 1rem = 10px; 10px/16 = 62.5%
+}
+
+
+body{
+    font-family: "Overpass", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+
+    line-height: 1.7;
+}
+
+nav{
+    font-size: 1.4rem;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.instructions{
+    color:white;
+    font-weight: 300;
+    font-family: 'Overpass';
+    font-size: 1.6rem;
+}

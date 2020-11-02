@@ -1,0 +1,135 @@
+.viewport{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(33.333%, var(--sidebar-large-w)) 66.667%;    grid-auto-rows: 100%;
+    z-index: -4;
+}
+
+
+.instructions{
+    height:calc(100vh - var(--nav-height));
+    background-color:$color-grey-dark-3;
+    display: flex;
+    flex-direction: column;
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8rem;
+        border-bottom: 1px solid $color-grey-dark;
+
+        > a{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--bottom{
+            margin-top: 3rem;
+            
+        
+            a:first-child{
+                justify-content: flex-start;
+                i{
+                    margin-right: 2rem;
+                }
+            }
+
+            a:last-child{
+                justify-content: flex-end;
+                i{
+                    margin-left: 2rem;
+                }
+            }
+            
+            border-bottom: 0;
+            border-top: 1px solid $color-grey-dark;
+        }
+    
+    }
+
+    &__dropdown{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        i{
+            margin-right: 1rem;
+        }
+
+        select{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.0001;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+    }
+
+    &__info{
+        padding: 3.2rem 4rem;
+        overflow: auto;
+        flex: 1;
+        height: 0;
+        position: relative;
+    }
+
+    &__image{
+        display: flex;
+        justify-content: center;
+
+        img{
+            width: 80%;
+            max-width: 400px;
+        }
+        
+    }
+
+    h2{
+        font-size: 2.6rem;
+        font-weight: 400;
+
+        margin: 4rem 0 2rem 0;
+        line-height: 1;
+
+        &:first-child{
+            margin: 1rem 0 4rem 0;
+        }
+    }
+
+    p{
+        margin-bottom: 2rem;
+    }
+}
+
+
+.resize{
+	position: absolute;
+    right: 20px;
+    display: inline-block;
+    transform: rotate(45deg);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.min{
+	display: none;
+}
+
+.min,.max{
+	top:30px;
+}
+
+.editor{
+    width: 100%;
+    height: 100%;
+}
