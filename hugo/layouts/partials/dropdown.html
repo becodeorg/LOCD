@@ -14,7 +14,7 @@
 		{{ $title := replace $exercise "-" " " }}
 			{{$adress := print "content/" $type "/" $chapter.folder "/" $exercise ".md"}}
 				{{if (fileExists $adress)}}
-					<li><a class="drop__exercise" href="/{{$type}}/{{$chapter.folder}}/{{$exercise}}/">{{$title}}</a></li>
+					<li><a class="drop__exercise" href="/{{$type}}/{{$chapter.folder}}/{{$exercise}}/index.html">{{$title}}</a></li>
 				{{end}}
 			{{ end }}  
 		{{/*  When there are subfolders */}}
@@ -24,7 +24,7 @@
 			{{ range $exercise:=$subChapter.exercises }}
 				{{$adress := print "content/" $type "/" $chapter.folder "/" $subChapter.folder "/" $exercise ".md"}}
 				{{if (fileExists $adress)}}
-					<li><a class="drop__exercise--sub" href="/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/">{{$exercise}}</a></li>
+					<li><a class="drop__exercise--sub" href="/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/indes">{{$exercise}}</a></li>
 				{{end}}
 			{{ end }}
 		{{end}}

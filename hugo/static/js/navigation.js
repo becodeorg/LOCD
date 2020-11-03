@@ -28,7 +28,9 @@ function myFunction() {
   let links = document.querySelectorAll(".dropdown__list ul > li a");
 
 	for(let i=0; i<links.length; i++){
-		if(links[i] == window.location.href){
+		// added + "index.html" because on the server they open the folder and read the file.
+		if(JSON.stringify(links[i].href+"index.html").includes(window.location.pathname)){
+			console.log(links[i].href , window.location.pathname)
 			setNavArrow(links,i-1,".prev")
 			setNavArrow(links,i+1,".next")
 			links[i].classList.add("current")
