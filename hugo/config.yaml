@@ -1,7 +1,9 @@
-baseURL: "./"
+baseURL: ""
 languageCode: "en-us"
 title: "LOCD Learning on your own!"
 pluralizelisttitles: "false"
+relativeURLs: "true"
+publishDir: "../build"
 
 
 disableKinds: ['taxonomy', 'taxonomyTerm','section']
