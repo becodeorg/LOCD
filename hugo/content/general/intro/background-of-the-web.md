@@ -2,8 +2,9 @@
 title: "Background of the web"
 date: 2020-11-02T09:25:04+01:00
 draft: true
+editor: true
+editorContent: "Test"
 ---
-
 # The internet
 
 ## Birth of the internet

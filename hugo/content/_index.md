@@ -2,6 +2,8 @@
 date: "2020-08-20T12:16:17+02:00"
 draft: true
 title: Home
+canWrite: true
+editorContent: 
 ---
 
 
@@ -32,6 +34,8 @@ No, you don't. Coding is about trying until it works. So we all start by failing
 
 Ready ? Let's go! 
 
+
 {{< addImage imageid="home/quit-basketball.gif" alt="The team" >}}
+
 
 

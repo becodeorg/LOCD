@@ -30,6 +30,9 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+	<script>
+		document.getElementById
+	</script>
         
 </head>
 <body>
@@ -75,41 +78,17 @@
                         </ul>
                     </div>
                 </div>
-      
-                <!-- <div class="instructions__dropdown">
-                    <i class="fas fa-bars"></i> {{.Title}} -->
-                    
-                    
-					
-                    <!-- <select class = "lesson__options" id = "ddlViewBy">
-						<option class="select__head" label = '{{ with .Site.GetPage "/" }}{{ .Title }}{{ end }}'></option>
-						 -->
-
-						<!-- {{range .Sections}}
-							<option class="select__head" label = "{{.Section}}"></option>
-							
-                            {{range $index, $element := .Pages}}
-                                {{ $index :=add $index 1 }}
-                                <option class="select__second" label="{{$index}} - {{.Title}}"></option>
-                            {{end}}
-                            
-						{{end}} -->
-                        
-<!-- 
-                    </select> -->
-                <!-- </div> -->
-
                 <a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 
             </nav>
 
             <div id="insertData" class="instructions__info">
+				
 
                 <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
                 <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
                 
 				<br>
-
 				{{.Content}}
 
                 <nav class="instructions__nav instructions__nav--bottom">
@@ -135,26 +114,7 @@
                     <div class="textarea">
                         <div id="textareawrapper">
                             <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page Title</title>
-</head>
-<body>
-    
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-<ul>
-    <li>
-        And this
-    </li>
-    <li>
-        a list
-    </li>
-</ul>
-        
-</body>
-</html>
+
                             </textarea>
                         </div>
                     </div>
@@ -186,11 +146,35 @@
     </div>
 </main>
 
+
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
+
+<!-- Fetching html from directory -->
+<script>
+	
+	let editor = document.getElementById("textareaCode");
+	editor.value = "hi";
+	console.log(editor);
+
+	  async function getUserAsync(name) 
+		{
+			let response = await fetch("{{.Site.BaseURL}}/editorContent/template/editor.html");
+			let data = await response.text()
+			return data;
+		}
+
+		getUserAsync()
+		.then(data =>{
+			editor.value = data;
+			window.editor.getDoc().setValue(data);
+			submitTryit();
+		}); 		
+</script>
+
 </body>
 </html>

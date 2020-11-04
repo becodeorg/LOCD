@@ -8,6 +8,10 @@ publishDir: "../build"
 
 disableKinds: ['taxonomy', 'taxonomyTerm','section']
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 # sectionPagesMenu: "main"
 
