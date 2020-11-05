@@ -8,6 +8,7 @@ chapters:
     subFolders: false
 
     exercises:
+      - start
       - background-of-the-web
       - How-does-the-internet-work
       - the-internet

@@ -480,7 +480,8 @@ body {
         return false;
       }
       window.editor = CodeMirror.fromTextArea(
-        document.getElementById('textareaCode'), {
+		document.getElementById('textareaCode'), {
+		  lineNumbers: true,
           mode: 'text/html',
           htmlMode: true,
           lineWrapping: true,
