@@ -7,7 +7,7 @@ title: Home
 
 # General Intro to the Course
 
-{{< addImage imageid="home/learntocode.gif" alt="KittenRuler" >}}
+{{< addImage imageid="resources/learntocode.gif" alt="KittenRuler" >}}
 
 ## Hello World!
 Since the computers and the Internet appeared, they have changed deeply how we play, how we communicate, how we work, how we live. Because of these deep changes in our Society, there are many jobs available for people who have learned to code and solve problems by coding websites and web applications.
@@ -27,11 +27,11 @@ The best way to learn coding, is just like cooking... By doing it! This is why t
 No, you don't. Coding is about trying until it works. So we all start by failing! Get used to it, failure is part of the learning process. Just keep trying, you will make it!
 
 ## A final word from the team
-{{< addImage imageid="home/welcome.jpg" alt="The team" >}}
+{{< addImage imageid="resources/welcome.jpg" alt="The team" >}}
 
 
 Ready ? Let's go! 
 
-{{< addImage imageid="home/quit-basketball.gif" alt="The team" >}}
+{{< addImage imageid="resources/quit-basketball.gif" alt="The team" >}}
 
 

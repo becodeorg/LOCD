@@ -18,35 +18,35 @@ The history of the Internet is somewhat obscure (you can read more about it [her
 
 When two computers need to communicate, you have to link them, either physically (usually with an Ethernet cable) or wirelessly (for example with WiFi or Bluetooth systems). All modern computers can sustain any of those connections.
 
-{{< addImage imageid="general/internet-schema-1.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-1.png" alt="internet schema" >}}
 
 Such a network is not limited to two computers. You can connect as many computers as you wish. But it gets complicated quickly. If you're trying to connect, say, ten computers, you need 45 cables, with nine plugs per computer!
 
-{{< addImage imageid="general/internet-schema-2.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-2.png" alt="internet schema" >}}
 
 To solve this problem, each computer on a network is connected to a special tiny computer called a router. This router has only one job: like a signaler at a railway station, it makes sure that a message sent from a given computer arrives at the right destination computer. To send a message to computer B, computer A must send the message to the router, which in turn forwards the message to computer B and makes sure the message is not delivered to computer C.
 
 Once we add a router to the system, our network of 10 computers only requires 10 cables: a single plug for each computer and a router with 10 plugs.
 
-{{< addImage imageid="general/internet-schema-3.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-3.png" alt="internet schema" >}}
 
 ## A network of networks
 
 So far so good. But what about connecting hundreds, thousands, billions of computers? Of course a single router can't scale that far, but, if you read carefully, we said that a router is a computer like any other, so what keeps us from connecting two routers together? Nothing, so let's do that.
 
-{{< addImage imageid="general/internet-schema-4.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-4.png" alt="internet schema" >}}
 
 By connecting computers to routers, then routers to routers, we are able to scale infinitely.
 
-{{< addImage imageid="general/internet-schema-5.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-5.png" alt="internet schema" >}}
 
 Such a network comes very close to what we call the Internet, but we're missing something. We built that network for our own purposes. There are other networks out there: your friends, your neighbors, anyone can have their own network of computers. But it's not really possible to set cables up between your house and the rest of the world, so how can you handle this? Well, there are already cables linked to your house, for example, electric power and telephone. The telephone infrastructure already connects your house with anyone in the world so it is the perfect wire we need. To connect our network to the telephone infrastructure, we need a special piece of equipment called a modem. This modem turns the information from our network into information manageable by the telephone infrastructure and vice versa.
 
-{{< addImage imageid="general/internet-schema-6.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-6.png" alt="internet schema" >}}
 
 So we are connected to the telephone infrastructure. The next step is to send the messages from our network to the network we want to reach. To do that, we will connect our network to an Internet Service Provider (ISP). An ISP is a company that manages some special routers that are all linked together and can also access other ISPs' routers. So the message from our network is carried through the network of ISP networks to the destination network. The Internet consists of this whole infrastructure of networks.
 
-{{< addImage imageid="general/internet-schema-7.png" alt="internet schema" >}}
+{{< addImage imageid="internet-schema-7.png" alt="internet schema" >}}
 
 ## Finding computers
 

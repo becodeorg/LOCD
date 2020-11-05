@@ -33,21 +33,21 @@ chapters:
       exercises:
         
 
-# -------TestFolder-------
-  testfolder : 
-    order: 3
-    folder: test
-    subFolders: true
+# -------TestFolder Example with subChapter-------
+  # testfolder : 
+  #   order: 3
+  #   folder: test
+  #   subFolders: true
 
-    exercises:
-      - basic-semantics
-      - chinese-letter
+  #   exercises:
+  #     - basic-semantics
+  #     - chinese-letter
 
-    subChapters:
-      1 - positioning:
-        folder: positioning
-        exercises:
-        - how
-        - to
+  #   subChapters:
+  #     1 - positioning:
+  #       folder: positioning
+  #       exercises:
+  #       - how
+  #       - to
 
   
