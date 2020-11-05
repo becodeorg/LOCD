@@ -4,6 +4,7 @@ title: "LOCD Learning on your own!"
 pluralizelisttitles: "false"
 relativeURLs: "true"
 publishDir: "../build"
+layout: "bundle"
 
 
 disableKinds: ['taxonomy', 'taxonomyTerm','section']

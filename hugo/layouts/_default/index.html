@@ -30,10 +30,26 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	<script>
-		document.getElementById
-	</script>
-        
+	
+	<style>
+
+		select{
+			padding: 8px 16px;
+			color: blue;
+		}
+
+		.select__head{
+			font-weight: bold;
+			font-size:14px;
+			color:black;
+		}
+
+		.select__second{
+			text-indent: 5px;
+		}
+	</style>
+    
+    
 </head>
 <body>
 
@@ -61,6 +77,8 @@
 </header>
 <div class="nav__backlayer"></div>
 
+
+
 <main>
 	
     <div id="viewport" class="viewport">
@@ -74,27 +92,32 @@
 							<li class="drop__chapter">0 - Start </li>
                             <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
 							{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
-                            {{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
                         </ul>
                     </div>
                 </div>
-                <a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
             </nav>
 
             <div id="insertData" class="instructions__info">
-				
 
                 <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
                 <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
                 
-				<br>
-				{{.Content}}
 
+				<!--START INSERT DATA-->
+				{{.Content}}
+                <!--END iNSERT DATA-->
+                
+                
+
+				
+				
+				
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
                     
-                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
                 </nav>
 
             </div>
@@ -114,7 +137,7 @@
                     <div class="textarea">
                         <div id="textareawrapper">
                             <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-
+{{ partial "editor/general/editor"}}  
                             </textarea>
                         </div>
                     </div>
@@ -146,35 +169,11 @@
     </div>
 </main>
 
-
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
-
-<!-- Fetching html from directory -->
-<script>
-	
-	let editor = document.getElementById("textareaCode");
-	editor.value = "hi";
-	console.log(editor);
-
-	  async function getUserAsync(name) 
-		{
-			let response = await fetch("{{.Site.BaseURL}}/editorContent/template/editor.html");
-			let data = await response.text()
-			return data;
-		}
-
-		getUserAsync()
-		.then(data =>{
-			editor.value = data;
-			window.editor.getDoc().setValue(data);
-			submitTryit();
-		}); 		
-</script>
-
 </body>
 </html>

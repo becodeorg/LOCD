@@ -14,7 +14,7 @@ This theory is not essential to writing web code in the short term, but before l
 
 Computers connected to the web are called **clients** and **servers**. A simplified diagram of how they interact might look like this:
 
-{{< addImage imageid="general/Client-server.jpg" alt="test" >}}
+{{< addImage imageid="Client-server.jpg" alt="first browser" >}}
 
 - Clients are the typical web user's internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and web-accessing software available on those devices (usually a web browser like Firefox or Chrome).
 
@@ -26,7 +26,7 @@ The client and server we've described above don't tell the whole story. There ar
 
 For now, let's imagine that the web is a road. On one end of the road is the client, which is like your house. On the other end of the road is the server, which is a shop you want to buy something from.
 
-{{< addImage imageid="general/road.jpg" alt="Person crossing the road" >}}
+{{< addImage imageid="road.jpg" alt="Person crossing the road" >}}
 
 In addition to the client and the server, we also need to say hello to:
 

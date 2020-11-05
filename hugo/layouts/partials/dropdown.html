@@ -12,8 +12,9 @@
 		{{ range $exercise:=.exercises }}
 		{{ $exercise:= lower $exercise }}
 		{{ $title := replace $exercise "-" " " }}
-			{{$adress := print "content/" $type "/" $chapter.folder "/" $exercise ".md"}}
-				{{if (fileExists $adress)}}
+			{{$adress := print "content/" $type "/" $chapter.folder "/" $exercise }}
+			{{$adressFile := print "content/" $type "/" $chapter.folder "/" $exercise ".md" }}
+				{{if or (fileExists $adress) (fileExists $adressFile)}}
 					<li><a class="drop__exercise" href="/{{$type}}/{{$chapter.folder}}/{{$exercise}}/index.html">{{$title}}</a></li>
 				{{end}}
 			{{ end }}  
@@ -24,7 +25,7 @@
 			{{ range $exercise:=$subChapter.exercises }}
 				{{$adress := print "content/" $type "/" $chapter.folder "/" $subChapter.folder "/" $exercise ".md"}}
 				{{if (fileExists $adress)}}
-					<li><a class="drop__exercise--sub" href="/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/indes">{{$exercise}}</a></li>
+					<li><a class="drop__exercise--sub" href="/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/index.html">{{$exercise}}</a></li>
 				{{end}}
 			{{ end }}
 		{{end}}

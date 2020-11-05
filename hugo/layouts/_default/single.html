@@ -77,6 +77,8 @@
 </header>
 <div class="nav__backlayer"></div>
 
+
+
 <main>
 	
     <div id="viewport" class="viewport">
@@ -90,7 +92,6 @@
                             <li class="drop__chapter">0 - Start </li>
                             <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
                             {{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
-                            {{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
                         </ul>
                     </div>
                 </div>
@@ -116,19 +117,61 @@
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
                     
-                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
                 </nav>
 
             </div>
 
+		</div>
+		<div class="editor">
+            <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
+            <div class="editor__input">
+                <div id="inputTab" class="input__tab">
+                    <div id="htmlView" class="tab tab--selected">index.html</div>
+                    <div id="cssView" class="tab">style.css</div>
+                    <div id="jsView" class="tab">script.js</div>
+                </div>
+                <div class="input__container">
+                <!-- BELOW IS TEMPORARY-->
+                <div id="textareacontainer">
+                    <div class="textarea">
+                        <div id="textareawrapper">
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+{{ partial "editor/general/editor"}}  
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- ABOVE IS TEMPORARY-->
+                </div>
+            </div>
+
+            <div class="editor__output">
+                <div class="output__tab">
+                    <div class="tab tab--selected">Result</div>
+                    <div class="tab">Console</div>
+                </div>
+                <div class="input__container">
+
+                    <div id="iframecontainer">
+                        <div id="iframe">
+                            <div id="iframewrapper">
+                                 <iframe frameborder="0" id="iframeResult" name="iframeResult" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
         
     </div>
 </main>
 
     
-<!-- <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script> -->
-<!-- <script src="{{.Site.BaseURL}}/js/editor.js"></script> -->
+<script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
+<script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
