@@ -8,10 +8,9 @@ chapters:
     subFolders: false
 
     exercises:
-      - HTML
-      - intro
-      - TEST123
-      - why-html
+      - intro-to-HTML
+      - HTML5-explained
+      - semantic
 
     subChapters:
       folder:

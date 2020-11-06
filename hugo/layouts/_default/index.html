@@ -30,26 +30,7 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	
-	<style>
 
-		select{
-			padding: 8px 16px;
-			color: blue;
-		}
-
-		.select__head{
-			font-weight: bold;
-			font-size:14px;
-			color:black;
-		}
-
-		.select__second{
-			text-indent: 5px;
-		}
-	</style>
-    
-    
 </head>
 <body>
 
@@ -92,6 +73,7 @@
 							<li class="drop__chapter">0 - Start </li>
                             <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
 							{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
+							{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
                         </ul>
                     </div>
                 </div>
