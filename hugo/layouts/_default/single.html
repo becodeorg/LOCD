@@ -58,6 +58,7 @@
 </header>
 <div class="nav__backlayer"></div>
 
+{{ $content_parts := split .Content "<p>||</p>" }}
 
 
 <main>
@@ -88,7 +89,7 @@
                 
 
 				<!--START INSERT DATA-->
-				{{.Content}}
+				{{ index $content_parts 0 | safe.HTML }}
                 <!--END iNSERT DATA-->
 				
                 <nav class="instructions__nav instructions__nav--bottom">
@@ -113,9 +114,8 @@
                 <div id="textareacontainer">
                     <div class="textarea">
                         <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-{{ partial "editor/general/editor"}}  
-                            </textarea>
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">{{  index $content_parts 1 | safe.HTML }}
+							</textarea>
                         </div>
                     </div>
                 </div>
