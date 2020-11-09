@@ -30,26 +30,7 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	
-	<style>
-
-		select{
-			padding: 8px 16px;
-			color: blue;
-		}
-
-		.select__head{
-			font-weight: bold;
-			font-size:14px;
-			color:black;
-		}
-
-		.select__second{
-			text-indent: 5px;
-		}
-	</style>
-    
-    
+	   
 </head>
 <body>
 
@@ -77,6 +58,7 @@
 </header>
 <div class="nav__backlayer"></div>
 
+{{ $content_parts := split .Content "<p>||</p>" }}
 
 
 <main>
@@ -91,7 +73,8 @@
                         <ul>
                             <li class="drop__chapter">0 - Start </li>
                             <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-                            {{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
+							{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
+							{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
                         </ul>
                     </div>
                 </div>
@@ -106,13 +89,8 @@
                 
 
 				<!--START INSERT DATA-->
-				{{.Content}}
+				{{ index $content_parts 0 | safe.HTML }}
                 <!--END iNSERT DATA-->
-                
-                
-
-				
-				
 				
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
@@ -136,9 +114,8 @@
                 <div id="textareacontainer">
                     <div class="textarea">
                         <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-{{ partial "editor/general/editor"}}  
-                            </textarea>
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">{{  index $content_parts 1 | safe.HTML }}
+							</textarea>
                         </div>
                     </div>
                 </div>

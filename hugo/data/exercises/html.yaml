@@ -8,10 +8,29 @@ chapters:
     subFolders: false
 
     exercises:
-      - HTML
-      - intro
-      - TEST123
-      - why-html
+      - intro-to-HTML
+      - HTML5-explained
+      - semantic
+      - hello-world
+
+    subChapters:
+      folder:
+      exercises:
+
+# -------Intro-------
+  basics-of-html: 
+    order: 2
+    folder : basics-of-html
+    subFolders: false
+
+    exercises:
+      - hello-world
+      - titles
+      - paragraphs
+      - boldcursive
+      - lists
+      - relative-links
+      - images
 
     subChapters:
       folder:
@@ -19,14 +38,15 @@ chapters:
 
 # -------Semantics-------
   semantics: 
-    order: 2
+    order: 3
     folder: semantics
     subFolders: false
 
     exercises:
-      - basic-semantics
-      - chinese-letter
-      - exercise-quotes
+      - letter-formatting
+      - recipe-page
+      - chinese-farmer
+      
 
     subChapters:
       folder:
