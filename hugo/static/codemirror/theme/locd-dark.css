@@ -1,0 +1,44 @@
+/*
+
+    Name:       Tomorrow Night - Bright
+    Author:     Chris Kempson
+
+    Port done by Gerard Braad <me@gbraad.nl>
+
+*/
+
+:root{
+	/* used by tags/variables/objects. */
+	--primaryColor: #fa3667;
+	/* Attributes/numbers */
+	--secondaryColor:#DB8864;
+}
+
+.cm-s-locd-dark.CodeMirror { background: #333333; color: #eaeaea; }
+.cm-s-locd-dark div.CodeMirror-selected { background: #424242; }
+.cm-s-locd-dark .CodeMirror-gutters { background: #333333; border-right: 0px; }
+.cm-s-locd-dark .CodeMirror-guttermarker { color: #e78c45; }
+.cm-s-locd-dark .CodeMirror-guttermarker-subtle { color: #777; }
+.cm-s-locd-dark .CodeMirror-linenumber { color: #424242; }
+.cm-s-locd-dark .CodeMirror-cursor { border-left: 1px solid #6A6A6A; }
+
+.cm-s-locd-dark span.cm-comment { color: #d27b53; }
+.cm-s-locd-dark span.cm-atom { color: #a16a94; }
+.cm-s-locd-dark span.cm-number { color: var(--secondaryColor); }
+
+.cm-s-locd-dark span.cm-attribute { color: var(--secondaryColor) }
+.cm-s-locd-dark span.cm-property{color:rgb(57, 185, 218);}
+.cm-s-locd-dark span.cm-keyword { color: #c453b5; }
+.cm-s-locd-dark span.cm-string { color: #D8A88A; }
+
+.cm-s-locd-dark span.cm-variable { color:  var(--primaryColor); }
+.cm-s-locd-dark span.cm-variable-2 { color: green; }
+.cm-s-locd-dark span.cm-def { color:  var(--primaryColor); }
+.cm-s-locd-dark span.cm-bracket { color: #eaeaea; }
+.cm-s-locd-dark span.cm-tag { color: var(--primaryColor); }
+.cm-s-locd-dark span.cm-link { color: #a16a94; }
+.cm-s-locd-dark span.cm-error { background: #D53C3E; color: #6A6A6A; }
+.cm-m-xml.cm-meta {color: var(--primaryColor);}
+
+.cm-s-locd-dark .CodeMirror-activeline-background { background: #2a2a2a; }
+.cm-s-locd-dark .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }

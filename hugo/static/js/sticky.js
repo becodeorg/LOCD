@@ -8,6 +8,5 @@ parent.addEventListener('scroll', function(e) {
 	let topCo = y + 30;
 	maxIcon.style.top = `${topCo}px`;
 	minIcon.style.top = `${topCo}px`;
-	console.log(icon.style.top)
 })
 
