@@ -11,7 +11,7 @@
     <!--START EDITOR LINKS-->
 
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
-	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/mdn-like.css">
+	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
 
     <!--Start JS screen and editor.-->
@@ -92,14 +92,13 @@
 				{{ index $content_parts 0 | safe.HTML }}
                 <!--END iNSERT DATA-->
 				
-                <nav class="instructions__nav instructions__nav--bottom">
-                    <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
-                    
-					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
-                </nav>
-
             </div>
+			<nav class="instructions__nav">
+                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+                
 
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+            </nav>
 		</div>
 		<div class="editor">
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->

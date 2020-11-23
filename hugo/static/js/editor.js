@@ -1,3 +1,8 @@
+Split(['.editor__input','.editor__output'],{
+	direction:"vertical",
+	gutterSize:15,
+})
+
 console.log(window)
 submitTryit();
 
@@ -114,108 +119,108 @@ var currentStack = true;
       showFrameSize();
     }
 
-    // function showFrameSize() {
-    //   var t;
-    //   var width, height;
-    //   width = Number(
-    //     w3_getStyleValue(
-    //       document.getElementById('iframeResult'),
-    //       'width'
-    //     ).replace('px', '')
-    //   ).toFixed();
-    //   height = Number(
-    //     w3_getStyleValue(
-    //       document.getElementById('iframeResult'),
-    //       'height'
-    //     ).replace('px', '')
-    //   ).toFixed();
-    //   document.getElementById('framesize').innerHTML =
-    //     'Result Size: <span>' + width + ' x ' + height + '</span>';
-    // }
-    // var dragging = false;
-    // var stack;
+    function showFrameSize() {
+      var t;
+      var width, height;
+      width = Number(
+        w3_getStyleValue(
+          document.getElementById('iframeResult'),
+          'width'
+        ).replace('px', '')
+      ).toFixed();
+      height = Number(
+        w3_getStyleValue(
+          document.getElementById('iframeResult'),
+          'height'
+        ).replace('px', '')
+      ).toFixed();
+      document.getElementById('framesize').innerHTML =
+        'Result Size: <span>' + width + ' x ' + height + '</span>';
+    }
+    var dragging = false;
+    var stack;
 
-    // function fixDragBtn() {
-    //   var textareawidth, leftpadding, dragleft, containertop, buttonwidth;
-    //   var containertop = Number(
-    //     w3_getStyleValue(document.getElementById('container'), 'top').replace(
-    //       'px',
-    //       ''
-    //     )
-    //   );
-    //   if (stack != ' horizontal') {
-    //     document.getElementById('dragbar').style.width = '5px';
-    //     textareasize = Number(
-    //       w3_getStyleValue(
-    //         document.getElementById('textareawrapper'),
-    //         'width'
-    //       ).replace('px', '')
-    //     );
-    //     leftpadding = Number(
-    //       w3_getStyleValue(
-    //         document.getElementById('textarea'),
-    //         'padding-left'
-    //       ).replace('px', '')
-    //     );
-    //     buttonwidth = Number(
-    //       w3_getStyleValue(
-    //         document.getElementById('dragbar'),
-    //         'width'
-    //       ).replace('px', '')
-    //     );
-    //     textareaheight = w3_getStyleValue(
-    //       document.getElementById('textareawrapper'),
-    //       'height'
-    //     );
-    //     dragleft =
-    //       textareasize + leftpadding + leftpadding / 2 - buttonwidth / 2;
-    //     document.getElementById('dragbar').style.top = containertop + 'px';
-    //     document.getElementById('dragbar').style.left = dragleft + 'px';
-    //     document.getElementById('dragbar').style.height = textareaheight;
-    //     document.getElementById('dragbar').style.cursor = 'col-resize';
-    //   } else {
-    //     document.getElementById('dragbar').style.height = '5px';
-    //     if (window.getComputedStyle) {
-    //       textareawidth = window
-    //         .getComputedStyle(
-    //           document.getElementById('textareawrapper'),
-    //           null
-    //         )
-    //         .getPropertyValue('height');
-    //       textareaheight = window
-    //         .getComputedStyle(
-    //           document.getElementById('textareawrapper'),
-    //           null
-    //         )
-    //         .getPropertyValue('width');
-    //       leftpadding = window
-    //         .getComputedStyle(document.getElementById('textarea'), null)
-    //         .getPropertyValue('padding-top');
-    //       buttonwidth = window
-    //         .getComputedStyle(document.getElementById('dragbar'), null)
-    //         .getPropertyValue('height');
-    //     } else {
-    //       dragleft = document.getElementById('textareawrapper').currentStyle[
-    //         'width'
-    //       ];
-    //     }
-    //     textareawidth = Number(textareawidth.replace('px', ''));
-    //     leftpadding = Number(leftpadding.replace('px', ''));
-    //     buttonwidth = Number(buttonwidth.replace('px', ''));
-    //     dragleft =
-    //       containertop + textareawidth + leftpadding + leftpadding / 2;
-    //     document.getElementById('dragbar').style.top = dragleft + 'px';
-    //     document.getElementById('dragbar').style.left = '5px';
-    //     document.getElementById('dragbar').style.width = textareaheight;
-    //     document.getElementById('dragbar').style.cursor = 'row-resize';
-    //   }
-    // }
+    function fixDragBtn() {
+      var textareawidth, leftpadding, dragleft, containertop, buttonwidth;
+      var containertop = Number(
+        w3_getStyleValue(document.getElementById('container'), 'top').replace(
+          'px',
+          ''
+        )
+      );
+      if (stack != ' horizontal') {
+        document.getElementById('dragbar').style.width = '5px';
+        textareasize = Number(
+          w3_getStyleValue(
+            document.getElementById('textareawrapper'),
+            'width'
+          ).replace('px', '')
+        );
+        leftpadding = Number(
+          w3_getStyleValue(
+            document.getElementById('textarea'),
+            'padding-left'
+          ).replace('px', '')
+        );
+        buttonwidth = Number(
+          w3_getStyleValue(
+            document.getElementById('dragbar'),
+            'width'
+          ).replace('px', '')
+        );
+        textareaheight = w3_getStyleValue(
+          document.getElementById('textareawrapper'),
+          'height'
+        );
+        dragleft =
+          textareasize + leftpadding + leftpadding / 2 - buttonwidth / 2;
+        document.getElementById('dragbar').style.top = containertop + 'px';
+        document.getElementById('dragbar').style.left = dragleft + 'px';
+        document.getElementById('dragbar').style.height = textareaheight;
+        document.getElementById('dragbar').style.cursor = 'col-resize';
+      } else {
+        document.getElementById('dragbar').style.height = '5px';
+        if (window.getComputedStyle) {
+          textareawidth = window
+            .getComputedStyle(
+              document.getElementById('textareawrapper'),
+              null
+            )
+            .getPropertyValue('height');
+          textareaheight = window
+            .getComputedStyle(
+              document.getElementById('textareawrapper'),
+              null
+            )
+            .getPropertyValue('width');
+          leftpadding = window
+            .getComputedStyle(document.getElementById('textarea'), null)
+            .getPropertyValue('padding-top');
+          buttonwidth = window
+            .getComputedStyle(document.getElementById('dragbar'), null)
+            .getPropertyValue('height');
+        } else {
+          dragleft = document.getElementById('textareawrapper').currentStyle[
+            'width'
+          ];
+        }
+        textareawidth = Number(textareawidth.replace('px', ''));
+        leftpadding = Number(leftpadding.replace('px', ''));
+        buttonwidth = Number(buttonwidth.replace('px', ''));
+        dragleft =
+          containertop + textareawidth + leftpadding + leftpadding / 2;
+        document.getElementById('dragbar').style.top = dragleft + 'px';
+        document.getElementById('dragbar').style.left = '5px';
+        document.getElementById('dragbar').style.width = textareaheight;
+        document.getElementById('dragbar').style.cursor = 'row-resize';
+      }
+    }
 
-    // function dragstart(e) {
-    //   e.preventDefault();
-    //   dragging = true;
-    //   var main = document.getElementById('iframecontainer');
-    // }
+    function dragstart(e) {
+      e.preventDefault();
+      dragging = true;
+      var main = document.getElementById('iframecontainer');
+    }
 
     // function dragmove(e) {
     //   if (dragging) {
@@ -298,13 +303,13 @@ var currentStack = true;
         });
       }
 
-    // function w3_getStyleValue(elmnt, style) {
-    //   if (window.getComputedStyle) {
-    //     return window.getComputedStyle(elmnt, null).getPropertyValue(style);
-    //   } else {
-    //     return elmnt.currentStyle[style];
-    //   }
-    // }
+    function w3_getStyleValue(elmnt, style) {
+      if (window.getComputedStyle) {
+        return window.getComputedStyle(elmnt, null).getPropertyValue(style);
+      } else {
+        return elmnt.currentStyle[style];
+      }
+    }
 
     if (
       navigator.userAgent.indexOf('MSIE') > 0 ||

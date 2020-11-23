@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn offline coding by doing</title>
     <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
-    <link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+	<link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+	
+	<script src="{{.Site.BaseURL}}/js/setup.js"></script>
 
 
     <!--START EDITOR LINKS-->
@@ -14,8 +16,6 @@
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
 
-    <!--Start JS screen and editor.-->
-    <script src="{{.Site.BaseURL}}/js/setup.js"></script>
 
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
     <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
@@ -27,9 +27,12 @@
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/xml-hint.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/html-hint.js"></script>
+	<script src="{{.Site.BaseURL}}/js/split.js"></script>
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/max-screen.css"> -->
+
 
 	<style>
 		
@@ -66,13 +69,13 @@
 
 <main>
 
-	<a class=" maxscreen-nav maxscreen-nav--left">
-		<i class="fas fa-arrow-left"></i>
-	</a>
-	<a class=" maxscreen-nav maxscreen-nav--right">
-		<i class="fas fa-arrow-right"></i>
-	</a>
-	
+	<!-- <nav class="instructions__nav instructions__nav--max">
+		<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+		
+
+		<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+	</nav> -->
+
     <div id="viewport" class="viewport">
         <div class="instructions">
             <nav class="instructions__nav">
@@ -102,18 +105,14 @@
 				{{.Content}}
                 <!--END iNSERT DATA-->
                 
+
+			</div>
+			<nav class="instructions__nav">
+                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
                 
 
-				
-				
-				
-                <nav class="instructions__nav instructions__nav--bottom">
-                    <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
-                    
-					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
-                </nav>
-
-            </div>
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+            </nav>
 
 		</div>
 		<div class="editor">
@@ -125,17 +124,15 @@
                     <div id="jsView" class="tab">script.js</div>
                 </div>
                 <div class="input__container">
-                <!-- BELOW IS TEMPORARY-->
-                <div id="textareacontainer">
-                    <div class="textarea">
-                        <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-{{ partial "editor/general/editor"}}  
-                            </textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- ABOVE IS TEMPORARY-->
+					<!-- BELOW IS TEMPORARY-->
+					<div id="textareacontainer">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+{{ partial "editor/general/editor"}}</textarea>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
 
@@ -155,10 +152,8 @@
                     </div>
                     
                 </div>
-            </div>
-            
-        </div>
-        
+			</div>        
+        </div>  
     </div>
 </main>
 
@@ -166,7 +161,9 @@
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
+
+<script src="{{.Site.BaseURL}}/js/sticky.js"></script>
+
 </body>
 </html>

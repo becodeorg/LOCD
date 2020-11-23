@@ -1,5 +1,3 @@
-
-
 let btn = document.querySelector('.dropdown__btn');
 
 btn.addEventListener('click',myFunction)

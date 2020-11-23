@@ -9,19 +9,6 @@ let main = document.querySelector('main');
 let viewport = document.getElementById('viewport');
 let insertView = document.querySelector('#insertData');
 
-viewport.style.transition = "all 2s";;
-viewport.style.gridTemplateColumns = "100vw 100vw";
-// viewport.style.width = "120%";
-max.style.display = "none";
-min.style.display = "inline-block";
-
-main.style.overflow = "hidden";
-main.style.position = "relative";
-
-editorView.classList.add("direct-row");
-input.classList.add("sized");
-output.classList.add("sized")
-insertView.style.padding = "8rem 18rem"
 
 max.addEventListener("click", ()=>{
     viewport.style.transition = "all 2s";;
@@ -59,3 +46,16 @@ for(let i = 0; i < inputView.length; i++){
 // let currInput = document.getElementById(inputView);
 
 
+
+
+let maxIcon = document.getElementById("max");
+let minIcon = document.getElementById("min");
+let parent = document.getElementById("insertData");
+
+
+parent.addEventListener('scroll', function(e) {
+	let y = parent.scrollTop;
+	let topCo = y + 30;
+	maxIcon.style.top = `${topCo}px`;
+	minIcon.style.top = `${topCo}px`;
+})

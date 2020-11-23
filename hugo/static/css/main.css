@@ -56,7 +56,8 @@ nav {
 /*SCROLLBAR*/
 /* width */
 ::-webkit-scrollbar {
-  width: 10px; }
+  width: 10px;
+  height: 10px; }
 
 /* Track */
 /* Handle */
@@ -65,6 +66,29 @@ nav {
   border-radius: 10px; }
 
 /* Handle on hover */
+.editor {
+  position: relative; }
+
+.gutter {
+  cursor: n-resize;
+  background-color: white;
+  box-shadow: inset 0px 0px 7px -1px rgba(0, 0, 0, 0.35);
+  position: relative; }
+  .gutter::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4; }
+
+pre {
+  overflow: auto; }
+
 header {
   background-color: #15141F;
   position: relative;
@@ -197,15 +221,22 @@ li {
   height: calc(100vh - var(--nav-height));
   background-color: #333;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: hidden; }
   .instructions__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 8rem;
     border-bottom: 1px solid #777; }
+    .instructions__nav:last-of-type {
+      border-bottom: 0px solid;
+      border-top: 1px solid #777;
+      box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      z-index: 5; }
     .instructions__nav > a {
-      width: 30%;
+      padding: 0px 50px;
       height: 100%;
       display: flex;
       justify-content: center;
