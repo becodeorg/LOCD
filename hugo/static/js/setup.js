@@ -9,7 +9,7 @@ if (window.addEventListener) {
 
   function browserResize() {
 	var afterResize = window.innerWidth;
-	console.log(window.innerWidth)
+	// console.log(window.innerWidth)
     if (
       (xbeforeResize < 970 && afterResize >= 970) ||
       (xbeforeResize >= 970 && afterResize < 970) ||

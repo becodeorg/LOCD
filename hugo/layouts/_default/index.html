@@ -31,12 +31,9 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	<!-- <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/max-screen.css"> -->
-
-
-	<style>
-		
-	</style>
+	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
 
 </head>
 <body>
@@ -68,31 +65,35 @@
 
 
 <main>
-
-	<!-- <nav class="instructions__nav instructions__nav--max">
-		<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
-		
-
-		<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
-	</nav> -->
+	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
+		<div class="nav__wrapper">
+			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+			<div class="view-navigation">
+				<button id="instructionsButton">Instructions</button>
+				<button id="editorButton">Editor</button>
+			</div>
+			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+		</div>
+	</nav>
 
     <div id="viewport" class="viewport">
         <div class="instructions">
             <nav class="instructions__nav">
-                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
-                <div class="dropdown">
-                    <button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
-                    <div id="dropdownList" class="dropdown__list">
-                        <ul>
-							<li class="drop__chapter">0 - Start </li>
-                            <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-							{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
-							{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
-                        </ul>
-                    </div>
-                </div>
-
-				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				<div class="nav__wrapper">
+					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+					<div class="dropdown">
+						<button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
+						<div id="dropdownList" class="dropdown__list">
+							<ul>
+								<li class="drop__chapter">0 - Start </li>
+								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
+							</ul>
+						</div>
+					</div>
+					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				</div>
             </nav>
 
             <div id="insertData" class="instructions__info">
@@ -107,12 +108,14 @@
                 
 
 			</div>
-			<nav class="instructions__nav">
-                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
-                
 
-				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
-            </nav>
+
+			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
+				<div class="nav__wrapper">
+					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				</div>
+			</nav>
 
 		</div>
 		<div class="editor">
@@ -150,7 +153,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
 			</div>        
         </div>  
