@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn offline coding by doing</title>
     <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
-    <link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+	<link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+	
+	<script src="{{.Site.BaseURL}}/js/setup.js"></script>
 
 
     <!--START EDITOR LINKS-->
 
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
-	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/mdn-like.css">
+	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
 
-    <!--Start JS screen and editor.-->
-    <script src="{{.Site.BaseURL}}/js/setup.js"></script>
 
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
     <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
@@ -27,9 +27,13 @@
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/xml-hint.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/html-hint.js"></script>
+	<script src="{{.Site.BaseURL}}/js/split.js"></script>
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
 
 </head>
 <body>
@@ -61,24 +65,35 @@
 
 
 <main>
-	
+	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
+		<div class="nav__wrapper">
+			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+			<div class="view-navigation">
+				<button id="instructionsButton">Instructions</button>
+				<button id="editorButton">Editor</button>
+			</div>
+			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+		</div>
+	</nav>
+
     <div id="viewport" class="viewport">
         <div class="instructions">
             <nav class="instructions__nav">
-                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
-                <div class="dropdown">
-                    <button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
-                    <div id="dropdownList" class="dropdown__list">
-                        <ul>
-							<li class="drop__chapter">0 - Start </li>
-                            <li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-							{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
-							{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
-                        </ul>
-                    </div>
-                </div>
-
-				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				<div class="nav__wrapper">
+					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+					<div class="dropdown">
+						<button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
+						<div id="dropdownList" class="dropdown__list">
+							<ul>
+								<li class="drop__chapter">0 - Start </li>
+								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
+							</ul>
+						</div>
+					</div>
+					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				</div>
             </nav>
 
             <div id="insertData" class="instructions__info">
@@ -91,18 +106,16 @@
 				{{.Content}}
                 <!--END iNSERT DATA-->
                 
-                
 
-				
-				
-				
-                <nav class="instructions__nav instructions__nav--bottom">
-                    <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
-                    
-					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
-                </nav>
+			</div>
 
-            </div>
+
+			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
+				<div class="nav__wrapper">
+					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+				</div>
+			</nav>
 
 		</div>
 		<div class="editor">
@@ -114,17 +127,15 @@
                     <div id="jsView" class="tab">script.js</div>
                 </div>
                 <div class="input__container">
-                <!-- BELOW IS TEMPORARY-->
-                <div id="textareacontainer">
-                    <div class="textarea">
-                        <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-{{ partial "editor/general/editor"}}  
-                            </textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- ABOVE IS TEMPORARY-->
+					<!-- BELOW IS TEMPORARY-->
+					<div id="textareacontainer">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+{{ partial "editor/general/editor"}}</textarea>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
 
@@ -142,12 +153,9 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-            </div>
-            
-        </div>
-        
+			</div>        
+        </div>  
     </div>
 </main>
 
@@ -155,7 +163,9 @@
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
+
+<script src="{{.Site.BaseURL}}/js/sticky.js"></script>
+
 </body>
 </html>

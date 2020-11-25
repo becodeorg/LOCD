@@ -8,7 +8,8 @@ if (window.addEventListener) {
   var fileID = '';
 
   function browserResize() {
-    var afterResize = window.innerWidth;
+	var afterResize = window.innerWidth;
+	// console.log(window.innerWidth)
     if (
       (xbeforeResize < 970 && afterResize >= 970) ||
       (xbeforeResize >= 970 && afterResize < 970) ||
@@ -21,7 +22,10 @@ if (window.addEventListener) {
     }
     if (window.screen.availWidth <= 768) {
       restack(window.innerHeight > window.innerWidth);
-    }
-    fixDragBtn();
-    showFrameSize();
+	}
+	if(window.screen.innerWidth < 1000){
+		console.log("collapse")
+	}
+    // fixDragBtn();
+    // showFrameSize();
   }
