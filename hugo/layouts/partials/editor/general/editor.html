@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title href="ewe">Page Title</title>
 </head>
 <body>
     
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-<ul>
-    <li>
-        And this
-    </li>
-    <li>
-        a list
-    </li>
-</ul>
+	<h1>This is a Heading</h1>
+
+	<script>
+		// 1. Create the button
+	var button = document.createElement("button");
+	button.innerHTML = "Do Something";
+
+	// 2. Append somewhere
+	var body = document.getElementsByTagName("body")[0];
+	body.appendChild(button);
+
+	// 3. Add event handler
+	button.addEventListener ("click", function() {
+	alert("did something");
+	});
+	</script>
         
 </body>
 </html>

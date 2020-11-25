@@ -1,3 +1,8 @@
+Split(['.editor__input','.editor__output'],{
+	direction:"vertical",
+	gutterSize:15,
+})
+
 console.log(window)
 submitTryit();
 

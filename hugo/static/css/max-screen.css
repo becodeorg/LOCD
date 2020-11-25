@@ -1,0 +1,32 @@
+#instructionNavMax {
+  display: block; }
+
+.instructions {
+  height: calc(100vh - var(--nav-height) - 8rem); }
+  .instructions__info {
+    max-width: 1200px;
+    margin: auto; }
+  .instructions__nav--max {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #333;
+    z-index: 1; }
+
+.nav__wrapper {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%; }
+
+main {
+  overflow-x: hidden;
+  position: relative; }
+
+.viewport {
+  grid-template-columns: minmax(100%, var(--sidebar-large-w)) 100%;
+  grid-auto-rows: 100%;
+  transform: translateX(0%);
+  transition: transform 0.6s ease-in-out; }
+
+.viewport--editor {
+  transform: translateX(-100%); }
