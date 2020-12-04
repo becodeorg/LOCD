@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
 	<link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
 	
+	<script src="{{.Site.BaseURL}}/js/setup.js"></script>
+
+
     <!--START EDITOR LINKS-->
 
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
@@ -28,7 +31,7 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
+	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
 	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
 	<link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
 
@@ -97,13 +100,11 @@
 
                 <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
                 <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
-                
 
 				<!--START INSERT DATA-->
 				{{.Content}}
                 <!--END iNSERT DATA-->
                 
-
 			</div>
 
 
@@ -120,16 +121,15 @@
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
                     <div id="htmlView" class="tab tab--selected">index.html</div>
-                     <!-- <div id="cssView" class="tab">style.css</div>
-                    <div id="jsView" class="tab">script.js</div> -->
+                    <div id="cssView" class="tab">style.css</div>
+                    <div id="jsView" class="tab">script.js</div>
                 </div>
                 <div class="input__container">
 					<!-- BELOW IS TEMPORARY-->
 					<div id="textareacontainer">
 						<div class="textarea">
 							<div id="textareawrapper">
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
-{{ partial "editor/general/editor"}}</textarea>
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">{{ partial "editor/general/editor"}}</textarea>
 							</div>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
             <div class="editor__output">
                 <div class="output__tab">
                     <div class="tab tab--selected">Result</div>
-                    <!-- <div class="tab">Console</div> -->
+                    <div class="tab">Console</div>
                 </div>
                 <div class="input__container">
 
@@ -161,6 +161,8 @@
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script src="{{.Site.BaseURL}}/js/navigation.js"></script>
+
+<script src="{{.Site.BaseURL}}/js/sticky.js"></script>
 
 </body>
 </html>

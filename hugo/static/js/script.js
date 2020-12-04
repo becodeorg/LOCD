@@ -15,19 +15,9 @@ stylesheet.disabled = true;
 
 
 max.addEventListener("click", ()=>{
-
 	max.style.display = "none";
 	min.style.display = "inline-block";
 	stylesheet.disabled = false;
-
-	// let head = document.querySelector("head");
-
-	// let link = document.createElement('link');
-	// link.rel = 'stylesheet';
-	// link.type = 'text/css';
-	// link.href = root+'/css/max-screen.css';
-	// link.id = 'maxViewer';
-	// link.media = "(min-width: 1000px)";
 })
 
 
