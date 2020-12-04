@@ -20,6 +20,8 @@ SANDBOX = allow-scripts allow-same-origin allow-forms allow-modals allow-popups
 
 ````
 
-This needs to be done on every machine (trainer and learner).
+4. Close Kolibri, wait a few seconds, then relaunch it. The new settings should be used now!
+
+This needs to be done once on every machine (trainer and learner).
 
 
