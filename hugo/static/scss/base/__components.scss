@@ -2,7 +2,8 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
+	height: 10px;
   }
   
   /* Track */
@@ -20,3 +21,31 @@
   ::-webkit-scrollbar-thumb:hover {
     // background: #b30000; 
   }
+
+  .editor{
+	  position: relative;
+  }
+
+  .gutter{
+	  cursor: n-resize;
+	  background-color:white;
+	  box-shadow: inset 0px 0px 7px -1px rgba(0,0,0,.35);
+	  position: relative;
+
+	 &::after{
+		 content: "";
+		 display: block;
+		 width: 40px;
+		 height: 2px;
+		 background-color: $color-grey-dark-2;
+		 position: absolute;
+		 top:50%;
+		 left:50%;
+		 transform: translate(-50%, -50%);
+		 opacity: 0.4;
+	 }
+  }
+  
+  pre{
+	overflow: auto;
+}
