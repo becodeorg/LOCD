@@ -17,7 +17,7 @@ The setup of Hugo is fairly easy. You can find the releases [here](https://githu
 ### Windows
 
 For windows users the setup is already done.
-Inside the repository there is a bin folder that contains the hugo.exe. This way everything *next* to the **bin** folder can use `Hugo`.
+Inside the repository there is a bin folder that contains the hugo.exe. This way everything *inside* the **bin** folder can use `Hugo`.
 To test this, run the `hugo version` command, this should return a response.
 
 If this is not the case, download the latest release mentioned above, and store it inside a bin folder at the location that you are planning to work.
