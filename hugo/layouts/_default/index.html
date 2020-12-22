@@ -116,12 +116,18 @@
 
 		</div>
 		<div class="editor">
+
+            <div class="successMessage">
+                <p>Save successfull!</p>
+            </div>
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
                     <div id="htmlView" class="tab tab--selected">index.html</div>
                      <!-- <div id="cssView" class="tab">style.css</div>
                     <div id="jsView" class="tab">script.js</div> -->
+
+                    <button id="saveButton">Save</button>
                 </div>
                 <div class="input__container">
 					<!-- BELOW IS TEMPORARY-->
@@ -159,6 +165,36 @@
     </div>
 </main>
 
+<script>
+
+    let button = document.getElementById("saveButton");
+    button.addEventListener("click",saveEditor);
+
+    function saveEditor(){
+        let myContent = document.getElementById("textareaCode").value;
+        messagePop("Succesfully saved!");
+        localStorage.setItem({{.Title}},myContent);
+    }
+
+    function loadEditor(){
+        let content = localStorage.getItem({{.Title}});
+        if(content){
+            document.getElementById("textareaCode").value = content;
+        }
+    }
+
+    function messagePop(text){
+        let message = document.querySelector(".successMessage");
+        console.log(message.firstElementChild.innerHTML = text)
+        message.classList.add("activeMessage");
+
+        message.addEventListener('animationend', () => {
+            message.classList.remove("activeMessage");
+        });
+    }
+
+    loadEditor();
+</script>
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>

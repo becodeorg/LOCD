@@ -121,13 +121,17 @@
                     <div id="htmlView" class="tab tab--selected">index.html</div>
                     <!-- <div id="cssView" class="tab">style.css</div>
                     <div id="jsView" class="tab">script.js</div> -->
+                    <button id="saveButton">Save</button>
                 </div>
                 <div class="input__container">
                 <!-- BELOW IS TEMPORARY-->
                 <div id="textareacontainer">
                     <div class="textarea">
                         <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">{{  index $content_parts 1 | safe.HTML }}</textarea>
+                             <!--Dirty way to hide the load time of codemirror-->
+                             <div class="overlay__editor"></div>
+
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{  index $content_parts 1 | safe.HTML }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -157,6 +161,26 @@
         
     </div>
 </main>
+
+<script>
+
+    let button = document.getElementById("saveButton");
+    button.addEventListener("click",saveEditor);
+
+    function saveEditor(){
+        let myContent = document.getElementById("textareaCode").value;
+        localStorage.setItem({{.Title}},myContent);
+    }
+
+    function loadEditor(){
+        let content = localStorage.getItem({{.Title}});
+        if(content){
+            document.getElementById("textareaCode").value = content;
+        }
+    }
+
+    loadEditor();
+</script>
 
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>

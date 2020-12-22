@@ -59,6 +59,13 @@
   }
 }
 
+#saveButton{
+  margin-left: auto;
+  padding: 0 100px;
+  border: none;
+  
+}
+
 #textareacontainer, .textarea, #textareawrapper , #iframecontainer,#iframe
 ,#iframewrapper,iframe{
   height: 100%;
@@ -68,6 +75,8 @@
 #iframewrapper{
 	position: relative;
 }
+
+
 iframe {
 	position: absolute;
 	top: 0;

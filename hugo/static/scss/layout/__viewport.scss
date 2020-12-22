@@ -149,3 +149,43 @@
     height: 100%;
 }
 
+
+.successMessage{
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 -4px 10px 0px rgba(0,0,0,0.5);
+    opacity: 100;
+    z-index: 100;
+    position: absolute;
+
+    right: 50%;
+    top:5%;
+
+    transform: translateX(50%);
+
+    height: 80px;
+    width: 200px;
+    background-color: white;
+
+    p{
+        text-align: center;
+        line-height: 80px;
+        font-size: 1.5rem;
+        color:green
+    }
+}
+
+.activeMessage{
+    display: block;
+    animation-name: messagePopUp;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes messagePopUp {
+    0% {opacity: 0;top:-5%;}
+    30% {opacity: 1;top:8%}
+    70% {opacity: 1;top:8%}
+    100% {opacity: 0;top:-5%}
+  }
