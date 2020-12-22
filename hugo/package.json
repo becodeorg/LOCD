@@ -4,8 +4,8 @@
   "description": "Offline tool for teaching prisoners or refugees",
   "main": "index.js",
   "scripts": {
-	"sass:compile": "node-sass static/scss/main.scss static/css/main.css -w",
-	"sass:max": "node-sass static/scss/max-screen.scss static/css/max-screen.css -w",
+    "sass:compile": "node-sass static/scss/main.scss static/css/main.css -w",
+    "sass:max": "node-sass static/scss/max-screen.scss static/css/max-screen.css -w",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass static/scss/main.scss static/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" static/css/style.comp.css -o static/css/style.prefix.css",
