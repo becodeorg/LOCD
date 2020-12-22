@@ -127,7 +127,8 @@
                      <!-- <div id="cssView" class="tab">style.css</div>
                     <div id="jsView" class="tab">script.js</div> -->
 
-                    <button id="saveButton">Save</button>
+                    <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
+                    <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
 					<!-- BELOW IS TEMPORARY-->
@@ -167,8 +168,11 @@
 
 <script>
 
-    let button = document.getElementById("saveButton");
-    button.addEventListener("click",saveEditor);
+    let saveButton = document.getElementById("saveButton");
+    let resetButton = document.getElementById("resetButton");
+
+    saveButton.addEventListener("click",saveEditor);
+    resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
         let myContent = document.getElementById("textareaCode").value;
@@ -181,6 +185,14 @@
         if(content){
             document.getElementById("textareaCode").value = content;
         }
+    }
+
+    function resetEditor(){
+        let myContent = document.getElementById("textareaCode").value;
+        messagePop("Succesfully reset!");
+        window.editor.setValue({{ partial "editor/general/editor"}});
+        localStorage.removeItem({{.Title}});
+        submitTryit();
     }
 
     function messagePop(text){

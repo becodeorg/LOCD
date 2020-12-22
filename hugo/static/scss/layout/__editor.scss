@@ -59,12 +59,20 @@
   }
 }
 
-#saveButton{
-  margin-left: auto;
-  padding: 0 100px;
+
+
+.editorButton{
+  padding: 0 80px;
   border: none;
-  
+
+  &__saveButton{
+    margin-left: auto;
+    border-left: 1px solid $color-grey-light-3 ;
+    border-right: 1px solid $color-grey-light-3 ;
+  }
 }
+
+
 
 #textareacontainer, .textarea, #textareawrapper , #iframecontainer,#iframe
 ,#iframewrapper,iframe{

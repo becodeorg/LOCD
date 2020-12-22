@@ -402,10 +402,13 @@ li {
     font-size: 1.5rem;
     color: #FF5606; }
 
-#saveButton {
-  margin-left: auto;
-  padding: 0 100px;
+.editorButton {
+  padding: 0 80px;
   border: none; }
+  .editorButton__saveButton {
+    margin-left: auto;
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1; }
 
 #textareacontainer, .textarea, #textareawrapper, #iframecontainer, #iframe
 , #iframewrapper, iframe {
