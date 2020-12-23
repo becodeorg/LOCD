@@ -24,7 +24,6 @@ max.addEventListener("click", ()=>{
 
 
 min.addEventListener("click", ()=>{
-	
 	max.style.display = "inline-block";
 	min.style.display = "none";
 

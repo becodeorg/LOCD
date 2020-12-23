@@ -5,10 +5,23 @@ Split(['.editor__input','.editor__output'],{
 
 submitTryit();
 
+
+let typingTimer;
+const doneTypingCount = 1500;
+
 document.addEventListener('keyup',()=>{
-  console.clear();
-  submitTryit();
+
+  
+  clearTimeout(typingTimer);
+  
+  typingTimer = setTimeout(noTyping, doneTypingCount);
 });
+
+function noTyping(){
+  console.clear();
+  console.log('o')
+  submitTryit();
+}
 
 function submitTryit(n) {
 
