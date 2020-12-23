@@ -2,6 +2,8 @@ let max = document.getElementById('max');
 let min = document.getElementById('min');
 
 let editorView = document.querySelector('.editor');
+let instructionsView = document.querySelector('.instructions');
+
 let input = document.querySelector('.editor__input');
 let output = document.querySelector('.editor__output');
 let main = document.querySelector('main');
@@ -53,9 +55,11 @@ parent.addEventListener('scroll', function(e) {
 })
 
 document.getElementById("instructionsButton").addEventListener("click",()=>{
-	viewport.classList.remove("viewport--editor")
+	instructionsView.classList.remove("instructions--max")
+	editorView.classList.remove("editor--max")
 })
 
 document.getElementById("editorButton").addEventListener("click",()=>{
-	viewport.classList.add("viewport--editor")
+	instructionsView.classList.add("instructions--max")
+	editorView.classList.add("editor--max")
 })

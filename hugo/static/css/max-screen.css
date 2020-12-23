@@ -1,17 +1,16 @@
 #instructionNavMax {
   display: block; }
 
-.instructions {
-  height: calc(100vh - var(--nav-height) - 8rem); }
-  .instructions__info {
-    max-width: 1200px;
-    margin: auto; }
-  .instructions__nav--max {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: #333;
-    z-index: 1; }
+.instructions__info {
+  max-width: 1200px;
+  margin: auto; }
+
+.instructions__nav--max {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #333;
+  z-index: 1; }
 
 .nav__wrapper {
   max-width: 1200px;
@@ -28,5 +27,8 @@ main {
   transform: translateX(0%);
   transition: transform 0.6s ease-in-out; }
 
-.viewport--editor {
-  transform: translateX(-100%); }
+.editor, .instructions {
+  transform: translateX(0%);
+  transition: transform 0.6s ease-in-out; }
+  .editor--max, .instructions--max {
+    transform: translateX(-100%); }

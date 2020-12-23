@@ -346,37 +346,42 @@ li {
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out; }
 
-.resetComfirm {
-  border-radius: 5px;
-  box-shadow: 0 -4px 10px 0px rgba(0, 0, 0, 0.5);
-  opacity: 100;
-  z-index: 100;
+.reset {
   position: absolute;
-  right: 50%;
-  top: 5%;
-  transform: translateX(-50%);
-  height: 250px;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  padding: 40px; }
-  .resetComfirm p {
-    margin-top: 40px;
-    font-size: 1.8rem; }
-  .resetComfirm button:hover {
-    background-color: #d1d1d1; }
-
-.resetSelection {
-  margin-top: 20px; }
-  .resetSelection :first-child {
-    margin-right: 10px; }
-  .resetSelection :last-child {
-    margin-left: 10px; }
-  .resetSelection > * {
-    padding: 10px 40px;
-    border-radius: 5px; }
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .reset__comfirm {
+    border-radius: 5px;
+    box-shadow: 0 -4px 10px 0px rgba(0, 0, 0, 0.5);
+    opacity: 100;
+    z-index: 100;
+    position: absolute;
+    right: 50%;
+    top: 5%;
+    transform: translateX(50%);
+    height: 250px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 40px; }
+    .reset__comfirm p {
+      margin-top: 40px;
+      font-size: 1.8rem; }
+    .reset__comfirm button:hover {
+      background-color: #d1d1d1; }
+    .reset__comfirm__Selection {
+      margin-top: 20px; }
+      .reset__comfirm__Selection :first-child {
+        margin-right: 10px; }
+      .reset__comfirm__Selection :last-child {
+        margin-left: 10px; }
+      .reset__comfirm__Selection > * {
+        padding: 10px 40px;
+        border-radius: 5px; }
 
 @keyframes messagePopUp {
   0% {
