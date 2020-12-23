@@ -184,14 +184,15 @@
 
 .reset{
     position: absolute;
-    
+    display: none;
+    z-index: 9999;
     
     top:0;
     right:0;
     bottom: 0;
     left:0;
 
-    &__comfirm{
+    &__confirm{
         border-radius: 5px;
         box-shadow: 0 -4px 10px 0px rgba(0,0,0,0.5);
         opacity: 100;
@@ -224,19 +225,21 @@
         //     background-color: red;
         //
     
-        &__Selection{
-            margin-top: 20px;
-            :first-child{
-                margin-right: 10px;
-            }
         
-            :last-child{
-                margin-left: 10px;
-            }
-            > *{
-                padding: 10px 40px;
-                border-radius: 5px;
-            }
+    }
+
+    &__selection{
+        margin-top: 20px;
+        :first-child{
+            margin-right: 10px;
+        }
+    
+        :last-child{
+            margin-left: 10px;
+        }
+        > *{
+            padding: 10px 40px;
+            border-radius: 5px;
         }
     }
 }

@@ -1,21 +1,25 @@
 #instructionNavMax {
   display: block; }
 
-.instructions__info {
-  max-width: 1200px;
-  margin: auto; }
-
-.instructions__nav--max {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #333;
-  z-index: 1; }
+.instructions {
+  height: calc(100vh - var(--nav-height) - 8rem); }
+  .instructions__info {
+    max-width: 1200px;
+    margin: auto; }
+  .instructions__nav--max {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #333;
+    z-index: 1; }
 
 .nav__wrapper {
   max-width: 1200px;
   margin: auto;
   width: 100%; }
+
+#instructionNavMin {
+  display: none; }
 
 main {
   overflow-x: hidden;

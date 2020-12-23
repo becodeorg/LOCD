@@ -348,11 +348,13 @@ li {
 
 .reset {
   position: absolute;
+  display: none;
+  z-index: 9999;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0; }
-  .reset__comfirm {
+  .reset__confirm {
     border-radius: 5px;
     box-shadow: 0 -4px 10px 0px rgba(0, 0, 0, 0.5);
     opacity: 100;
@@ -368,20 +370,20 @@ li {
     align-items: center;
     background-color: white;
     padding: 40px; }
-    .reset__comfirm p {
+    .reset__confirm p {
       margin-top: 40px;
       font-size: 1.8rem; }
-    .reset__comfirm button:hover {
+    .reset__confirm button:hover {
       background-color: #d1d1d1; }
-    .reset__comfirm__Selection {
-      margin-top: 20px; }
-      .reset__comfirm__Selection :first-child {
-        margin-right: 10px; }
-      .reset__comfirm__Selection :last-child {
-        margin-left: 10px; }
-      .reset__comfirm__Selection > * {
-        padding: 10px 40px;
-        border-radius: 5px; }
+  .reset__selection {
+    margin-top: 20px; }
+    .reset__selection :first-child {
+      margin-right: 10px; }
+    .reset__selection :last-child {
+      margin-left: 10px; }
+    .reset__selection > * {
+      padding: 10px 40px;
+      border-radius: 5px; }
 
 @keyframes messagePopUp {
   0% {
