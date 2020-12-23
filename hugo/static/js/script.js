@@ -11,15 +11,17 @@ let main = document.querySelector('main');
 let viewport = document.getElementById('viewport');
 let insertView = document.querySelector('#insertData');
 
-let stylesheet = document.getElementById("maxViewer");
 
-stylesheet.disabled = true;
+
+
+
 
 
 max.addEventListener("click", ()=>{
 	max.style.display = "none";
 	min.style.display = "inline-block";
 	stylesheet.disabled = false;
+	sessionStorage.setItem('maxScreen', true);
 })
 
 
@@ -27,6 +29,7 @@ min.addEventListener("click", ()=>{
 	max.style.display = "inline-block";
 	min.style.display = "none";
 
+	sessionStorage.removeItem('maxScreen');
 	stylesheet.disabled = true;
 })
 
