@@ -21,7 +21,7 @@
 	<script src="{{.Site.BaseURL}}/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
     <script src="{{.Site.BaseURL}}/js/split.js"></script>
-    <script src="{{.Site.BaseURL}}/js/browser.js"></script>
+    <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
@@ -165,8 +165,7 @@
                                 <!--Dirty way to hide the load time of codemirror-->
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">
-{{ partial "editor/general/editor"}}</textarea>
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none"></textarea>
 							</div>
 						</div>
 					</div>
