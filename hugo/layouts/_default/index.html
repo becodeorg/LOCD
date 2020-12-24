@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
-	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
 
 
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
@@ -21,16 +20,19 @@
     <script src="{{.Site.BaseURL}}/codemirror/mode/xml/xml.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
-	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
-	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/xml-hint.js"></script>
-	<script src="{{.Site.BaseURL}}/codemirror/addon/hint/html-hint.js"></script>
-	<script src="{{.Site.BaseURL}}/js/split.js"></script>
+    <script src="{{.Site.BaseURL}}/js/split.js"></script>
+    <script src="{{.Site.BaseURL}}/js/browser.js"></script>
 	
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
 	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
 	<link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
+
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
+
     
     <script>
         let stylesheet = document.getElementById("maxViewer");

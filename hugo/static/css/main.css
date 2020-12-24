@@ -476,6 +476,9 @@ iframe {
   height: 100%;
   font-size: 14px; }
 
+.emmet-abbreviation-preview {
+  z-index: 9; }
+
 #textareawrapper {
   position: relative; }
 
