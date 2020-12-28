@@ -10,6 +10,12 @@ header{
     padding: 0.5rem;
     margin: 0 6rem;
     height: var(--nav-height);
+    max-height: none;
+    
+    &--burger{
+
+    }
+
     &__logo{
         background-image: url('../img/locdLogo.png');
         display: inline-block;
@@ -24,9 +30,18 @@ header{
         display: flex;
         align-items: center;
         list-style: none;
+        transition: all .2s ease-out;
+
+        @media (max-width: 1000px){
+            display: none;
+        }
 
         &>*{
             margin-left:40px ;
+           
+            @media (max-width: 1000px){
+                padding: 1.2rem;
+            }
         }
     }
 
@@ -40,6 +55,84 @@ header{
         box-shadow: 0px 0px 10px 5px $color-grey-dark-3;
     }
 }
+
+.menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    display: none;
+  }
+
+  .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+
+.navicon:before,
+.navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.menu-icon .navicon:before {
+  top: 5px;
+}
+
+.menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.menu-btn {
+  display: none;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+
+@media (max-width: 1000px) {
+
+    .menu-btn:checked ~ .nav__menu {
+        // height: 240px;
+        height: 100%;
+        max-height: 240px;
+        transition: all .2s ease-out;
+    }
+    .menu-icon {
+        display: block;
+    }
+
+ 
+}
+
 
 .dropdown{
 
@@ -192,4 +285,6 @@ li{
         }
     }
 }
+
+
 
