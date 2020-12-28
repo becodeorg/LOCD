@@ -11,7 +11,6 @@ const doneTypingCount = 1500;
 
 document.addEventListener('keyup',()=>{
 
-  
   clearTimeout(typingTimer);
   
   typingTimer = setTimeout(noTyping, doneTypingCount);
@@ -19,7 +18,7 @@ document.addEventListener('keyup',()=>{
 
 function noTyping(){
   console.clear();
-  console.log('o')
+  console.log('cleared!')
   submitTryit();
 }
 

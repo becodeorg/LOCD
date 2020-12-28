@@ -201,6 +201,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        submitTryit();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem({{.Title}},myContent);
@@ -257,7 +258,6 @@
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script src="{{.Site.BaseURL}}/js/navigation.js"></script>
 
 </body>
 </html>
