@@ -5,21 +5,16 @@ header{
 }
 
 .nav{
-    
     display: flex;
     justify-content: space-between;
-
     padding: 0.5rem;
     margin: 0 6rem;
     height: var(--nav-height);
-    
-
     &__logo{
         background-image: url('../img/locdLogo.png');
         display: inline-block;
         height: 6rem;
         width: 15rem;
-        
         background-size: auto 100%;
         background-position: left center;
         background-repeat: no-repeat;
@@ -32,7 +27,6 @@ header{
 
         &>*{
             margin-left:40px ;
-
         }
     }
 
@@ -63,6 +57,10 @@ header{
         outline: none;
         width: 100%;
         text-align: start;
+
+        &:hover{
+            background-color: $color-grey-dark-3;
+        }
     }
 
     &__list{
@@ -164,10 +162,34 @@ li{
     color:white;
 }
 
-
+> button:first-child{
+        margin-right: 1rem;
+    }
 .disabled {
 	pointer-events: none;
 	cursor: default;
 	color:grey;
+}
+
+.view-navigation{
+    width: 100%;
+    text-align:center;
+
+
+    > button{
+        display:inline-block;
+        padding:1rem 4rem;
+        color:$color-grey-dark;
+        margin: 0 1rem 1rem 0;
+        border-radius:0.3rem;
+        text-decoration:none;
+        
+        @media only screen and (max-width: 550px) {
+            display: block;
+            margin: 0.4em auto;
+            width: 100%;
+            padding:1rem 2rem;
+        }
+    }
 }
 

@@ -97,12 +97,6 @@ nav {
 pre {
   overflow: auto; }
 
-button {
-  padding: 20px 80px;
-  font-size: 1.4rem; }
-  button:hover {
-    background-color: #d1d1d1; }
-
 header {
   background-color: #15141F;
   position: relative;
@@ -151,6 +145,8 @@ header {
     outline: none;
     width: 100%;
     text-align: start; }
+    .dropdown__btn:hover {
+      background-color: #333; }
   .dropdown__list {
     display: none;
     position: absolute;
@@ -218,10 +214,30 @@ li {
   background: #777;
   color: white; }
 
+> button:first-child {
+  margin-right: 1rem; }
+
 .disabled {
   pointer-events: none;
   cursor: default;
   color: grey; }
+
+.view-navigation {
+  width: 100%;
+  text-align: center; }
+  .view-navigation > button {
+    display: inline-block;
+    padding: 1rem 4rem;
+    color: #777;
+    margin: 0 1rem 1rem 0;
+    border-radius: 0.3rem;
+    text-decoration: none; }
+    @media only screen and (max-width: 550px) {
+      .view-navigation > button {
+        display: block;
+        margin: 0.4em auto;
+        width: 100%;
+        padding: 1rem 2rem; } }
 
 #instructionNavMax {
   display: none; }
@@ -238,7 +254,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 8rem; }
+  min-height: 8rem; }
   .nav__wrapper > a {
     padding: 0px 50px;
     height: 100%;

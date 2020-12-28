@@ -49,12 +49,3 @@
   pre{
 	overflow: auto;
 }
-
-button{
-	padding: 20px 80px;
-	font-size: 1.4rem;
-
-	&:hover{
-		background-color: $color-grey-light-3;
-	}
-}
