@@ -113,3 +113,15 @@ function myFunction() {
 			})
 		}
 	}
+
+// burger menu toggle
+let burgerMenu = document.getElementById("menu__btn");
+const burgerNav = document.querySelector(".nav__menu--hamburger")
+
+burgerMenu.addEventListener("change",function(){
+	if(this.checked){
+		burgerNav.classList.add("burger--active")
+	}else{
+		burgerNav.classList.remove("burger--active")
+	}	
+})

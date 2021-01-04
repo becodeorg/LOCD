@@ -130,6 +130,23 @@ header {
       @media (max-width: 1000px) {
         .nav__menu > * {
           padding: 1.2rem; } }
+    .nav__menu--hamburger {
+      background-color: #15141F;
+      text-decoration: none;
+      padding-top: 25px;
+      display: none;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      transform: translateY(-500px);
+      transition: 0.5s transform ease-in-out; }
+      .nav__menu--hamburger li {
+        padding: 20px; }
+      @media (max-width: 1000px) {
+        .nav__menu--hamburger {
+          display: block; } }
+      .nav__menu--hamburger.burger--active {
+        transform: translateY(0px); }
   .nav__backlayer {
     position: absolute;
     width: 100%;
@@ -139,7 +156,7 @@ header {
     top: 25px;
     box-shadow: 0px 0px 10px 5px #333; }
 
-.menu-icon {
+.menu__icon {
   cursor: pointer;
   display: inline-block;
   float: right;
@@ -148,7 +165,7 @@ header {
   user-select: none;
   display: none; }
 
-.navicon {
+.nav__icon {
   background: #333;
   display: block;
   height: 2px;
@@ -156,8 +173,8 @@ header {
   transition: background .2s ease-out;
   width: 18px; }
 
-.navicon:before,
-.navicon:after {
+.nav__icon:before,
+.nav__icon:after {
   background: #333;
   content: '';
   display: block;
@@ -166,35 +183,35 @@ header {
   transition: all .2s ease-out;
   width: 100%; }
 
-.menu-icon .navicon:before {
+.menu__icon .nav__icon:before {
   top: 5px; }
 
-.menu-icon .navicon:after {
+.menu__icon .nav__icon:after {
   top: -5px; }
 
 /* menu btn */
-.menu-btn {
+.menu__btn {
   display: none; }
 
-.menu-btn:checked ~ .menu-icon .navicon {
+.menu__btn:checked ~ .menu__icon .nav__icon {
   background: transparent; }
 
-.menu-btn:checked ~ .menu-icon .navicon:before {
+.menu__btn:checked ~ .menu__icon .nav__icon:before {
   transform: rotate(-45deg); }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
+.menu__btn:checked ~ .menu__icon .nav__icon:after {
   transform: rotate(45deg); }
 
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+.menu__btn:checked ~ .menu__icon:not(.steps) .nav__icon:before,
+.menu__btn:checked ~ .menu__icon:not(.steps) .nav__icon:after {
   top: 0; }
 
 @media (max-width: 1000px) {
-  .menu-btn:checked ~ .nav__menu {
+  .menu__btn:checked ~ .nav__menu {
     height: 100%;
     max-height: 240px;
     transition: all .2s ease-out; }
-  .menu-icon {
+  .menu__icon {
     display: block; } }
 
 .dropdown {
