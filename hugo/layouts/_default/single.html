@@ -46,11 +46,34 @@
 
     
 	
-<header>
-    <nav class="nav">
-        <a href="/" class="nav__logo"></a>
-
-        <ul class="nav__menu">
+    <header>
+        <nav class="nav">
+            <a href="/" class="nav__logo"></a>
+    
+            <input class="menu__btn" type="checkbox" id="menu__btn" />
+            <label class="menu__icon" for="menu__btn">
+                <span class="nav__icon"></span>
+            </label>
+    
+            <ul class="nav__menu">
+                <li>
+                    <a href="#">Practice</a>
+                </li>
+                <li>
+                    <a href="#">Documentation</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="nav__backlayer"></div>
+    <nav>
+        <ul class="nav__menu--hamburger">
             <li>
                 <a href="#">Practice</a>
             </li>
@@ -64,9 +87,7 @@
                 <a href="#">About</a>
             </li>
         </ul>
-    </nav>
-</header>
-<div class="nav__backlayer"></div>
+    </nav>  
 
 {{ $content_parts := split .Content "<p>||</p>" }}
 
@@ -156,7 +177,7 @@
                              <!--Dirty way to hide the load time of codemirror-->
                              <div class="overlay__editor"></div>
 
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{  index $content_parts 1 | safe.HTML }}</textarea>
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none"></textarea>
                         </div>
                     </div>
                 </div>
@@ -196,6 +217,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        submitTryit();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem({{.Title}},myContent);
@@ -219,7 +241,7 @@
         acceptButton.addEventListener("click",()=>{
             let myContent = document.getElementById("textareaCode").value;
             messagePop("Succesfully reset!");
-            window.editor.setValue({{ index $content_parts 1 | safe.HTML }});
+            window.editor.setValue({{  index $content_parts 1 | safe.HTML }});
             localStorage.removeItem({{.Title}});
             submitTryit();
             resetModal.style = "display:none";
@@ -248,11 +270,9 @@
 
     loadEditor();
 </script>
-
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script src="{{.Site.BaseURL}}/js/navigation.js"></script>
 </body>
 </html>
