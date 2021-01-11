@@ -3,6 +3,11 @@
   height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column;
+
+  &__input,
+  &__output {
+    height: 50%;
+  }
 }
 
 .input,

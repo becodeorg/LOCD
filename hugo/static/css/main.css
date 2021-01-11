@@ -465,6 +465,8 @@ header {
   height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column; }
+  .editor__input, .editor__output {
+    height: 50%; }
 
 .input__tab,
 .output__tab {
