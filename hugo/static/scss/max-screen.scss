@@ -1,68 +1,61 @@
 $max-width: 1200px;
 
-// html{
-// 	font-size: 55%;
-// }
-
-
-
-#instructionNavMax{
-	display: block;
+#instructionNavMax {
+  display: block;
 }
 
-.instructions{
-	height:calc(100vh - var(--nav-height) - 8rem);
+.instructions {
+  height: calc(100vh - var(--nav-height) - 8rem);
 
-	&__info{
-		max-width: $max-width;
-		margin:auto;
-	}
+  &__info {
+    max-width: $max-width;
+    margin: auto;
+  }
 
-	&__nav--max{
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		background-color: #333;
-		z-index: 1;
-	}
+  &__nav--max {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #333;
+    z-index: 1;
+  }
 }
 
-.nav__wrapper{
-	max-width: $max-width;
-	margin: auto;
-	width: 100%;
+.nav__wrapper {
+  max-width: $max-width;
+  margin: auto;
+  width: 100%;
 }
 
-#instructionNavMin{
-	display: none;
+#instructionNavMin {
+  display: none;
 }
 
-main{
-	overflow-x: hidden;
-	position: relative;
+main {
+  overflow-x: hidden;
+  position: relative;
 }
-.viewport{
-	grid-template-columns: minmax(100%, var(--sidebar-large-w)) 100%;
-	grid-auto-rows: 100%;
-	transform: translateX(0%);
-	transition: transform 0.6s ease-in-out;
+.viewport {
+  grid-template-columns: minmax(100%, var(--sidebar-large-w)) 100%;
+  grid-auto-rows: 100%;
+  transform: translateX(0%);
+  transition: transform 0.6s ease-in-out;
 }
 
+.editor,
+.instructions {
+  transform: translateX(0%);
+  transition: transform 0.6s ease-in-out;
 
-
-.editor,.instructions{
-	transform: translateX(0%);
-	transition: transform 0.6s ease-in-out;
-
-	&--max{
-			transform: translateX(-100%);
-	}
+  &--max {
+    transform: translateX(-100%);
+  }
 }
 
 .min {
-	display: block; 
+  display: block;
 }
 
-.max{
-	display: none;
+.max {
+  display: none;
 }

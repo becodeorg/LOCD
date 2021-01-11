@@ -1,158 +1,105 @@
-
-.editor{
+//All styles for the editor
+.editor {
   height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column;
-
-  &__input,&__output{
-    height: 50%;
-  }
 }
 
-.direct-row{
-  flex-direction: row;
-}
-
-.sized{
-    height: 100%;
-    width: 100vw;
-}
-
-
-.input,.output{
-  &__tab{
+.input,
+.output {
+  &__tab {
     background-color: rgb(243, 243, 243);
     display: flex;
-    // padding:2rem 20px;
     overflow: hidden;
     height: 6rem;
   }
 
-  &__container{
-    height:calc(100% - 6rem);
+  &__container {
+    height: calc(100% - 6rem);
   }
 }
 
-
-.tab{
-  padding:2rem 20px 1rem 20px;
+.tab {
+  padding: 2rem 20px 1rem 20px;
   font-size: 1.4rem;
   border-right: 1px solid rgba(236, 236, 236, 0.979);
   border-bottom: solid 1px rgba(236, 236, 236, 0.979);
-  
+
   width: 12rem;
   text-align: center;
-  transition: all .9s;
+  transition: all 0.9s;
   cursor: pointer;
 
-  &--selected{
+  &--selected {
     border-bottom: $color-primary solid 2px;
     box-shadow: 13px 0px 20px 1px rgb(221, 221, 221);
     font-size: 1.5rem;
-    color:$color-primary;
+    color: $color-primary;
   }
 
-  &:hover{
+  &:hover {
     box-shadow: 13px 0px 20px 1px rgb(221, 221, 221);
     font-size: 1.5rem;
-    color:$color-primary;
+    color: $color-primary;
   }
 }
 
-
-
-.editorButton{
+.editorButton {
   padding: 0 80px;
   border: none;
 
-  &__saveButton{
+  &__saveButton {
     margin-left: auto;
-    border-left: 1px solid $color-grey-light-3 ;
-    border-right: 1px solid $color-grey-light-3 ;
+    border-left: 1px solid $color-grey-light-3;
+    border-right: 1px solid $color-grey-light-3;
   }
 }
 
-
-
-#textareacontainer, .textarea, #textareawrapper , #iframecontainer,#iframe
-,#iframewrapper,iframe{
+#textareacontainer,
+.textarea,
+#textareawrapper,
+#iframecontainer,
+#iframe,
+#iframewrapper,
+iframe {
   height: 100%;
   width: 100%;
 }
 
-#iframewrapper{
-	position: relative;
+#iframewrapper {
+  position: relative;
 }
 
-
 iframe {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.CodeMirror{
-    height: 100%;
-    font-size: 14px;
-  }
+#textareawrapper {
+  position: relative;
+}
 
-  .emmet-abbreviation-preview{
-    z-index: 9;
-  }
-
-  #textareawrapper{
-    position: relative;
-  }
-
-.overlay{
-
-  &__editor{
+.overlay {
+  &__editor {
     position: absolute;
     background-color: #333333;
-    top:0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
   }
 }
 
-
-.maxscreen-nav{
-	position: absolute;
-	height: 100%;
-	width: auto;
-	cursor: pointer;
-	z-index: 5;
-	background: #222;
-	color: rgba(221, 221, 221,0.2);
-	opacity: 0.2;
-	transition: opacity 0.3s ease-in-out;
-	i{
-		position: relative;
-		top: calc(50% - 10px); /* 50% - 3/4 of icon height */
-		font-size: 50px;
-		padding: 5rem;
-	}
+.CodeMirror {
+  height: 100%;
+  font-size: 14px;
 }
 
-.maxscreen-nav:hover{
-	opacity: 1;
-	color: rgba(221, 221, 221,.8);
-	transition: all .5 linear;
-}
-
-.maxscreen-nav--right{
-	right: 0;
-	background: linear-gradient(90deg, rgba(0,0,0,0.0) 0%, rgb(29, 29, 29)100%);
-	
-}
-
-.maxscreen-nav--left{
-	left: 0;
-	background: linear-gradient(-90deg, rgba(0,0,0,0.0) 0%, rgb(29, 29, 29)100%);
-
+.emmet-abbreviation-preview {
+  z-index: 9;
 }
