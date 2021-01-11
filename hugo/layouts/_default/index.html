@@ -222,7 +222,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
-        submitTryit();
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem({{.Title}},myContent);
@@ -248,7 +248,7 @@
             messagePop("Succesfully reset!");
             window.editor.setValue({{ partial "editor/general/editor"}});
             localStorage.removeItem({{.Title}});
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 

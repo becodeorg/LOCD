@@ -1,40 +1,15 @@
-Split(['.editor__input','.editor__output'],{
-	direction:"vertical",
-	gutterSize:15,
-})
-
-submitTryit();
-
-
-let typingTimer;
-const doneTypingCount = 1500;
-
-document.addEventListener('keyup',()=>{
-
-  clearTimeout(typingTimer);
-  
-  typingTimer = setTimeout(noTyping, doneTypingCount);
-});
-
-function noTyping(){
-  console.clear();
-  console.log('cleared!')
-  submitTryit();
-}
-
-function submitTryit(n) {
+//viewing function for text area to IFrame
+function viewContent(n) {
 
     if (window.editor) {
         window.editor.save();
       }
 
     var text = document.getElementById("textareaCode").value;
-    // console.log(document.getElementById("textareaCode").value);
     var ifr = document.createElement("iframe");
     ifr.setAttribute("frameborder", "0");
     ifr.setAttribute("id", "iframeResult");
     ifr.setAttribute("name", "iframeResult");
-    // ifr.setAttribute("src","empty.html"); 
     ifr.setAttribute("allowfullscreen", "true");  
     document.getElementById("iframewrapper").innerHTML = "";
     document.getElementById("iframewrapper").appendChild(ifr);
@@ -43,12 +18,29 @@ function submitTryit(n) {
     ifrw.document.open();
     ifrw.document.write(text);  
     ifrw.document.close();
-  
-    if (ifrw.document.body && !ifrw.document.body.isContentEditable) {
-    ifrw.document.body.contentEditable = true;
-    ifrw.document.body.contentEditable = false;
-
-    }
-    
 }
+
+//execute at start to view the page
+viewContent();
+
+//Update Iframe when user is done typing
+
+let typingTimer;
+const doneTypingCount = 1500;
+
+document.addEventListener('keyup',()=>{
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(noTyping, doneTypingCount);
+});
+
+function noTyping(){
+  console.clear();
+  viewContent();
+}
+
+//handle bar in the editor to increase the viewports.
+Split(['.editor__input','.editor__output'],{
+	direction:"vertical",
+	gutterSize:15,
+})
 
