@@ -4,8 +4,8 @@ function viewContent(n) {
     window.editor.save();
   }
 
-  var text = document.getElementById("textareaCode").value;
-  var ifr = document.createElement("iframe");
+  let text = document.getElementById("textareaCode").value;
+  let ifr = document.createElement("iframe");
   ifr.setAttribute("frameborder", "0");
   ifr.setAttribute("id", "iframeResult");
   ifr.setAttribute("name", "iframeResult");
@@ -13,7 +13,7 @@ function viewContent(n) {
   document.getElementById("iframewrapper").innerHTML = "";
   document.getElementById("iframewrapper").appendChild(ifr);
 
-  var ifrw = ifr.contentWindow
+  let ifrw = ifr.contentWindow
     ? ifr.contentWindow
     : ifr.contentDocument.document
     ? ifr.contentDocument.document
@@ -24,7 +24,6 @@ function viewContent(n) {
 }
 
 //Update Iframe when user is done typing
-
 let userType = () => {
   let typingTimer;
   const doneTypingCount = 1500;
@@ -38,13 +37,9 @@ let userType = () => {
     console.clear();
     viewContent();
   }
-
-  //handle bar in the editor to increase the viewports.
-  Split([".editor__input", ".editor__output"], {
-    direction: "vertical",
-    gutterSize: 15,
-  });
 };
+
+
 
 //execute at start to view the page
 viewContent();

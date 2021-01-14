@@ -41,7 +41,9 @@
             if(sessionStorage.getItem('maxScreen') == "true"){
                 stylesheet.disabled = false;
             }
+            
         </script>
+        
     </head>
 <body>
 
@@ -210,7 +212,12 @@
 </main>
 
 <script>
-
+    //handle bar in the editor to increase the viewports.
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -271,9 +278,10 @@
 
     loadEditor();
 </script>
-    
-<script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
+
+<script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
+
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 </body>
 </html>
