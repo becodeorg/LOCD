@@ -6,5 +6,16 @@
       htmlMode: true,
       lineWrapping: true,
 		  smartIndent: false,
-		  addModeClass: true
+      addModeClass: true,
+      extraKeys: {
+        'Tab': 'emmetExpandAbbreviation',
+        'Esc': 'emmetResetAbbreviation',
+        'Enter': 'emmetInsertLineBreak',
+        "Ctrl": "autocomplete"
+    },
+    globalVars: true,
+    emmet: {
+      preview:['html'],
+      markupStyle:'html'
+  }
 })
