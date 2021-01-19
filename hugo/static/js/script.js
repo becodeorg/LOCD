@@ -1,3 +1,13 @@
+// Make sure service workers are supported
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("../service-worker.js")
+      .then((reg) => console.log("Service worker: registered"))
+      .catch((err) => console.log(`Service Worker: error ${err}`));
+  });
+}
+
 //################## Minimize and maximize ReadMe ##################
 let resizeButtons = () => {
   let maxIcon = document.getElementById("max");
@@ -71,7 +81,7 @@ let setDropdown = () => {
 
 //################## Arrow navigation ##################
 
-let setupArrowNav = () =>{
+let setupArrowNav = () => {
   // Find all links in the dropdown menu and create the previouse and next function out of it
   let links = document.querySelectorAll(".dropdown__list ul > li a");
   for (let i = 0; i < links.length; i++) {
@@ -103,14 +113,13 @@ let setupArrowNav = () =>{
       });
     }
   }
-}
-
+};
 
 // burger menu toggle
-let setupBurger = () =>{
+let setupBurger = () => {
   let burgerMenu = document.getElementById("menu__btn");
   const burgerNav = document.querySelector(".nav__menu--hamburger");
-  
+
   burgerMenu.addEventListener("change", function () {
     if (this.checked) {
       burgerNav.classList.add("burger--active");
@@ -118,8 +127,7 @@ let setupBurger = () =>{
       burgerNav.classList.remove("burger--active");
     }
   });
-}
-
+};
 
 let init = () => {
   resizeButtons();
