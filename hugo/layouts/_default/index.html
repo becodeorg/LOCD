@@ -32,8 +32,15 @@
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
+    <style>
+        .css-editor{
+            display: none;
+        }
+        
+    </style>
 
     
+
     <script>
         let stylesheet = document.getElementById("maxViewer");
 
@@ -46,8 +53,6 @@
 
 </head>
 <body>
-
-    
 	
 <header>
     <nav class="nav">
@@ -165,22 +170,29 @@
 		</div>
 		<div class="editor">
 
-            
-            
-
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
                     <div id="htmlView" class="tab tab--selected">index.html</div>
-                     <!-- <div id="cssView" class="tab">style.css</div>
-                    <div id="jsView" class="tab">script.js</div> -->
+                    <div id="cssView" class="tab">style.css</div>
+                    <!-- <div id="jsView" class="tab">script.js</div> -->
 
                     <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
-					<!-- BELOW IS TEMPORARY-->
-					<div id="textareacontainer">
+					
+					<div id="textareacontainer" class="html-editor">
+						<div class="textarea">
+							<div id="textareawrapper">
+                                <!--Dirty way to hide the load time of codemirror-->
+                                <div class="overlay__editor"></div>
+
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{ partial "editor/general/editor"}}</textarea>
+							</div>
+						</div>
+                    </div>
+                    <div id="textareacontainer" class="css-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
                                 <!--Dirty way to hide the load time of codemirror-->
@@ -280,6 +292,18 @@
 
     loadEditor();
 </script>
+
+<script>
+        let inputButtons = Array.from(document.getElementById("inputTab").children);
+        
+        inputButtons.forEach(element => {
+            element.addEventListener("click",()=>{
+            let parent = element.parentElement;
+            let currentActive = parent.querySelector('.tab--selected');
+            console.log(element == currentActive)
+        })
+        });
+    </script>
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
