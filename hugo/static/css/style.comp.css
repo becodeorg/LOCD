@@ -71,14 +71,20 @@ nav {
 
 .gutter {
   cursor: n-resize;
-  background-color: #333333; }
-  .gutter::before {
-    background-image: linear-gradient(to right, #FF01C8, #FF5606);
+  background-color: white;
+  box-shadow: inset 0px 0px 7px -1px rgba(0, 0, 0, 0.35);
+  position: relative; }
+  .gutter::after {
     content: "";
     display: block;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6; }
+    width: 40px;
+    height: 2px;
+    background-color: #999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4; }
 
 pre {
   overflow: auto; }
@@ -203,6 +209,9 @@ li {
   cursor: default;
   color: grey; }
 
+#instructionNavMax {
+  display: none; }
+
 .viewport {
   width: 100%;
   height: 100%;
@@ -211,6 +220,18 @@ li {
   grid-auto-rows: 100%;
   z-index: -4; }
 
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem; }
+  .nav__wrapper > a {
+    padding: 0px 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
 .instructions {
   height: calc(100vh - var(--nav-height));
   background-color: #333;
@@ -218,23 +239,10 @@ li {
   flex-direction: column;
   overflow: hidden; }
   .instructions__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8rem;
     border-bottom: 1px solid #777; }
-    .instructions__nav:last-of-type {
+    .instructions__nav--top {
       border-bottom: 0px solid;
-      border-top: 1px solid #777;
-      box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.8);
-      overflow: hidden;
-      z-index: 5; }
-    .instructions__nav > a {
-      padding: 0px 50px;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+      border-top: 1px solid #777; }
     .instructions__nav--bottom {
       margin-top: 3rem;
       border-bottom: 0;
@@ -365,9 +373,19 @@ iframe {
   height: 100%; }
 
 .CodeMirror {
-  padding: 10px;
   height: 100%;
   font-size: 14px; }
+
+.textwrapper {
+  position: relative; }
+
+.overlay__editor {
+  position: absolute;
+  background-color: red;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 .maxscreen-nav {
   position: absolute;

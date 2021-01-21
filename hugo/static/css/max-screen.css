@@ -18,6 +18,9 @@
   margin: auto;
   width: 100%; }
 
+#instructionNavMin {
+  display: none; }
+
 main {
   overflow-x: hidden;
   position: relative; }
@@ -28,5 +31,14 @@ main {
   transform: translateX(0%);
   transition: transform 0.6s ease-in-out; }
 
-.viewport--editor {
-  transform: translateX(-100%); }
+.editor, .instructions {
+  transform: translateX(0%);
+  transition: transform 0.6s ease-in-out; }
+  .editor--max, .instructions--max {
+    transform: translateX(-100%); }
+
+.min {
+  display: block; }
+
+.max {
+  display: none; }
