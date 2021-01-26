@@ -32,14 +32,20 @@
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
-    <style>
-        .css-editor{
-            display: none;
-        }
-        
-    </style>
 
-    
+    <style>
+        #textareacontainer{
+            position: absolute;
+        }
+
+        .input__container{
+            position: relative;
+        }
+
+        .html-editor{
+            z-index: 50;
+        }
+    </style>
 
     <script>
         let stylesheet = document.getElementById("maxViewer");
@@ -173,8 +179,8 @@
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
-                    <div id="htmlView" class="tab tab--selected">index.html</div>
-                    <div id="cssView" class="tab">style.css</div>
+                    <div data-link="html-editor" id="htmlView" class="tab tab--selected">index.html</div>
+                    <div data-link="css-editor" id="cssView" class="tab">style.css</div>
                     <!-- <div id="jsView" class="tab">script.js</div> -->
 
                     <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
@@ -198,7 +204,7 @@
                                 <!--Dirty way to hide the load time of codemirror-->
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{ partial "editor/general/editor"}}</textarea>
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">.style{font:red;}</textarea>
 							</div>
 						</div>
 					</div>
@@ -282,7 +288,6 @@
 
     function messagePop(text){
         let message = document.querySelector(".successMessage");
-        console.log(message.firstElementChild.innerHTML = text)
         message.classList.add("activeMessage");
 
         message.addEventListener('animationend', () => {
@@ -293,17 +298,31 @@
     loadEditor();
 </script>
 
-<script>
+<!-- <script>
         let inputButtons = Array.from(document.getElementById("inputTab").children);
         
         inputButtons.forEach(element => {
             element.addEventListener("click",()=>{
-            let parent = element.parentElement;
-            let currentActive = parent.querySelector('.tab--selected');
-            console.log(element == currentActive)
-        })
+                let parent = element.parentElement;
+                let views = [...document.querySelector(".input__container").children];
+                
+
+                console.log(views)
+                let currentActive = parent.querySelector('.tab--selected');
+                currentActive.classList.remove('tab--selected')
+                element.classList.add('tab--selected')
+                console.log(element.dataset.link)
+                
+                views.forEach(view =>{
+                    if(view.className !== element.dataset.link){
+                        view.style.display = "none";
+                    }else{
+                        view.style.display = "block";
+                    }
+                })
+            })
         });
-    </script>
+    </script> -->
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>

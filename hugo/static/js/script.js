@@ -1,19 +1,3 @@
-// Make sure service workers are supported
-let scopeToSearch = "/";
-if (location.host.includes("github")) {
-  scopeToSearch = "/LOCD/";
-}
-
-// Make sure service workers are supported
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register(`${scopeToSearch}service-worker.js`, { scope: scopeToSearch })
-      .then((reg) => console.log("Service worker: registered"))
-      .catch((err) => console.log(`Service Worker: error ${err}`));
-  });
-}
-
 //################## Minimize and maximize ReadMe ##################
 let resizeButtons = () => {
   let maxIcon = document.getElementById("max");
