@@ -29,7 +29,6 @@
   font-size: 1.4rem;
   border-right: 1px solid rgba(236, 236, 236, 0.979);
   border-bottom: solid 1px rgba(236, 236, 236, 0.979);
-
   width: 12rem;
   text-align: center;
   transition: all 0.9s;
@@ -52,7 +51,10 @@
 .editorButton {
   padding: 0 80px;
   border: none;
-
+  &:hover{
+    background-color:white;
+    color:black;
+  }
   &__saveButton {
     margin-left: auto;
     border-left: 1px solid $color-grey-light-3;

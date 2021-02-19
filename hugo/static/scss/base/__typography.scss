@@ -41,13 +41,18 @@ body{
 nav{
     font-size: 1.4rem;
     a{
-        color: #fff;
+        color: $color-becode-secondary-light;
         text-decoration: none;
+
+        &:hover{
+            color: $color-becode-secondary-dark;
+        }
     }
 }
 
 .instructions{
-    color:white;
+    //color:white;
+    color: $color-becode-primary-dark;
     font-weight: 300;
     font-family: 'Overpass';
     font-size: 1.6rem;

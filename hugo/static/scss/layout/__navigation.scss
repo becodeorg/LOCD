@@ -1,6 +1,7 @@
 // top navigation
 header {
-  background-color: #15141f;
+  background-color: $color-becode-secondary-light;
+  background-color: darken($color-grey-light-1,10);
   position: relative;
   z-index: 11;
 }
@@ -14,10 +15,11 @@ header {
   max-height: none;
 
   &__logo {
-    background-image: url("../img/locdLogo.png");
+    background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
     height: 6rem;
     width: 15rem;
+    //outline:1px red solid;
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat;
@@ -35,7 +37,10 @@ header {
     & > * {
       margin-left: 40px;
     }
+    a:hover, a:current{
+      text-decoration: underline;
 
+    }
     &--hamburger {
       background-color: #15141f;
       text-decoration: none;
@@ -68,11 +73,11 @@ header {
     z-index: 10;
     background-image: linear-gradient(
       to right,
-      $color-secondary-light,
-      $color-primary
+      $color-becode-primary-dark,
+      $color-becode-primary-light
     );
     top: 25px;
-    box-shadow: 0px 0px 10px 5px $color-grey-dark-3;
+    box-shadow: 0px 0px 10px 5px #DDD;
   }
 }
 
@@ -155,6 +160,8 @@ header {
 
   &__btn {
     background-color: $color-grey-dark-3;
+    background-color: $color-becode-secondary-light;
+    //background-color:white;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -166,6 +173,8 @@ header {
 
     &:hover {
       background-color: #444444;
+      background-color: $color-becode-primary-light;
+
     }
   }
 
@@ -253,6 +262,8 @@ header {
 
 .current {
   background: $color-grey-dark;
+  background-color: $color-becode-primary-light;
+
   color: white;
 }
 
