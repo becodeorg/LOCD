@@ -307,8 +307,7 @@ header {
   display: block; }
 
 .current {
-  background: #777;
-  background-color: #59BEC9;
+  background: #333;
   color: white; }
 
 > button:first-child {
