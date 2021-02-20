@@ -6,9 +6,7 @@
 
 //COLORS
 
-$color-primary: #FF5606;
-$color-primary-light: rgb(255, 141, 88);
-$color-primary-dark:rgb(228, 72, 0);
+
 
 $color-secondary-light:#FF01C8;
 $color-secondary-dark:rgb(161, 18, 130);
@@ -28,3 +26,6 @@ $color-becode-secondary-light:#235060;
 
 $default-font-size:1.6rem;
 
+$color-primary: $color-becode-secondary-light;
+$color-primary-light: $color-becode-primary-light;
+$color-primary-dark: darken($color-becode-primary-light, 30);
