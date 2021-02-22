@@ -33,7 +33,20 @@
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
 
-    
+    <style>
+        #textareacontainer{
+            position: absolute;
+        }
+
+        .input__container{
+            position: relative;
+        }
+
+        .html-editor{
+            z-index: 50;
+        }
+    </style>
+
     <script>
         let stylesheet = document.getElementById("maxViewer");
 
@@ -46,8 +59,6 @@
 
 </head>
 <body>
-
-    
 	
 <header>
     <nav class="nav">
@@ -122,7 +133,7 @@
             <p>Save successfull!</p>
         </div>
         
-        <div class="instructions">
+        <section class="instructions">
             <nav class="instructions__nav">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
@@ -162,31 +173,45 @@
 				</div>
 			</nav>
 
-		</div>
-		<div class="editor">
-
-            
-            
+		</section>
+		<section class="editor">
 
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
-                    <div id="htmlView" class="tab tab--selected">index.html</div>
-                     <!-- <div id="cssView" class="tab">style.css</div>
-                    <div id="jsView" class="tab">script.js</div> -->
+                    <div data-link="html-editor" id="htmlView" class="tab tab--selected">index.html</div>
+                    <div data-link="css-editor" id="cssView" class="tab">style.css</div>
+                    <div data-link="js-editor" id="jsView" class="tab">script.js</div>
+                    <!-- <div id="jsView" class="tab">script.js</div> -->
 
                     <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
-					<!-- BELOW IS TEMPORARY-->
-					<div id="textareacontainer">
+					
+					<div id="textareacontainer" class="html-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
                                 <!--Dirty way to hide the load time of codemirror-->
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{ partial "editor/general/editor"}}</textarea>
+								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ partial "editor/general/editor"}}</textarea>
+							</div>
+						</div>
+                    </div>
+                    <div id="textareacontainer" class="css-editor">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">h1{
+    color:red;
+}</textarea>
+							</div>
+						</div>
+                    </div>
+                    <div id="textareacontainer" class="js-editor">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCodeJS" wrap="logical" spellcheck="false" style="display:none">let index = 4;</textarea>
 							</div>
 						</div>
 					</div>
@@ -209,9 +234,30 @@
                     </div>
                 </div>
 			</div>        
-        </div>  
+        </section>  
     </div>
 </main>
+<div id="debugDiv"></div>
+
+<script>
+
+    // document.getElementById('frame').contentWindow.console = console;
+    
+    // let iframeWindow = document.getElementById("iframeResult").contentWindow;
+    
+    // console.log('logging from now on...')
+
+    // console.log(iframeWindow)
+
+    // iframeWindow.console.log = function(val) {
+    //     console.log('logging!')
+    //     var divId = document.getElementById("debugDiv");
+    //     var span = document.createElement("span");
+    //     span.appendChild(document.createTextNode(val));
+    //     divId.appendChild(span);
+    // };
+    
+</script>
 
 <script>
     //handle bar in the editor to increase the viewports.
@@ -228,15 +274,23 @@
 
     function saveEditor(){
         viewContent();
-        let myContent = document.getElementById("textareaCode").value;
+        let htmlContent = document.getElementById("textareaCodeHTML").value;
+        let cssContent = document.getElementById("textareaCodeCSS").value;
+        let jsContent = document.getElementById("textareaCodeJS").value;
         messagePop("Succesfully saved!");
-        localStorage.setItem({{.Title}},myContent);
+        localStorage.setItem(`${ {{.Title}} }-html`,htmlContent);
+        localStorage.setItem(`${ {{.Title}} }-css`,cssContent);
+        localStorage.setItem(`${ {{.Title}} }-js`,jsContent);
     }
 
     function loadEditor(){
-        let content = localStorage.getItem({{.Title}});
-        if(content){
-            document.getElementById("textareaCode").value = content;
+        let htmlContent = localStorage.getItem(`${ {{.Title}} }-html`);
+        let cssContent = localStorage.getItem(`${ {{.Title}} }-css`);
+        let jsContent = localStorage.getItem(`${ {{.Title}} }-js`);
+        if(htmlContent){
+            document.getElementById("textareaCodeHTML").value = htmlContent;
+            document.getElementById("textareaCodeCSS").value = cssContent;
+            document.getElementById("textareaCodeJS").value = jsContent;
         }
     }
 
@@ -249,10 +303,14 @@
         resetModal.style = "display:block";
 
         acceptButton.addEventListener("click",()=>{
-            let myContent = document.getElementById("textareaCode").value;
+            console.log("clicked!")
+            let htmlView= document.getElementById("textareaCodeHTML");
             messagePop("Succesfully reset!");
-            window.editor.setValue({{ partial "editor/general/editor"}});
-            localStorage.removeItem({{.Title}});
+            HTMLeditor.setValue({{ partial "editor/general/editor"}});
+            CSSeditor.setValue("");
+            localStorage.removeItem(`${ {{.Title}} }-html`);
+            localStorage.removeItem(`${ {{.Title}} }-css`);
+            localStorage.removeItem(`${ {{.Title}} }-js`);
             viewContent();
             resetModal.style = "display:none";
         })
@@ -270,7 +328,6 @@
 
     function messagePop(text){
         let message = document.querySelector(".successMessage");
-        console.log(message.firstElementChild.innerHTML = text)
         message.classList.add("activeMessage");
 
         message.addEventListener('animationend', () => {
@@ -279,11 +336,69 @@
     }
 
     loadEditor();
+
+    
 </script>
+
+<script>
+        let inputButtons = Array.from(document.getElementById("inputTab").children);
+        
+        inputButtons.forEach(element => {
+            if(element.tagName === "DIV"){
+                element.addEventListener("click",()=>{
+                console.log(element)
+                let parent = element.parentElement;
+                let views = [...document.querySelector(".input__container").children];
+                
+
+                console.log(views)
+                let currentActive = parent.querySelector('.tab--selected');
+                currentActive.classList.remove('tab--selected')
+                element.classList.add('tab--selected')
+                console.log(element.dataset.link)
+                
+                views.forEach(view =>{
+                    if(view.className !== element.dataset.link){
+                        view.style.display = "none";
+                    }else{
+                        view.style.display = "block";
+                    }
+                })
+            })
+            }
+        }); 
+    </script>
     
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
+<script>
+
+    // let iframe = document.getElementById("iframeResult");
+    // iframeWin = iframe.contentWindow || iframe;
+
+    //   (function () {
+    //       if (!iframeWin.console) {
+    //             iframeWin.console = {};
+    //         }
+
+    //     let old = iframeWin.console.log;
+    //     let logger = document.getElementById('debugDiv');
+        
+    //     iframeWin.console.log = function (message) {
+    //     if (typeof message == 'object') {
+    //         logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />';
+    //     } else {
+    //         logger.innerHTML += message + '<br />';
+    //     }
+    // }
+
+    //   })();
+
+
+
+
+</script>
 
 </body>
 </html>
