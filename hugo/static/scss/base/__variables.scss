@@ -6,9 +6,7 @@
 
 //COLORS
 
-$color-primary: #FF5606;
-$color-primary-light: rgb(255, 141, 88);
-$color-primary-dark:rgb(228, 72, 0);
+
 
 $color-secondary-light:#FF01C8;
 $color-secondary-dark:rgb(161, 18, 130);
@@ -20,6 +18,14 @@ $color-grey-light-3: rgb(209, 209, 209);
 $color-grey-dark: #777;
 $color-grey-dark-2:#999;
 $color-grey-dark-3:#333;
+$color-grey-dark-4: #676778;
+$color-becode-primary-light:#59BEC9;
+$color-becode-primary-dark:#101820;
+$color-becode-secondary-dark:#011322;
+$color-becode-secondary-light:#235060;
 
 $default-font-size:1.6rem;
 
+$color-primary: $color-becode-secondary-light;
+$color-primary-light: $color-becode-primary-light;
+$color-primary-dark: darken($color-becode-primary-light, 30);

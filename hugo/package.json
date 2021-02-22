@@ -6,6 +6,8 @@
   "scripts": {
     "sass:compile": "node-sass static/scss/main.scss static/css/main.css -w",
     "sass:max": "node-sass static/scss/max-screen.scss static/css/max-screen.css -w",
+    "watch:sass": "sass:compile sass:max",
+    "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass static/scss/main.scss static/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" static/css/style.comp.css -o static/css/style.prefix.css",
