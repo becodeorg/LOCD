@@ -159,7 +159,7 @@ header {
       width: 100%;
       z-index: 1;
       transform: translateY(-500px);
-      transition: 0.5s transform ease-in-out; }
+      transition: 0.3s transform ease-in-out; }
       .nav__menu--hamburger li {
         padding: 20px; }
       @media (max-width: 1000px) {
@@ -543,7 +543,7 @@ header {
   width: 12rem;
   text-align: center;
   background: white;
-  transition: all 0.3s;
+  transition: all 0.1s;
   cursor: pointer; }
   .tab--selected {
     background: white;
