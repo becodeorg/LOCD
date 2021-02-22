@@ -41,14 +41,53 @@ body{
 nav{
     font-size: 1.4rem;
     a{
-        color: #fff;
+        color: $color-becode-secondary-light;
+
         text-decoration: none;
+
+        &:hover{
+            color: $color-becode-primary-light;
+        }
     }
 }
 
 .instructions{
-    color:white;
+    //color:white;
+    color: $color-becode-primary-dark;
+    color: #E7E7E7;
     font-weight: 300;
     font-family: 'Overpass';
     font-size: 1.6rem;
+    a {
+        color: $color-becode-primary-light;
+        &:hover{
+            color: white;
+        }
+    }
+    nav {
+
+
+        .dropdown{
+            a {
+                color: #333;
+                &:hover{
+                    color: black;
+                }
+
+                &.current{
+                    color:white;
+                }
+            }
+
+
+        }
+
+        a {
+            color: lighten($color-grey-dark-4, 30);
+            &:hover{
+                color: lighten($color-grey-dark-4,100);
+            }
+        }
+
+    }
 }

@@ -28,7 +28,12 @@
 
 .instructions {
   height: calc(100vh - var(--nav-height));
-  background-color: $color-grey-dark-3;
+  background-color: $color-becode-primary-dark;
+  background-color: darken($color-grey-light-1,10);
+  background-color: darken($color-grey-dark-4,20);
+  box-shadow: 0px 0px 7px 2px #BBB;
+
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -61,6 +66,10 @@
     }
   }
 
+  h1{
+    line-height:1;
+    margin-bottom:2rem;
+  }
   h2 {
     font-size: 2.6rem;
     font-weight: 400;

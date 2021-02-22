@@ -50,14 +50,31 @@ body {
 nav {
   font-size: 1.4rem; }
   nav a {
-    color: #fff;
+    color: #235060;
     text-decoration: none; }
+    nav a:hover {
+      color: #59BEC9; }
 
 .instructions {
-  color: white;
+  color: #101820;
+  color: #E7E7E7;
   font-weight: 300;
   font-family: 'Overpass';
   font-size: 1.6rem; }
+  .instructions a {
+    color: #59BEC9; }
+    .instructions a:hover {
+      color: white; }
+  .instructions nav .dropdown a {
+    color: #333; }
+    .instructions nav .dropdown a:hover {
+      color: black; }
+    .instructions nav .dropdown a.current {
+      color: white; }
+  .instructions nav a {
+    color: #b7b7c1; }
+    .instructions nav a:hover {
+      color: white; }
 
 /*SCROLLBAR*/
 /* width */
@@ -91,9 +108,12 @@ pre {
   overflow: auto; }
 
 header {
-  background-color: #15141f;
+  background-color: #235060;
+  background-color: #dedede;
+  background-color: white;
   position: relative;
-  z-index: 11; }
+  z-index: 11;
+  box-shadow: 0 -0.4rem 0.9rem 0.2rem #383841; }
 
 .nav {
   display: flex;
@@ -103,13 +123,22 @@ header {
   height: var(--nav-height);
   max-height: none; }
   .nav__logo {
-    background-image: url("../img/locdLogo.png");
+    background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
     height: 6rem;
     width: 15rem;
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat; }
+    .nav__logo:hover, .nav__logo:focus, .nav__logo:active {
+      -webkit-animation-name: buzz;
+      animation-name: buzz;
+      -webkit-animation-duration: 0.15s;
+      animation-duration: 0.15s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; }
   .nav__menu {
     display: flex;
     align-items: center;
@@ -119,6 +148,8 @@ header {
         display: none; } }
     .nav__menu > * {
       margin-left: 40px; }
+    .nav__menu a:hover, .nav__menu a:current {
+      text-decoration: underline; }
     .nav__menu--hamburger {
       background-color: #15141f;
       text-decoration: none;
@@ -141,9 +172,7 @@ header {
     width: 100%;
     height: 50px;
     z-index: 10;
-    background-image: linear-gradient(to right, #FF01C8, #FF5606);
-    top: 25px;
-    box-shadow: 0px 0px 10px 5px #333; }
+    top: 25px; }
 
 .menu__icon {
   cursor: pointer;
@@ -206,7 +235,7 @@ header {
   display: inline-block;
   width: 90%; }
   .dropdown__btn {
-    background-color: #333;
+    background-color: #202026;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -260,7 +289,7 @@ header {
   padding: 5px 40px;
   font-weight: bold;
   font-size: 15px;
-  color: #464646;
+  color: #111;
   box-shadow: -100px 10px 10px rgba(0, 0, 0, 0.02); }
 
 .drop__exercise {
@@ -278,7 +307,7 @@ header {
   display: block; }
 
 .current {
-  background: #777;
+  background: #333;
   color: white; }
 
 > button:first-child {
@@ -306,6 +335,26 @@ header {
         width: 100%;
         padding: 1rem 2rem; } }
 
+@-webkit-keyframes buzz {
+  50% {
+    -ms-transform: translateX(3px) rotate(2deg);
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg); }
+  100% {
+    -ms-transform: translateX(-3px) rotate(-2deg);
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg); } }
+
+@keyframes buzz {
+  50% {
+    -ms-transform: translateX(3px) rotate(2deg);
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg); }
+  100% {
+    -ms-transform: translateX(-3px) rotate(-2deg);
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg); } }
+
 #instructionNavMax {
   display: none; }
 
@@ -331,7 +380,10 @@ header {
 
 .instructions {
   height: calc(100vh - var(--nav-height));
-  background-color: #333;
+  background-color: #101820;
+  background-color: #dedede;
+  background-color: #383841;
+  box-shadow: 0px 0px 7px 2px #BBB;
   display: flex;
   flex-direction: column;
   overflow: hidden; }
@@ -353,6 +405,9 @@ header {
       width: 80%;
       max-width: 400px;
       margin-bottom: 2rem; }
+  .instructions h1 {
+    line-height: 1;
+    margin-bottom: 2rem; }
   .instructions h2 {
     font-size: 2.6rem;
     font-weight: 400;
@@ -473,7 +528,8 @@ header {
   background-color: #f3f3f3;
   display: flex;
   overflow: hidden;
-  height: 6rem; }
+  height: 6rem;
+  border-bottom: 0px solid #235060; }
 
 .input__container,
 .output__container {
@@ -486,21 +542,23 @@ header {
   border-bottom: solid 1px rgba(236, 236, 236, 0.979);
   width: 12rem;
   text-align: center;
-  transition: all 0.9s;
+  background: white;
+  transition: all 0.3s;
   cursor: pointer; }
   .tab--selected {
-    border-bottom: #FF5606 solid 2px;
-    box-shadow: 13px 0px 20px 1px #dddddd;
+    background: white;
+    border-bottom: 1px solid white;
+    border-top: #235060 solid 2px;
+    box-shadow: 0px 0px 20px 1px #dddddd;
     font-size: 1.5rem;
-    color: #FF5606; }
-  .tab:hover {
-    box-shadow: 13px 0px 20px 1px #dddddd;
-    font-size: 1.5rem;
-    color: #FF5606; }
+    color: #235060; }
 
 .editorButton {
   padding: 0 80px;
   border: none; }
+  .editorButton:hover {
+    background-color: white;
+    color: black; }
   .editorButton__saveButton {
     margin-left: auto;
     border-left: 1px solid #d1d1d1;

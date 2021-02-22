@@ -1,8 +1,12 @@
 // top navigation
 header {
-  background-color: #15141f;
+  background-color: $color-becode-secondary-light;
+  background-color: darken($color-grey-light-1,10);
+  background-color: white;
   position: relative;
   z-index: 11;
+  box-shadow: 0 -0.4rem 0.9rem 0.2rem darken(#676778,20);
+
 }
 
 .nav {
@@ -14,13 +18,27 @@ header {
   max-height: none;
 
   &__logo {
-    background-image: url("../img/locdLogo.png");
+    background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
     height: 6rem;
     width: 15rem;
+    //outline:1px red solid;
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat;
+
+    &:hover,
+&:focus,
+&:active {
+	-webkit-animation-name: buzz;
+	animation-name: buzz;
+	-webkit-animation-duration: 0.15s;
+	animation-duration: 0.15s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
   }
 
   &__menu {
@@ -35,7 +53,10 @@ header {
     & > * {
       margin-left: 40px;
     }
+    a:hover, a:current{
+      text-decoration: underline;
 
+    }
     &--hamburger {
       background-color: #15141f;
       text-decoration: none;
@@ -66,13 +87,12 @@ header {
     width: 100%;
     height: 50px;
     z-index: 10;
-    background-image: linear-gradient(
-      to right,
-      $color-secondary-light,
-      $color-primary
-    );
+    // background-image: linear-gradient(
+    //   to right,
+    //   $color-becode-primary-dark,
+    //   $color-becode-primary-light
+    // );
     top: 25px;
-    box-shadow: 0px 0px 10px 5px $color-grey-dark-3;
   }
 }
 
@@ -154,7 +174,9 @@ header {
   width: 90%;
 
   &__btn {
-    background-color: $color-grey-dark-3;
+    background-color: darken($color-grey-dark-4,30);
+   // background-color: $color-becode-secondary-light;
+    //background-color:white;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -166,6 +188,8 @@ header {
 
     &:hover {
       background-color: #444444;
+      //background-color: $color-becode-primary-light;
+
     }
   }
 
@@ -225,7 +249,8 @@ header {
     padding: 5px 40px;
     font-weight: bold;
     font-size: 15px;
-    color: rgb(70, 70, 70);
+    //color: rgb(70, 70, 70);
+    color: #111;
     box-shadow: -100px 10px 10px rgba(0, 0, 0, 0.02);
   }
 
@@ -252,7 +277,8 @@ header {
 }
 
 .current {
-  background: $color-grey-dark;
+  background: $color-grey-dark-3;
+  //background-color: $color-becode-primary-light;
   color: white;
 }
 
@@ -283,5 +309,32 @@ header {
       width: 100%;
       padding: 1rem 2rem;
     }
+  }
+}
+
+
+
+@-webkit-keyframes buzz {
+  50% {
+      -ms-transform: translateX(3px) rotate(2deg);
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -ms-transform: translateX(-3px) rotate(-2deg);
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes buzz {
+  50% {
+    -ms-transform: translateX(3px) rotate(2deg);
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -ms-transform: translateX(-3px) rotate(-2deg);
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
   }
 }

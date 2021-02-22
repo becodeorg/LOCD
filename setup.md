@@ -102,7 +102,7 @@ You don't have to be an experienced developer to use the basics of Hugo. If you 
 - Open source
 - constantly updated
 - Live rebuild
-- Has an active community 
+- Has an active community
 
 **Cons**
 - To use Hugo in advanced cases you need to be experienced
@@ -116,7 +116,7 @@ You don't have to be an experienced developer to use the basics of Hugo. If you 
 
 **Data**: The data folder will contain data's that you will use on your website. Right now we use it to structure our website to overcome the "order" that Hugo uses by default.
 
-**Layouts**: In here you will store the HTML pages that will be used for the website, inside the _default you will find the HTML pages used by the content folder.  
+**Layouts**: In here you will store the HTML pages that will be used for the website, inside the _default you will find the HTML pages used by the content folder.
 Index = homePage (first page of the site), section = not used for now (will probably stay that way.), single = each exercise.
 
 The reason behind the index, section and single is the default set-up of Hugo, made to be a blog-generator, each section has its single posts.
@@ -137,6 +137,11 @@ For now to run live-load for Hugo you have to use the:
 `hugo server -D`
 
 This will live build the static site with all draft files.
+
+To use livereload with SASS compilation, use
+
+`npm run sass:compile`
+
 Later when we get out of the draft phase, we could use
 
 `hugo server`
