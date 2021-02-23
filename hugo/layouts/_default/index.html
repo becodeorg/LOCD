@@ -6,7 +6,7 @@
     <title>Learn offline coding by doing</title>
     <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
 	<link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
-	
+
     <!--START EDITOR LINKS-->
 
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
@@ -22,7 +22,7 @@
 
     <script src="{{.Site.BaseURL}}/js/split.js"></script>
     <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
-	
+
 
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
 	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
@@ -51,7 +51,7 @@
         let stylesheet = document.getElementById("maxViewer");
 
         stylesheet.disabled = true;
-        
+
         if(sessionStorage.getItem('maxScreen') == "true"){
             stylesheet.disabled = false;
         }
@@ -59,7 +59,7 @@
 
 </head>
 <body>
-	
+
 <header>
     <nav class="nav">
         <a href="/" class="nav__logo"></a>
@@ -101,7 +101,7 @@
             <a href="#">About</a>
         </li>
     </ul>
-</nav>  
+</nav>
 
 
 
@@ -132,7 +132,7 @@
         <div class="successMessage">
             <p>Save successfull!</p>
         </div>
-        
+
         <section class="instructions">
             <nav class="instructions__nav">
 				<div class="nav__wrapper">
@@ -156,20 +156,20 @@
 
                 <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
                 <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
-                
+
 
 				<!--START INSERT DATA-->
 				{{.Content}}
                 <!--END iNSERT DATA-->
-                
+
 
 			</div>
 
 
 			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
 				<div class="nav__wrapper">
-					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
-					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+					<a class="prev" href=""><i class="fas fa-arrow-left"></i>  &nbsp;Previous</a>
+					<a class="next" href="">Next &nbsp;<i class="fas fa-arrow-right"></i></a>
 				</div>
 			</nav>
 
@@ -188,7 +188,7 @@
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
-					
+
 					<div id="textareacontainer" class="html-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
@@ -233,8 +233,8 @@
                         </div>
                     </div>
                 </div>
-			</div>        
-        </section>  
+			</div>
+        </section>
     </div>
 </main>
 <div id="debugDiv"></div>
@@ -242,9 +242,9 @@
 <script>
 
     // document.getElementById('frame').contentWindow.console = console;
-    
+
     // let iframeWindow = document.getElementById("iframeResult").contentWindow;
-    
+
     // console.log('logging from now on...')
 
     // console.log(iframeWindow)
@@ -256,7 +256,7 @@
     //     span.appendChild(document.createTextNode(val));
     //     divId.appendChild(span);
     // };
-    
+
 </script>
 
 <script>
@@ -265,7 +265,7 @@
     direction: "vertical",
     gutterSize: 15,
     });
-    
+
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -337,26 +337,26 @@
 
     loadEditor();
 
-    
+
 </script>
 
 <script>
         let inputButtons = Array.from(document.getElementById("inputTab").children);
-        
+
         inputButtons.forEach(element => {
             if(element.tagName === "DIV"){
                 element.addEventListener("click",()=>{
                 console.log(element)
                 let parent = element.parentElement;
                 let views = [...document.querySelector(".input__container").children];
-                
+
 
                 console.log(views)
                 let currentActive = parent.querySelector('.tab--selected');
                 currentActive.classList.remove('tab--selected')
                 element.classList.add('tab--selected')
                 console.log(element.dataset.link)
-                
+
                 views.forEach(view =>{
                     if(view.className !== element.dataset.link){
                         view.style.display = "none";
@@ -366,9 +366,9 @@
                 })
             })
             }
-        }); 
+        });
     </script>
-    
+
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
@@ -384,7 +384,7 @@
 
     //     let old = iframeWin.console.log;
     //     let logger = document.getElementById('debugDiv');
-        
+
     //     iframeWin.console.log = function (message) {
     //     if (typeof message == 'object') {
     //         logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />';
