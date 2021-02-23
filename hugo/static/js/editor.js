@@ -4,7 +4,6 @@ async function createCssFile(textAr,element, type, file) {
   let docEl = document.createElement(element);
   docEl.type = type;
   
-
   if(element === "link"){
     const content = `data:text/css;base64,${await toBase64(text)}`;
     docEl.rel = file;
@@ -35,7 +34,8 @@ function insertFiles(content, ...elements) {
     let index = lines.findIndex(head);
     lines.splice(index, 0, element.outerHTML); 
   })
-  let array = lines.join(" ");
+  let array = lines.join("\n");
+  console.log(array)
   return array;
   
 }
