@@ -12,7 +12,6 @@ async function createCssFile(textAr,element, type, file) {
     const content = `data:text/javascript;base64,${await toBase64(text)}`;
     docEl.src = await content;
     docEl.defer = true;
-    console.log(docEl)
   }
   return docEl;
 }
@@ -35,9 +34,7 @@ function insertFiles(content, ...elements) {
     lines.splice(index, 0, element.outerHTML); 
   })
   let array = lines.join("\n");
-  console.log(array)
-  return array;
-  
+  return array; 
 }
 
 //viewing function for text area to IFrame
