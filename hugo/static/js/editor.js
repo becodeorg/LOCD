@@ -4,7 +4,6 @@ async function createCssFile(textAr,element, type, file) {
   let docEl = document.createElement(element);
   docEl.type = type;
   
-
   if(element === "link"){
     const content = `data:text/css;base64,${await toBase64(text)}`;
     docEl.rel = file;
@@ -13,7 +12,6 @@ async function createCssFile(textAr,element, type, file) {
     const content = `data:text/javascript;base64,${await toBase64(text)}`;
     docEl.src = await content;
     docEl.defer = true;
-    console.log(docEl)
   }
   return docEl;
 }
@@ -35,9 +33,8 @@ function insertFiles(content, ...elements) {
     let index = lines.findIndex(head);
     lines.splice(index, 0, element.outerHTML); 
   })
-  let array = lines.join(" ");
-  return array;
-  
+  let array = lines.join("\n");
+  return array; 
 }
 
 //viewing function for text area to IFrame

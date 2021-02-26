@@ -2,6 +2,7 @@
 let resizeButtons = () => {
   let maxIcon = document.getElementById("max");
   let minIcon = document.getElementById("min");
+  let resize = document.querySelector(".resize")
   let parent = document.getElementById("insertData");
 
   //handle if we user is looking at big screen/not styelsheet is a global variable in the index.html
@@ -23,8 +24,8 @@ let resizeButtons = () => {
   parent.addEventListener("scroll", function (e) {
     let y = parent.scrollTop;
     let topCo = y + 30;
-    maxIcon.style.top = `${topCo}px`;
-    minIcon.style.top = `${topCo}px`;
+    resize.style.top = `${topCo}px`;
+
   });
 };
 

@@ -29,9 +29,15 @@
 	<link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
 
+
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
+
+    <!--IntoJS import-->
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/introjs.min.css">
+    <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
+
 
     <style>
         #textareacontainer{
@@ -80,7 +86,7 @@
                 <a href="#">Help</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#" data-title="Farewell!">About</a>
             </li>
         </ul>
     </nav>
@@ -134,7 +140,7 @@
         </div>
 
         <section class="instructions">
-            <nav class="instructions__nav">
+            <nav id="instructionNavigation" class="instructions__nav">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
 					<div class="dropdown">
@@ -148,14 +154,17 @@
 							</ul>
 						</div>
 					</div>
+                    <i id="tourHandler" class=" question far fa-question-circle"></i>
 					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 				</div>
             </nav>
 
             <div id="insertData" class="instructions__info">
-
-                <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
-                <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
+                <div class="resize">
+                    <div id="max"class="max"><i class="fas fa-arrows-alt"></i></div>
+                    <div id="min"class="min"><i class="fas fa-compress-arrows-alt"></i></div>
+                </div>
+                
 
 
 				<!--START INSERT DATA-->
@@ -178,7 +187,8 @@
 
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div class="editor__input">
-                <div id="inputTab" class="input__tab">
+                <div id="inputTab" class="input__tab" >
+                    
                     <div data-link="html-editor" id="htmlView" class="tab tab--selected">index.html</div>
                     <div data-link="css-editor" id="cssView" class="tab">style.css</div>
                     <div data-link="js-editor" id="jsView" class="tab">script.js</div>
@@ -237,34 +247,17 @@
         </section>
     </div>
 </main>
-<div id="debugDiv"></div>
 
-<script>
 
-    // document.getElementById('frame').contentWindow.console = console;
-
-    // let iframeWindow = document.getElementById("iframeResult").contentWindow;
-
-    // console.log('logging from now on...')
-
-    // console.log(iframeWindow)
-
-    // iframeWindow.console.log = function(val) {
-    //     console.log('logging!')
-    //     var divId = document.getElementById("debugDiv");
-    //     var span = document.createElement("span");
-    //     span.appendChild(document.createTextNode(val));
-    //     divId.appendChild(span);
-    // };
-
-</script>
-
+<script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script>
     //handle bar in the editor to increase the viewports.
     Split([".editor__input", ".editor__output"], {
     direction: "vertical",
     gutterSize: 15,
     });
+    document.querySelector(".gutter").setAttribute('data-title', 'The dragbar')
+    document.querySelector(".gutter").setAttribute('data-intro', 'Use the dragbar to make your viewport bigger/smaller.')
 
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
@@ -372,33 +365,7 @@
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script>
 
-    // let iframe = document.getElementById("iframeResult");
-    // iframeWin = iframe.contentWindow || iframe;
-
-    //   (function () {
-    //       if (!iframeWin.console) {
-    //             iframeWin.console = {};
-    //         }
-
-    //     let old = iframeWin.console.log;
-    //     let logger = document.getElementById('debugDiv');
-
-    //     iframeWin.console.log = function (message) {
-    //     if (typeof message == 'object') {
-    //         logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />';
-    //     } else {
-    //         logger.innerHTML += message + '<br />';
-    //     }
-    // }
-
-    //   })();
-
-
-
-
-</script>
 
 </body>
 </html>
