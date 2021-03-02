@@ -67,7 +67,7 @@
 <body>
 
 <header>
-    <nav class="nav">
+    <nav id="nav" class="nav">
         <a href="/" class="nav__logo"></a>
 
         <input class="menu__btn" type="checkbox" id="menu__btn" />
@@ -139,7 +139,7 @@
             <p>Save successfull!</p>
         </div>
 
-        <section class="instructions">
+        <section id="instructions" class="instructions">
             <nav id="instructionNavigation" class="instructions__nav">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
@@ -160,7 +160,7 @@
             </nav>
 
             <div id="insertData" class="instructions__info">
-                <div class="resize">
+                <div id="resize" class="resize">
                     <div id="max"class="max"><i class="fas fa-arrows-alt"></i></div>
                     <div id="min"class="min"><i class="fas fa-compress-arrows-alt"></i></div>
                 </div>
@@ -183,10 +183,10 @@
 			</nav>
 
 		</section>
-		<section class="editor">
+		<section id="editor" class="editor">
 
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
-            <div class="editor__input">
+            <div  id="editorInput" class="editor__input">
                 <div id="inputTab" class="input__tab" >
                     
                     <div data-link="html-editor" id="htmlView" class="tab tab--selected">index.html</div>
@@ -248,17 +248,15 @@
     </div>
 </main>
 
-
-<script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script>
     //handle bar in the editor to increase the viewports.
     Split([".editor__input", ".editor__output"], {
     direction: "vertical",
     gutterSize: 15,
     });
-    document.querySelector(".gutter").setAttribute('data-title', 'The dragbar')
-    document.querySelector(".gutter").setAttribute('data-intro', 'Use the dragbar to make your viewport bigger/smaller.')
 
+  document.querySelector('.gutter').setAttribute('id','gutter')
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -362,6 +360,7 @@
         });
     </script>
 
+<script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
