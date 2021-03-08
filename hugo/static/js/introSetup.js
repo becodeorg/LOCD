@@ -101,7 +101,7 @@ function tutorial() {
     document.querySelector('.instructions').style.transition = "transform 0.6s ease-in-out"
   })
   .onbeforechange(function(targetElement) {  
-    document.querySelector('.editor').style.transition = "none"
+    // document.querySelector('.editor').style.transition = "none"
     document.querySelector('.instructions').style.transition = "none"
       steps.forEach(step => {
         if(step.element === targetElement){

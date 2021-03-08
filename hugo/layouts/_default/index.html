@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
 	<link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
 
+    
+    {{ if eq .Params.Editor true}}
     <!--START EDITOR LINKS-->
-
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 
-
+    
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
     <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/javascript/javascript.js"></script>
@@ -23,21 +24,39 @@
     <script src="{{.Site.BaseURL}}/js/split.js"></script>
     <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
 
-
-	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
-	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
-	<link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
-    <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
-
-
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
+    
 
     <!--IntoJS import-->
+    
+    <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+    <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
+    {{end}}
+    
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/introjs.min.css">
-    <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
+	
 
+
+    
+    <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
+    {{ if eq .Params.Editor false}}
+    <style>
+        .viewport{
+            grid-template-columns: minmax(100%,0%) 66.667%;
+            
+        }
+        
+        .instructions__info{
+            max-width: 1200px;
+            margin: auto;
+        }
+    </style>
+    {{end}}
+    
 
     <style>
         #textareacontainer{
@@ -66,8 +85,10 @@
 </head>
 <body>
 {{ partial "navbar" }}
+
 <main>
 	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
+        
 		<div class="nav__wrapper">
 			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
 			<div class="view-navigation">
@@ -76,6 +97,7 @@
 			</div>
 			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 		</div>
+        
 	</nav>
 
     <div id="viewport" class="viewport">
@@ -109,7 +131,9 @@
 							</ul>
 						</div>
 					</div>
+                    {{ if eq .Params.Editor true}}
                     <i id="tourHandler" class=" question far fa-question-circle"></i>
+                    {{end}}
 					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 				</div>
             </nav>
@@ -129,7 +153,7 @@
 
 			</div>
 
-
+            
 			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i>  &nbsp;Previous</a>
@@ -138,7 +162,8 @@
 			</nav>
 
 		</section>
-		<section id="editor" class="editor">
+        {{ if eq .Params.Editor true}}
+        <section id="editor" class="editor">
 
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div  id="editorInput" class="editor__input">
@@ -200,9 +225,14 @@
                 </div>
 			</div>
         </section>
+
+        {{ end }}
+		
     </div>
 </main>
 
+
+{{ if eq .Params.Editor true}}
 <script>
     //handle bar in the editor to increase the viewports.
     Split([".editor__input", ".editor__output"], {
@@ -285,40 +315,44 @@
 
 
 </script>
+{{end}}
 
 <script>
-        let inputButtons = Array.from(document.getElementById("inputTab").children);
+    let inputButtons = Array.from(document.getElementById("inputTab").children);
 
-        inputButtons.forEach(element => {
-            if(element.tagName === "DIV"){
-                element.addEventListener("click",()=>{
-                console.log(element)
-                let parent = element.parentElement;
-                let views = [...document.querySelector(".input__container").children];
+    inputButtons.forEach(element => {
+        if(element.tagName === "DIV"){
+            element.addEventListener("click",()=>{
+            console.log(element)
+            let parent = element.parentElement;
+            let views = [...document.querySelector(".input__container").children];
 
 
-                console.log(views)
-                let currentActive = parent.querySelector('.tab--selected');
-                currentActive.classList.remove('tab--selected')
-                element.classList.add('tab--selected')
-                console.log(element.dataset.link)
+            console.log(views)
+            let currentActive = parent.querySelector('.tab--selected');
+            currentActive.classList.remove('tab--selected')
+            element.classList.add('tab--selected')
+            console.log(element.dataset.link)
 
-                views.forEach(view =>{
-                    if(view.className !== element.dataset.link){
-                        view.style.display = "none";
-                    }else{
-                        view.style.display = "block";
-                    }
-                })
+            views.forEach(view =>{
+                if(view.className !== element.dataset.link){
+                    view.style.display = "none";
+                }else{
+                    view.style.display = "block";
+                }
             })
-            }
-        });
-    </script>
+        })
+        }
+    });
+    
+</script>
+
 
 <script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
+
 
 
 </body>
