@@ -1,0 +1,55 @@
+body{
+    overflow-y:auto;
+}
+
+.about__section{
+    background-color: #383841;
+}
+
+.about__intro{
+    height: 100%;
+    font-size: 1.6rem;
+    color: white;
+    width: 80%;
+    max-width: 900px;
+    margin: 5rem auto;
+    
+}
+
+.text__container{
+    h1,p{
+        margin-bottom: 2rem;
+        
+    }
+
+    h1{
+        border-bottom: 2px #63c3d1 solid;
+        display: inline-block;
+    }
+
+    p{
+        text-align: justify;
+    }
+}
+
+figure{
+    max-width: 550px;
+    text-align: center;
+    margin: auto;
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+.responsive__image{
+    width: 100%;
+}
+
+.button__default{
+    background-color: #63c3d1;
+    color: white;
+    font-weight: bold;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+
