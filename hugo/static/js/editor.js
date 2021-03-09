@@ -1,19 +1,21 @@
 async function createCssFile(textAr,element, type, file) {
   let text = document.getElementById(textAr).value;
-  
-  let docEl = document.createElement(element);
-  docEl.type = type;
-  
-  if(element === "link"){
-    const content = `data:text/css;base64,${await toBase64(text)}`;
-    docEl.rel = file;
-    docEl.href = await content;
-  }else{
-    const content = `data:text/javascript;base64,${await toBase64(text)}`;
-    docEl.src = await content;
-    docEl.defer = true;
+  if(text){ 
+    let docEl = document.createElement(element);
+    docEl.type = type;
+    
+    if(element === "link"){
+      const content = `data:text/css;base64,${await toBase64(text)}`;
+      docEl.rel = file;
+      docEl.href = await content;
+    }else{
+      const content = `data:text/javascript;base64,${await toBase64(text)}`;
+      docEl.src = await content;
+      docEl.defer = true;
+    }
+    return docEl;
   }
-  return docEl;
+ return
 }
 
 function toBase64(text) {
@@ -29,9 +31,12 @@ function toBase64(text) {
 function insertFiles(content, ...elements) {
   let lines = content.replace(/\r\n/g, "\n").split("\n");
   elements.map((element)=>{
-    const head = (element) => element === "</head>";
-    let index = lines.findIndex(head);
-    lines.splice(index, 0, element.outerHTML); 
+    if(element){
+      const head = (element) => element === "</head>";
+      let index = lines.findIndex(head);
+      lines.splice(index, 0, element.outerHTML); 
+    }
+    
   })
   let array = lines.join("\n");
   return array; 
