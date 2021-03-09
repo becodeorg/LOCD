@@ -2,6 +2,7 @@
 title: "HTML5 Explained"
 date: 2020-11-05T17:15:13+01:00
 draft: false
+editor: true
 ---
 
 # First HTML document

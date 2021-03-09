@@ -39,10 +39,8 @@
 	<link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
 	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
 	
-
-
-    
     <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
+
     {{ if eq .Params.Editor false}}
     <style>
         .viewport{
@@ -85,6 +83,7 @@
 </head>
 <body>
 {{ partial "navbar" }}
+
 
 <main>
 	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
@@ -139,10 +138,12 @@
             </nav>
 
             <div id="insertData" class="instructions__info">
+                {{ if eq .Params.Editor true}}
                 <div id="resize" class="resize">
                     <div id="max"class="max"><i class="fas fa-arrows-alt"></i></div>
                     <div id="min"class="min"><i class="fas fa-compress-arrows-alt"></i></div>
                 </div>
+                {{end}}
                 
 
 
@@ -192,9 +193,7 @@
                     <div id="textareacontainer" class="css-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
-								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">h1{
-    color:red;
-}</textarea>
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none"></textarea>
 							</div>
 						</div>
                     </div>
@@ -315,7 +314,6 @@
 
 
 </script>
-{{end}}
 
 <script>
     let inputButtons = Array.from(document.getElementById("inputTab").children);
@@ -347,10 +345,13 @@
     
 </script>
 
-
 <script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
+{{end}}
+
+
+
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 
 

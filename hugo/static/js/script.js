@@ -6,28 +6,35 @@ let resizeButtons = () => {
   let parent = document.getElementById("insertData");
 
   //handle if we user is looking at big screen/not styelsheet is a global variable in the index.html
-  maxIcon.addEventListener("click", () => {
-    maxIcon.style.display = "none";
-    minIcon.style.display = "inline-block";
-    sessionStorage.setItem("maxScreen", true);
-    stylesheet.disabled = false;
-  });
+  if(maxIcon){
+    maxIcon.addEventListener("click", () => {
+      maxIcon.style.display = "none";
+      minIcon.style.display = "inline-block";
+      sessionStorage.setItem("maxScreen", true);
+      stylesheet.disabled = false;
+    });
+  }
 
+  if(minIcon){
   minIcon.addEventListener("click", () => {
     maxIcon.style.display = "inline-block";
     minIcon.style.display = "none";
     sessionStorage.removeItem("maxScreen");
     stylesheet.disabled = true;
   });
+}
 
   //when the user scrolls the min/max icon follows along.
-  parent.addEventListener("scroll", function (e) {
-    let y = parent.scrollTop;
-    let topCo = y + 30;
-    resize.style.top = `${topCo}px`;
+  if(resize){
+    parent.addEventListener("scroll", function (e) {
+      let y = parent.scrollTop;
+      let topCo = y + 30;
+      resize.style.top = `${topCo}px`;
 
-  });
-};
+    });
+  };
+  }
+
 
 // When in max screen, the user can use 2 buttons to navigate from the instructions to the editor
 let viewportNavigation = () => {

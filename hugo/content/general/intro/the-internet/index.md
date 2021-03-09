@@ -2,6 +2,7 @@
 title: "The internet"
 date: 2020-09-03T16:35:21+02:00
 draft: false
+editor: false
 ---
 
 # How does the internet work
