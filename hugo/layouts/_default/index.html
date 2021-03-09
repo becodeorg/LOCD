@@ -33,6 +33,8 @@
     
     <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
+    {{else}}
+        <link  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     {{end}}
     
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/introjs.min.css">
@@ -70,6 +72,7 @@
         }
     </style>
 
+    {{ if eq .Params.Editor true}}
     <script>
         let stylesheet = document.getElementById("maxViewer");
 
@@ -79,6 +82,7 @@
             stylesheet.disabled = false;
         }
     </script>
+    {{end}}
 
 </head>
 <body>

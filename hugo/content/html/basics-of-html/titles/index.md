@@ -31,3 +31,7 @@ Time to start exploring more html elements. Look at the index.html file and the 
   </head>
   <body></body>
 </html>
+||
+h1{
+  color:red;
+}
