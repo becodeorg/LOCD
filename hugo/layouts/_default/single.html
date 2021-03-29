@@ -32,8 +32,7 @@
     
     <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
-    {{else}}
-        <link  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+      
     {{end}}
     
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/introjs.min.css">
@@ -47,14 +46,24 @@
     {{ if eq .Params.Editor false}}
     <style>
         .viewport{
-            grid-template-columns: minmax(100%,0%) 66.667%;
-            
+            grid-template-columns: minmax(100%,0%) 66.667%;  
         }
         
         .instructions__info{
             max-width: 1200px;
             margin: auto;
         }
+
+        #instructionNavMax{
+            display: block;
+        }
+
+        .nav__wrapper{
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+        }
+
     </style>
     {{end}}
     
@@ -93,6 +102,7 @@
     {{ $content_parts := split .Content "||" }}
     
 <main>
+    {{ if eq .Params.Editor true}}
 	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
 		<div class="nav__wrapper">
 			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
@@ -103,6 +113,7 @@
 			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
 		</div>
 	</nav>
+    {{end}}
 
     <div id="viewport" class="viewport">
 
@@ -157,13 +168,14 @@
 
 			</div>
 
-
+            
 			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i>  &nbsp;Previous</a>
 					<a class="next" href="">Next &nbsp;<i class="fas fa-arrow-right"></i></a>
 				</div>
 			</nav>
+            
             
 
 		</section>
@@ -358,7 +370,7 @@
 
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script>
-
+    
 </script>
 
 </body>

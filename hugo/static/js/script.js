@@ -1,4 +1,5 @@
 //################## Minimize and maximize ReadMe ##################
+
 let resizeButtons = () => {
   let maxIcon = document.getElementById("max");
   let minIcon = document.getElementById("min");
@@ -35,6 +36,10 @@ let resizeButtons = () => {
   };
   }
 
+
+  let instructionNavMax = document.getElementById('instructionNavMax' || null) ;
+  console.log(instructionNavMax)
+  
 
 // When in max screen, the user can use 2 buttons to navigate from the instructions to the editor
 let viewportNavigation = () => {
@@ -129,10 +134,12 @@ let setupBurger = () => {
 
 let init = () => {
   resizeButtons();
-  viewportNavigation();
+  
   setDropdown();
   setupArrowNav();
   setupBurger();
+
+ 
 };
 
 init();
