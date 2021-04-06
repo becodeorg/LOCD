@@ -1,8 +1,8 @@
 ---
 title: "How does the internet work?"
-date: 2020-09-03T16:35:21+02:00
-draft: false
+slug: "How does the internet work?"
 editor: false
+layout: "single"
 ---
 
 # How the Web works

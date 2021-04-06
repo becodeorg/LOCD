@@ -1,9 +1,8 @@
 ---
 title: "Background of the web"
-date: 2020-11-02T09:25:04+01:00
-draft: false
+
 editor: false
-editorContent: "Test"
+layout: "single"
 ---
 # The internet
 

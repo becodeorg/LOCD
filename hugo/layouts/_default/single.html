@@ -82,6 +82,57 @@
         }
     </style>
 
+    <style>
+        .dropdown__title{
+            background-color: rgb(233, 233, 233);
+            border:none;
+            font-family: inherit;
+            padding: 1rem 2rem;
+            /* border-radius: .3rem; */
+        }
+
+        .dropdown__menu,.dropdown--lang{
+            list-style: none;
+        }
+
+        .dropdown--lang{
+            position: relative;
+        }
+
+        .dropdown--lang:hover .dropdown__menu,
+        .dropdown--lang:focus-within .dropdown__menu{
+            opacity: 1;
+            transform: rotateX(0) translateX(-50%);
+            visibility: visible;
+        }
+
+        .dropdown__menu{
+            background-color: rgb(233, 233, 233);
+            /* border-radius: 4px; */
+            box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+            padding: 0.5em 0;
+            width: 100%;
+            position: absolute;         
+            top: calc(100% - 0.25rem);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+
+            transform: rotateX(-90deg) translateX(-50%);
+            transform-origin: top center;
+            opacity: 0.3;
+            transition: 280ms all ease-out;
+        }
+
+        .dropdown__menu a{
+            color: #444 !important; 
+            display: block;
+            padding: 0.5em;
+        }
+
+        
+    </style>
+
     {{ if eq .Params.Editor true}}
     <script>
         let stylesheet = document.getElementById("maxViewer");
@@ -96,7 +147,8 @@
 
 </head>
 <body>
-{{ partial "navbar" }}
+    
+{{ partial "navbar" (dict "lang" .Lang)}}
 
     {{ $html_part := split .Content "<p>||</p>" }}
     {{ $content_parts := split .Content "||" }}
@@ -114,6 +166,8 @@
 		</div>
 	</nav>
     {{end}}
+
+
 
     <div id="viewport" class="viewport">
 
@@ -139,10 +193,10 @@
 						<button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
 						<div id="dropdownList" class="dropdown__list">
 							<ul>
-								<li class="drop__chapter">0 - Start </li>
+								<li class="drop__chapter">0 - Start   </li>
 								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-								{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "title" .Title)}}
-								{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "title" .Title)}}
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
+								{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
 							</ul>
 						</div>
 					</div>
@@ -150,6 +204,30 @@
                     <i id="tourHandler" class=" question far fa-question-circle"></i>
                     {{end}}
 					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+                    <div>
+        
+            
+                
+                {{ if .Site.IsMultiLingual }}
+                <li class="dropdown--lang">
+                    {{ range .Site.Languages }}
+                        {{ if eq . $.Site.Language }}
+                        <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown">{{ .LanguageName }}</button>
+                            
+                        {{ end }}
+                    {{ end }}
+                    <ul class="dropdown__menu">
+                        {{ range $.Translations }}
+                        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                    </ul>
+                        {{ end }}
+                   
+                {{ end }}
+                </li>
+        
+
+         
+    </div>
 				</div>
             </nav>
 
@@ -160,7 +238,8 @@
                     <div id="min"class="min"><i class="fas fa-compress-arrows-alt"></i></div>
                 </div>
                 {{end}}
-
+                
+               
 				<!--START INSERT DATA-->
 				{{index $content_parts 0 | safe.HTML}}
                 <!--END iNSERT DATA-->

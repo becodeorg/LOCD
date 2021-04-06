@@ -9,16 +9,16 @@
 
         <ul class="nav__menu">
             <li>
-                <a href="/">Practice</a>
+                <a href="/{{.lang}}">{{ i18n "practice" }}</a>
             </li>
             <li>
-                <a href="#">Documentation</a>
+                <a href="#">{{ i18n "documentation" }}</a>
             </li>
             <li>
-                <a onclick="tutorial()">Help</a>
+                <a onclick="tutorial()">{{ i18n "help" }}</a>
             </li>
             <li>
-                <a href="{{.Site.BaseURL}}/about">About</a>
+                <a href="/{{.lang}}/about">{{ i18n "about" }}{{.Translations}}</a>
             </li>
         </ul>
     </nav>
