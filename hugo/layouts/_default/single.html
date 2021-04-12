@@ -167,7 +167,7 @@
 	</nav>
     {{end}}
 
-
+    
 
     <div id="viewport" class="viewport">
 
@@ -193,10 +193,11 @@
 						<button class="dropdown__btn"><i class="fas fa-bars"></i> {{.Title}}</button>
 						<div id="dropdownList" class="dropdown__list">
 							<ul>
+                                {{ $SiteExercise := index .Site.Data.exercises .Lang }}
 								<li class="drop__chapter">0 - Start   </li>
 								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-								{{ partial "dropdown" (dict "path" .Site.Data.exercises.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
-								{{ partial "dropdown" (dict "path" .Site.Data.exercises.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
+								{{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
+								{{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
 							</ul>
 						</div>
 					</div>
