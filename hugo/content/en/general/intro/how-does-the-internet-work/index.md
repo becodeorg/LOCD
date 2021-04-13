@@ -1,6 +1,5 @@
 ---
 title: "How does the internet work?"
-slug: "How does the internet work?"
 editor: false
 layout: "single"
 ---

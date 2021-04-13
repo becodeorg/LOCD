@@ -1,6 +1,5 @@
 ---
 title: "Background of the web"
-slug: "Background of the web"
 editor: false
 layout: "single"
 ---

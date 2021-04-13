@@ -1,9 +1,9 @@
 ---
 title: "Boldcursive"
-slug: "Boldcursive"
-editor: false
+editor: true
 layout: "single"
 ---
+
 
 # Exercise 4 - Bold Cursive
 

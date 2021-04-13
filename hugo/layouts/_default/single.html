@@ -166,7 +166,6 @@
 		</div>
 	</nav>
     {{end}}
-
     
 
     <div id="viewport" class="viewport">
@@ -198,6 +197,7 @@
 								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
 								{{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
 								{{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.css "type" "css" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
 							</ul>
 						</div>
 					</div>
@@ -232,6 +232,17 @@
 				</div>
             </nav>
 
+            {{ if eq .Params.app true}}
+            <div id="iframecontainer">
+                <div id="iframe">
+                    <div id="iframewrapper">
+                        <iframe frameborder="0" id="iframeApp" name="iframeResult" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            {{else}}
+
             <div id="insertData" class="instructions__info">
                 {{ if eq .Params.Editor true}}
                 <div id="resize" class="resize">
@@ -247,6 +258,7 @@
 
 
 			</div>
+            {{end}}
 
             
 			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
@@ -325,6 +337,17 @@
     </div>
     
 </main>
+
+{{ if eq .Params.app true}}
+<script>
+    appIfr = document.getElementById('iframeApp');
+    console.log(appIfr)
+    appIfr = appIfr.contentWindow || appIfr.contentDocument.document || appIfr.contentDocument;
+    appIfr.document.open();
+    appIfr.document.write({{index $content_parts 0 | safe.HTML}});
+    appIfr.document.close();
+</script>
+{{end}}
 
 {{ if eq .Params.Editor true}}
 <script>
@@ -423,6 +446,7 @@
             element.addEventListener("click",()=>{
             let parent = element.parentElement;
             let views = [...document.querySelector(".input__container").children];
+            console.log(parent)
 
             let currentActive = parent.querySelector('.tab--selected');
             currentActive.classList.remove('tab--selected')
@@ -450,7 +474,6 @@
 
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
 <script>
-    
 </script>
 
 </body>

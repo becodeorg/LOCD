@@ -1,8 +1,7 @@
 ---
 title: "Intro to HTML"
-date: 2020-11-02T09:25:04+01:00
-draft: false
-editor: true
+editor: false
+layout: "single"
 ---
 
 # Intro to HTML

@@ -1,6 +1,6 @@
 ---
 title: "Lists"
-editor: false
+editor: true
 layout: "single"
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "Hello world"
-slug: "Hello world"
-editor: false
+editor: true
 layout: "single"
 ---
 

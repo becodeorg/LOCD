@@ -1,0 +1,41 @@
+---
+chapters:
+
+# -------Intro-------
+  intro: 
+    order: 1
+    folder : intro
+    subFolders: false
+
+    exercises:
+      - borders
+
+    subChapters:
+      folder:
+      exercises:
+
+  selectors: 
+    order: 2
+    folder : selectors
+    subFolders: false
+
+    exercises:
+      - css-selectors
+
+    subChapters:
+      folder:
+      exercises:
+    
+  basic-properties: 
+    order: 2
+    folder : basic-properties
+    subFolders: false
+
+    exercises:
+      - properties
+
+    subChapters:
+      folder:
+      exercises:
+
+  

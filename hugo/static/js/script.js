@@ -22,7 +22,10 @@ let resizeButtons = () => {
     minIcon.style.display = "none";
     sessionStorage.removeItem("maxScreen");
     stylesheet.disabled = true;
+    return true;
   });
+
+  
 }
 
   //when the user scrolls the min/max icon follows along.
@@ -34,6 +37,7 @@ let resizeButtons = () => {
 
     });
   };
+  return maxIcon
   }
 
 
@@ -45,6 +49,7 @@ let resizeButtons = () => {
 let viewportNavigation = () => {
   let editorView = document.querySelector(".editor");
   let instructionsView = document.querySelector(".instructions");
+  console.log('ok')
 
   document
     .getElementById("instructionsButton")
@@ -134,10 +139,13 @@ let setupBurger = () => {
 
 let init = () => {
   resizeButtons();
-  
   setDropdown();
   setupArrowNav();
   setupBurger();
+  
+  if(resizeButtons()){
+    viewportNavigation();
+  }
 
  
 };

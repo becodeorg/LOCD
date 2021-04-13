@@ -1,6 +1,5 @@
 ---
 title: "The internet"
-slug: "The internet"
 editor: false
 layout: "single"
 ---

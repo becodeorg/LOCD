@@ -1,8 +1,9 @@
 ---
 title: "Images"
-editor: false
+editor: true
 layout: "single"
 ---
+
 
 # Exercise 7 - Images
 
