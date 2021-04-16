@@ -11,9 +11,11 @@ chapters:
       - borders
 
     subChapters:
-      folder:
-      exercises:
+      #chapterTitle:
+        folder:
+        exercises:
 
+# -------Selectors-------
   selectors: 
     order: 2
     folder : selectors
@@ -23,9 +25,11 @@ chapters:
       - css-selectors
 
     subChapters:
-      folder:
-      exercises:
+      #chapterTitle:
+        folder:
+        exercises:
     
+# -------Basic properties-------
   basic-properties: 
     order: 2
     folder : basic-properties
@@ -35,9 +39,11 @@ chapters:
       - properties
 
     subChapters:
-      folder:
-      exercises:
+      #chapterTitle:
+        folder:
+        exercises:
   
+# -------Positioning-------
   positioning: 
     order: 3
     folder : positioning
@@ -46,10 +52,59 @@ chapters:
     exercises:
 
     subChapters:
+      1-display:
+        folder: display
+        exercises:
+        - display-properties-agenda
+        - display-properties-sentence
+
+      2-position:
+        folder: position
+        exercises: 
+        - position-navbar
+        - position-sections
+        - position-squares
+
       3-flex:
         folder: flex
         exercises: 
         - flex-basics
         - flex-froggy
+        - flex-card
+        - flex-page
 
-  
+# -------Animations-------
+  animations: 
+    order: 4
+    folder : animations
+    subFolders: false
+
+    exercises:
+      - button-animation
+      - square-animation
+      - search-animation
+      - cuckoo-animation
+      - complex-button-animation
+      - photogallery-animation
+      - accordeon-animation
+      - complex-animation
+      - checkbox-animation
+
+    subChapters:
+      #chapterTitle:
+        folder:
+        exercises: 
+
+# -------Final challenge-------
+  final-challenge: 
+    order: 5
+    folder : final-challenge
+    subFolders: false
+
+    exercises:
+      - final-challenge
+
+    subChapters:
+      #chapterTitle:
+        folder:
+        exercises: 

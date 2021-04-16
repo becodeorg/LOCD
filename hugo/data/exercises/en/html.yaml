@@ -48,19 +48,3 @@ chapters:
     subChapters:
       folder:
       exercises:
-
-
-  # -------TestFolder Example with subChapter-------
-  # testfolder:
-  #   order: 3
-  #   folder: test
-  #   subFolders: true
-
-  #   exercises:
-
-  #   subChapters:
-  #     1 - positioning:
-  #       folder: positioning
-  #       exercises:
-  #         - how
-  #         - to

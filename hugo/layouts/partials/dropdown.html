@@ -26,10 +26,11 @@
 			{{range $key, $subChapter:= $chapter.subChapters}}
 				<li><div class="drop__sub">{{$key}}</div></li>
 				{{ range $exercise:=$subChapter.exercises }}
+					{{ $title := replace $exercise "-" " " }}
 					{{$adress := print "content/" $lang "/" $type "/" $chapter.folder "/" $subChapter.folder "/" $exercise}}
 
 					{{if (fileExists $adress)}}
-						<li><a class="drop__exercise--sub" href="/{{$lang}}/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/index.html">{{$exercise}}</a></li>
+						<li><a class="drop__exercise--sub" href="/{{$lang}}/{{$type}}/{{$chapter.folder}}/{{$subChapter.folder}}/{{$exercise}}/index.html">{{$title}}</a></li>
 					{{end}}
 				{{ end }}
 			{{end}}
