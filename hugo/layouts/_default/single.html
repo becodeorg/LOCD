@@ -286,21 +286,24 @@
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
-
+                    {{ $html := index $content_parts 1 | safe.HTML}}
 					<div id="textareacontainer" class="html-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
                                 <div class="overlay__editor"></div>
                                 <!-- save html and remove </p> tag -->
-                                {{ $html := index $content_parts 1 | safe.HTML}}
-								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ substr $html 5  }}</textarea>
+                                
+                                
+								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ substr $html 3 -3  }}</textarea>
 							</div>
 						</div>
                     </div>
                     <div id="textareacontainer" class="css-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
-								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{  index $content_parts 2 | safe.HTML }}</textarea>
+                                {{ $css := index $content_parts 2 | safe.HTML}}
+                                
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{ substr $css 13 -8 }}</textarea>
 							</div>
 						</div>
                     </div>
@@ -311,7 +314,9 @@
 							</div>
 						</div>
 					</div>
+                    
                 </div>
+                
             </div>
 
             <div class="editor__output">
