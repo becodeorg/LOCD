@@ -72,6 +72,17 @@ chapters:
         - flex-froggy
         - flex-card
         - flex-page
+    
+      4-components:
+        folder: components
+        exercises: 
+        - quote-styling
+        - navbar-styling
+        - pagination-styling
+        - topic-styling
+        - call-to-action-styling
+        - appointment-styling
+        - store-styling
 
 # -------Animations-------
   animations: 
