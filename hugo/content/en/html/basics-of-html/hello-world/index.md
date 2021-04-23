@@ -12,10 +12,8 @@ Read the documentation if you're not sure how to use these html elements.
 Finally add a `<p>` element with the text 'hello world' to your document. The text should be displayed in the browser.
 
 
-
-
 ## Starting content
 
 ```html 
-<p>Hello world!</p>
+
 ```

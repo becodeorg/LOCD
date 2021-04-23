@@ -149,9 +149,8 @@
 <body>
     
 {{ partial "navbar" (dict "lang" .Lang)}}
-
-    {{ $html_part := split .Content "<p>||</p>" }}
-    {{ $content_parts := split .Content "||" }}
+{{$cssFile := ""}}
+{{$htmlFile := ""}}
     
 <main>
     {{ if eq .Params.Editor true}}
@@ -253,7 +252,7 @@
                 
                
 				<!--START INSERT DATA-->
-				{{index $content_parts 0 | safe.HTML}}
+				{{.Content}}
                 <!--END iNSERT DATA-->
 
 
@@ -273,13 +272,21 @@
 
 		</section>
         {{ if eq .Params.Editor true}}
+        
 		<section id="editor" class="editor">
             {{$path := .RelPermalink}}
             {{ $css := path.Join $path "style.css"}}
             {{ $cssPath := path.Join "./content" $css}}
             {{ $html := path.Join $path "exercise.html"}}
             {{ $htmlPath := path.Join "./content" $html}}
-            
+
+            {{ if(fileExists $htmlPath)}}
+                {{ $htmlFile = readFile $htmlPath}}
+            {{end}}
+
+            {{ if(fileExists $cssPath)}}
+                {{ $cssFile = readFile $cssPath}}
+            {{end}}
             
             
 
@@ -295,7 +302,7 @@
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
-                    {{ $html := index $content_parts 1 | safe.HTML}}
+                    
 					<div id="textareacontainer" class="html-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
@@ -303,16 +310,16 @@
                                 <!-- save html and remove </p> tag -->
                                 <!-- {{substr $html 1 -3}} -->
                                 
-								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ if(fileExists $htmlPath)}}{{ readFile $htmlPath}}{{end}}</textarea>
+								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{$htmlFile}}</textarea>
 							</div>
 						</div>
                     </div>
                     <div id="textareacontainer" class="css-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
-                                {{ $css := index $content_parts 2 | safe.HTML}}
                                 
-								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{ if(fileExists $cssPath)}}{{ readFile $cssPath}}{{end}}</textarea>
+                                
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{$cssFile}}</textarea>
 							</div>
 						</div>
                     </div>
@@ -358,7 +365,7 @@
     console.log(appIfr)
     appIfr = appIfr.contentWindow || appIfr.contentDocument.document || appIfr.contentDocument;
     appIfr.document.open();
-    appIfr.document.write({{index $content_parts 0 | safe.HTML}});
+    appIfr.document.write({{.Content}});
     appIfr.document.close();
 </script>
 {{end}}
@@ -411,10 +418,9 @@
             console.log("clicked!")
             let htmlView= document.getElementById("textareaCodeHTML");
             messagePop("Succesfully reset!");
-            {{ $html := index $content_parts 1 | safe.HTML}}
-            {{ $css := index $content_parts 2 | safe.HTML}}
-            HTMLeditor.setValue({{ substr $html 5  }});
-            CSSeditor.setValue({{  substr $css 2 }});
+            
+            HTMLeditor.setValue({{$htmlFile}});
+            CSSeditor.setValue({{$cssFile}});
             JSeditor.setValue("");
 
           CSSeditor.refresh()
