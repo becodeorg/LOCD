@@ -23,6 +23,7 @@ Time to start exploring more html elements. Look at the index.html file and the 
 </html>
 ```
 ||
+{{< wrap >}}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +32,7 @@ Time to start exploring more html elements. Look at the index.html file and the 
   </head>
   <body></body>
 </html>
+{{< /wrap >}}
 ||
 h1{
   color:red;

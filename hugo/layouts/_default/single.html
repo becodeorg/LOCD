@@ -264,6 +264,7 @@
 			<nav id="instructionNavMin" class="instructions__nav instructions__nav--max instructions__nav--top">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i>  &nbsp;Previous</a>
+                    
 					<a class="next" href="">Next &nbsp;<i class="fas fa-arrow-right"></i></a>
 				</div>
 			</nav>
@@ -273,6 +274,16 @@
 		</section>
         {{ if eq .Params.Editor true}}
 		<section id="editor" class="editor">
+            {{$path := .RelPermalink}}
+            {{ $css := path.Join $path "style.css"}}
+            {{ $cssPath := path.Join "./content" $css}}
+            {{ $html := path.Join $path "exercise.html"}}
+            {{ $htmlPath := path.Join "./content" $html}}
+            {{$htmlPath}}
+            {{$cssPath}}
+            
+            
+            
 
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div  id="editorInput" class="editor__input">
@@ -292,9 +303,9 @@
 							<div id="textareawrapper">
                                 <div class="overlay__editor"></div>
                                 <!-- save html and remove </p> tag -->
+                                <!-- {{substr $html 1 -3}} -->
                                 
-                                
-								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ substr $html 3 -3  }}</textarea>
+								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">{{ if(fileExists $htmlPath)}}{{ readFile $htmlPath}}{{end}}</textarea>
 							</div>
 						</div>
                     </div>
@@ -303,7 +314,7 @@
 							<div id="textareawrapper">
                                 {{ $css := index $content_parts 2 | safe.HTML}}
                                 
-								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{ substr $css 13 -8 }}</textarea>
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">{{ if(fileExists $cssPath)}}{{ readFile $cssPath}}{{end}}</textarea>
 							</div>
 						</div>
                     </div>
