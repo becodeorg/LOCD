@@ -2,6 +2,7 @@
 title: "The internet"
 editor: false
 layout: "single"
+translationKey: "the-internet"
 ---
 
 # How does the internet work

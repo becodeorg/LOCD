@@ -1,8 +1,8 @@
 ---
 title: "Background of the web"
-
 editor: false
 layout: "single"
+translationKey: "background-of-the-web"
 ---
 # The internet
 

@@ -2,6 +2,7 @@
 title: "How does the internet work?"
 editor: false
 layout: "single"
+translationKey: "how-does-the-internet-work"
 ---
 
 # How the Web works

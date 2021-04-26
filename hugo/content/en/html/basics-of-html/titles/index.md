@@ -2,6 +2,7 @@
 title: "Titles"
 editor: true
 layout: "single"
+translationKey: "titles"
 ---
 
 
@@ -22,18 +23,3 @@ Time to start exploring more html elements. Look at the index.html file and the 
   <body></body>
 </html>
 ```
-||
-{{< wrap >}}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Exercise 2 - Titles</title>
-  </head>
-  <body></body>
-</html>
-{{< /wrap >}}
-||
-h1{
-  color:red;
-}

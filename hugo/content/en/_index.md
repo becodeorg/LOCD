@@ -2,6 +2,7 @@
 title: Home
 editor: false
 layout: single
+translationKey: "home"
 ---
 
 

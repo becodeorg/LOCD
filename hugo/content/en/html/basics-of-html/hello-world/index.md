@@ -2,6 +2,7 @@
 title: "Hello world"
 editor: true
 layout: "single"
+translationKey: "hello-world"
 ---
 
 # exercise 1 - Hello world

@@ -2,6 +2,7 @@
 title: "Relative links"
 editor: true
 layout: "single"
+translationKey: "relative-links"
 ---
 
 # Exercise 6  - Relative links
