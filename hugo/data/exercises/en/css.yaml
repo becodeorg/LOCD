@@ -8,6 +8,11 @@ chapters:
     subFolders: false
 
     exercises:
+      - intro-to-css
+      - inline-css
+      - style-tag
+      - canary-islands
+      - classes
       - borders
 
     subChapters:

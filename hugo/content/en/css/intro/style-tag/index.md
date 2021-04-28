@@ -4,7 +4,7 @@ editor: true
 layout: "single"
 ---
 
-# Exercise: Plan your vacations with <style> !
+# Exercise: Plan your vacations with `<style>` !
 
 **Instruction**
 

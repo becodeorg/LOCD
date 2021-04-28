@@ -1,7 +1,8 @@
 ---
 title: "Intro to css"
-editor: false
+editor: true
 layout: "single"
+translationKey: "intro-to-css"
 ---
 
 # CSS introduction
@@ -20,11 +21,12 @@ That's because on top of their HTML, these pages are using another language, cal
 
 In other words, CSS allows us to turn this:
 
-![](without-css.png)
+![without css](without-css.png)
+
 
 Into that:
 
-![](with-css.png)
+![with css](with-css.png)
 
 ## What is CSS?
 
@@ -39,7 +41,7 @@ It's a must-have skill for any web developer out there.
 
 Look at this schematic, which sums all how to write CSS in a way that the browser understands it.
 
-![](selector.gif)
+!['selector'](selector.gif)
 
 As you can see, there are fancy words here. Don't panick, there won't be much more :-)
 
@@ -77,7 +79,7 @@ As you see, the css instructs the browser to use the color blue to render the `h
 <h1 style="color:blue;font-weight:bold">Hello world!</h1>
 ```
 
-![](output-inline-style.png)
+!['output inline-style'](output-inline-style.png)
 
 Easy again! As you can see, you can add up properties using a semicolon (the character `;`) to separate them so the browser does not get confused.
 
@@ -129,7 +131,7 @@ Having an external CSS file is the most recommended way to do, because it "separ
 
 #### Here is an example of our folder structure:
 
-![](resources/images/linking02.png)
+!['linking'](linking02.png)
 
 Inside of our CSS file we have written the following:
 
@@ -212,7 +214,7 @@ By default, without styling, each tag is rendered as a rectangle which backgroun
 
 Here is a visual representation of that rectangle, called the "box model".
 
-![](css-block.png)
+![css-block](css-block.png)
 
 This image represents how you can play with `border`, `margin`, `padding` to style any HTML tag!
 
