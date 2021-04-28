@@ -27,6 +27,9 @@ chapters:
     subFolders: false
 
     exercises:
+      - class-selectors
+      - psuedo-selector
+      - page-styling
       - css-selectors
 
     subChapters:
@@ -36,7 +39,7 @@ chapters:
     
 # -------Basic properties-------
   basic-properties: 
-    order: 2
+    order: 3
     folder : basic-properties
     subFolders: false
 

@@ -1,0 +1,16 @@
+span{
+    background-color:red;
+    padding:10px;
+    text-align:center;
+}
+li{
+    color:white;
+    background:blue;
+    padding:10px;
+    margin-right:5px;
+    width:500px;
+}
+ul{
+    margin:0;
+    padding:0;
+}

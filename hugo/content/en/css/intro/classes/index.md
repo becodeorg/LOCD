@@ -2,6 +2,7 @@
 title: "Classes"
 editor: true
 layout: "single"
+translationKey: "classes"
 ---
 
 # Exercise: Use classes to differentiate elements and style them differently
@@ -19,20 +20,3 @@ Let's make the last exercise look better, using more advanced techniques. Use th
 3. Add a class to the paragraph tag underneath the H1 tag, with a value of "introduction" (the syntax is like this: `<p class="classname">`and in CSS, you can mention that it is a class by adding a period in front of it, like this  `.classname`  (If you are stuck, make sure to read about "Selectors" in the Documentation or in the lessons)
 
 4. Style that "introduction" paragraph by setting its font size at 140% . Change the line height to 200% and give it an "italic" font style.
-
-**Content in the editor**
-
---> same as exercise 3.
-
-||
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Exercise 4 - Canary Islands classes</title>
-    </head>
-    <body>
-     
-    </body>
-</html>

@@ -2,6 +2,7 @@
 title: "Borders"
 editor: true
 layout: "single"
+translationKey: "borders"
 ---
 
 # Exercise: borders
@@ -16,7 +17,7 @@ Look at this stylish double underline below : the blue thick line spreads the wo
 
 **Tip 3:** Color: #2A99FB.
 
-![Double underline exercise](resources/images/exercise-doubleUnderline.png)
+![Double underline exercise](exercise-doubleUnderline.png)
 
 **Content in the editor**
 
@@ -27,17 +28,3 @@ Look at this stylish double underline below : the blue thick line spreads the wo
   spreads over the entire block. Try to mimick by using CSS on the H2 and the P tags!</p>
 </body>
 ```
-||
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Exercise 5 - Borders</title>
-    </head>
-    <body>
-        <h2>About Us</h2>
-        <p>Look at this stylish double underline above: the blue thick line spreads the word's length, while the grey line
-        spreads over the entire block. Try to mimick by using CSS on the H2 and the P tags!</p>
-    </body>
-</html>

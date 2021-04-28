@@ -2,6 +2,7 @@
 title: "Class Selector"
 editor: true
 layout: "single"
+translationKey: class-selector
 ---
 
 **Instructions**
@@ -11,11 +12,11 @@ Note that you can also add more HTML tags if you want to (especially for FedEx, 
 
 Here is the result you should try to reach (or as close as possible).
 
-![](toyota.png)
+![toyota](toyota.png)
 
-![](fedex.png)
+![fedex](fedex.png)
 
-![](facebook.png)
+![facebook](facebook.png)
 
 **Content in the editor**
 
@@ -36,20 +37,3 @@ Here is the result you should try to reach (or as close as possible).
     </body>
 </html>
 ```
-||
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Exercise 1 - Class selectors</title>
-    </head>
-    <body>
-        <h2>Brands</h2>
-        <ol>  
-            <li><span class="toyota">Toyota</span></li>
-            <li><span>Toyota</span></li>
-            <li>FedEx Express</li>
-        </ol>
-    </body>
-</html>
-
