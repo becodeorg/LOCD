@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn offline coding by doing</title>
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
+	  <link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+    <link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
+    
+  </head>
+  <body>
+    {{ partial "navbar" }}
+    <main>
+	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
+		<div class="nav__wrapper">
+			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+			<div class="view-navigation">
+				<button id="instructionsButton">Instructions</button>
+				<button id="editorButton">Editor</button>
+			</div>
+			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+		</div>
+	</nav>
+  </main>
+    <section class="about__section">
+      <main class="about__intro">
+        <div class="text__container">
+          <h1>About “Hello World!”</h1>
+          <p>The goal of Hello World! Is to provide a learning environment for people who want to learn how to make websites and have a taste at programming  - perhaps with the idea one day of becoming professional Developers.</p>
+          <p>These skills are like riding a bike: you can read many books about biking, it is only once you climb on the bike and try using it that you actually learn and improve.</p>
+          <p>Likewise, the best way to learn programming is by trying. The learning material abides to this principle : it requires  you to practice by following instructions,  solving problems and searching the documentation. Through these activities, you will be learning the fundamentals of html, css and javascript.</p>
+          <p>We hope you enjoy the learning experience and that you will soon be as passionate about programming and making websites as we are !</p>
+        </div>
+        <figure>
+          <img class="responsive__image" src="{{.Site.BaseURL}}/img/welcome.jpg" alt="hmmm">
+          <figcaption>Nick, Alexandre and the BeCode team</figcaption>
+        </figure>
+
+        <a class="button button__default" href="../">Back to the exercises</a>
+      </main>
+    </section>
+    
+    <script>
+      let setupBurger = () => {
+        let burgerMenu = document.getElementById("menu__btn");
+        const burgerNav = document.querySelector(".nav__menu--hamburger");
+
+        burgerMenu.addEventListener("change", function () {
+          if (this.checked) {
+            burgerNav.classList.add("burger--active");
+          } else {
+            burgerNav.classList.remove("burger--active");
+          }
+        });
+      };
+      setupBurger();
+    </script>
+      
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<header>
+    <nav id="nav" class="nav">
+        <a href="/" class="nav__logo"></a>
+
+        <input class="menu__btn" type="checkbox" id="menu__btn" />
+        <label class="menu__icon" for="menu__btn">
+            <span class="nav__icon"></span>
+        </label>
+
+        <ul class="nav__menu">
+            <li>
+                <a href="/{{.lang}}">{{ i18n "practice" }}</a>
+            </li>
+            <li>
+                <a href="#">{{ i18n "documentation" }}</a>
+            </li>
+            <li>
+                <a onclick="tutorial()">{{ i18n "help" }}</a>
+            </li>
+            <li>
+                <a href="/{{.lang}}/about">{{ i18n "about" }}{{.Translations}}</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="nav__backlayer"></div>
+<nav>
+    <ul class="nav__menu--hamburger">
+        <li>
+            <a href="#">Practice</a>
+        </li>
+        <li>
+            <a href="#">Documentation</a>
+        </li>
+        <li>
+            <a onclick="tutorial()">Help</a>
+        </li>
+        <li>
+            <a href="about">About</a>
+        </li>
+    </ul>
+</nav>

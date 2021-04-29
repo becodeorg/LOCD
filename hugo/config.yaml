@@ -1,21 +1,30 @@
 baseURL: ""
-languageCode: "en-us"
+defaultContentLanguageInSubdir: true
+defaultContentLanguage: "en"
 title: "LOCD Learning on your own!"
 pluralizelisttitles: "false"
 relativeURLs: "true"
 publishDir: "../build"
 layout: "bundle"
 
+languages:
+  en:
+    languageName: English
+    weight: 1
+    contentDir: "content/en"
 
-disableKinds: ['taxonomy', 'taxonomyTerm','section']
+  fr:
+    languageName: Français
+    weight: 2
+    contentDir: "content/fr"
+
+disableKinds: ["taxonomy", "taxonomyTerm", "section"]
 
 markup:
   goldmark:
     renderer:
       unsafe: true
-
 # sectionPagesMenu: "main"
-
 
 # menu:
 #   main:

@@ -1,0 +1,13 @@
+## EN
+#NavBar Translation
+- id: "practice"
+  translation: "Practice"
+- id: "documentation"
+  translation: "Documentation"
+- id: "help"
+  translation: "Help"
+- id: "about"
+  translation: "About"
+
+
+
