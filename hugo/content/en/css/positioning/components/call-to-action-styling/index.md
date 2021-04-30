@@ -2,6 +2,7 @@
 title: "Call to action styling"
 editor: true
 layout: "single"
+translationKey: "call-to-action-styling"
 ---
 # CSS Integration exercises
 
@@ -36,15 +37,3 @@ The CSS has to be in a `<style>`tag, no inline CSS.
 </body>
 </html>
 ```
-||
-<html>
-<head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>components - exercise 5</title>
-</head>
-<body>
-<!-- put your content here -->
-</body>
-</html>

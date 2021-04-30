@@ -1,10 +1,11 @@
 ---
 title: "Complex animation"
-draft: false
 editor: true
+layout: "single"
+translationKey: "complex-animation"
 ---
 
-# Learn CSS Animations
+# Complex animation
 
 ## The exercise
 

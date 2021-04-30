@@ -2,6 +2,7 @@
 title: "Store styling"
 editor: true
 layout: "single"
+translationKey: "store-styling"
 ---
 
 # CSS Integration exercises
@@ -28,22 +29,10 @@ The CSS has to be in a `<style>`tag, no inline CSS.
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>components - exercise 6</title>
+    <title>components - exercise 7</title>
 </head>
 <body>
 <!-- put your content here -->
 </body>
 </html>
 ```
-||
-<html>
-<head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>components - exercise 6</title>
-</head>
-<body>
-<!-- put your content here -->
-</body>
-</html>

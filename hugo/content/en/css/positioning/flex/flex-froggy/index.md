@@ -1,8 +1,9 @@
 ---
-title: "Display properties - agenda"
+title: "Flex-froggy"
 editor: false
 layout: "single"
 app: true 
+translationKey: "flex-froggy"
 ---
 
 <html lang="en">

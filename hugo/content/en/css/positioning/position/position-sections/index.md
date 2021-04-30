@@ -2,6 +2,7 @@
 title: "Position - sections"
 editor: true
 layout: "single"
+translationKey: "position-sections"
 ---
 
 ## Position properties
@@ -58,44 +59,3 @@ Now re-create this styling as good as possible:
 ![sections.png](sections.png)
 
 Now make it so that if we scroll down, each case collapses onto eachother. (Leave 20px space between the **top** and the cases.)
-||
-<html>
-<head>
-    <meta charset="utf-8" />
-</head>
-<body>
-<!-- put your content here -->
-    <main>
-      <div class="cases">
-        a
-      </div>
-      <div class="cases">
-        b
-      </div>
-      <div class="cases">
-        c
-      </div>
-      <div class="cases">
-        d
-      </div>
-      <div class="cases">
-        e
-      </div>
-      <div class="cases">
-        f
-      </div>
-      <div class="cases">
-        g
-      </div>
-    </main>
-</body>
-</html>
-||
-body{
-    height:3600px;
-    padding:0;
-    margin:0;
-    font-family:sans-serif;
-}
-/* Put your styling here */
-    

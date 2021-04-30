@@ -1,7 +1,8 @@
 ---
 title: "Accordeon animation"
-draft: false
 editor: true
+layout: "single"
+translationKey: "accordeon-animation"
 ---
 
 # Small CSS animations series - 07
@@ -76,15 +77,3 @@ Please copy and paste this code inside your editor:
 ## Animated component:
 
 ![](./07accordeon.gif)
-||
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Animations - exercise 7</title>
-    </head>
-<body>
-<!-- put your content here -->
-</body>
-</html>

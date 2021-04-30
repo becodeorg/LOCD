@@ -2,7 +2,7 @@
 title: "Display properties - agenda"
 editor: true
 layout: "single"
-translationKey: display-properties-agenda
+translationKey: "display-properties-agenda"
 ---
 
 # Display properties

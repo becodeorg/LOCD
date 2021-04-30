@@ -1,7 +1,8 @@
 ---
 title: "Photo gallery animation"
-draft: false
 editor: true
+layout: "single"
+translationKey: "photo-gallery-animation"
 ---
 
 # Small CSS animations series - 06
@@ -44,16 +45,4 @@ Please copy and paste this code inside your editor:
 
 ## Animated component:
 
-![](./06fotogalerij.gif)
-||
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Animations - exercise 6</title>
-    </head>
-<body>
-<!-- put your content here -->
-</body>
-</html>
+![exercise example](./06fotogalerij.gif)

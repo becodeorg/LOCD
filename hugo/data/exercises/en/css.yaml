@@ -1,10 +1,9 @@
 ---
 chapters:
-
-# -------Intro-------
-  intro: 
+  # -------Intro-------
+  intro:
     order: 1
-    folder : intro
+    folder: intro
     subFolders: false
 
     exercises:
@@ -17,13 +16,13 @@ chapters:
 
     subChapters:
       #chapterTitle:
-        folder:
-        exercises:
+      folder:
+      exercises:
 
-# -------Selectors-------
-  selectors: 
+  # -------Selectors-------
+  selectors:
     order: 2
-    folder : selectors
+    folder: selectors
     subFolders: false
 
     exercises:
@@ -34,13 +33,13 @@ chapters:
 
     subChapters:
       #chapterTitle:
-        folder:
-        exercises:
-    
-# -------Basic properties-------
-  basic-properties: 
+      folder:
+      exercises:
+
+  # -------Basic properties-------
+  basic-properties:
     order: 3
-    folder : basic-properties
+    folder: basic-properties
     subFolders: false
 
     exercises:
@@ -48,13 +47,13 @@ chapters:
 
     subChapters:
       #chapterTitle:
-        folder:
-        exercises:
-  
-# -------Positioning-------
-  positioning: 
-    order: 3
-    folder : positioning
+      folder:
+      exercises:
+
+  # -------Positioning-------
+  positioning:
+    order: 4
+    folder: positioning
     subFolders: true
 
     exercises:
@@ -63,39 +62,39 @@ chapters:
       1-display:
         folder: display
         exercises:
-        - display-properties-agenda
-        - display-properties-sentence
+          - display-properties-agenda
+          - display-properties-sentence
 
       2-position:
         folder: position
-        exercises: 
-        - position-navbar
-        - position-sections
-        - position-squares
+        exercises:
+          - position-navbar
+          - position-sections
+          - position-squares
 
       3-flex:
         folder: flex
-        exercises: 
-        - flex-basics
-        - flex-froggy
-        - flex-card
-        - flex-page
-    
+        exercises:
+          - flex-basics
+          - flex-froggy
+          - flex-card
+          - flex-page
+
       4-components:
         folder: components
-        exercises: 
-        - quote-styling
-        - navbar-styling
-        - pagination-styling
-        - topic-styling
-        - call-to-action-styling
-        - appointment-styling
-        - store-styling
+        exercises:
+          - quote-styling
+          - navbar-styling
+          - pagination-styling
+          - topic-styling
+          - call-to-action-styling
+          - appointment-styling
+          - store-styling
 
-# -------Animations-------
-  animations: 
-    order: 4
-    folder : animations
+  # -------Animations-------
+  animations:
+    order: 5
+    folder: animations
     subFolders: false
 
     exercises:
@@ -111,13 +110,13 @@ chapters:
 
     subChapters:
       #chapterTitle:
-        folder:
-        exercises: 
+      folder:
+      exercises:
 
-# -------Final challenge-------
-  final-challenge: 
-    order: 5
-    folder : final-challenge
+  # -------Final challenge-------
+  final-challenge:
+    order: 6
+    folder: final-challenge
     subFolders: false
 
     exercises:
@@ -125,5 +124,5 @@ chapters:
 
     subChapters:
       #chapterTitle:
-        folder:
-        exercises: 
+      folder:
+      exercises:

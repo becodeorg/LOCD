@@ -2,6 +2,7 @@
 title: "Position - navbar"
 editor: true
 layout: "single"
+translationKey: "position-navbar"
 ---
 
 # Position navbar
@@ -60,35 +61,3 @@ As a refreshment of everything we have currently seen so far. I want you to re-c
 ![navbar.png](navbar.png)
 
 After this, find a way to let the navbar stick to the top of the screen.
-||
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Position - Exercise 1</title>
-</head>
-<body>
-    <nav>
-    <!--Please make your own navbar here!-->
-    </nav>
-    <section>
-        <h2>Please scroll down!</h2>
-    </section>
-    <section>
-        <h2>The navbar should still be visible down here!</h2>
-    </section>
-</body>
-</html>
-||
-body{
-    height:3600px;
-    padding:0;
-    margin:0;
-    font-family:sans-serif;
-}
-h2{
-    margin:0;
-    padding-top:500px;
-    text-align:center;
-}

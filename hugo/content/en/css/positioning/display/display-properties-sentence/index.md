@@ -2,7 +2,7 @@
 title: "Display properties - sentence"
 editor: true
 layout: "single"
-translationKey: display-properties-sentence
+translationKey: "display-properties-sentence"
 ---
 
 # Display properties - sentence
