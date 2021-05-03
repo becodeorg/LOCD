@@ -1,9 +1,10 @@
 ---
 title: "Boldcursive"
-date: 2020-11-05T17:23:46+01:00
-draft: false
 editor: true
+layout: "single"
+translationKey: "boldcursive"
 ---
+
 
 # Exercise 4 - Bold Cursive
 
@@ -71,57 +72,3 @@ We can add some extra meaning to the text by adding more html elements. Make use
   </body>
 </html>
 ``` 
-
-||
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Exercise 4 - Bold Cursive</title>
-  </head>
-  <body>
-    <h1>Title of an H1 tag</h1>
-	<p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-    <h2>Title of an H2 tag</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-    <h3>Title of an H3 tag</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-    <h4>Title of an H4 tag</h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-    <h5>Title of an H5 tag</h5>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-    <h6>Title of an H6 tag</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe
-      architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque
-      quibusdam doloribus officia odit voluptatum minima ab, reprehenderit
-      cupiditate. Consequuntur, sapiente.
-    </p>
-  </body>
-</html>

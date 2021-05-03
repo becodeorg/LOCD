@@ -1,8 +1,8 @@
 ---
 title: "Relative links"
-date: 2020-11-05T17:23:46+01:00
-draft: false
 editor: true
+layout: "single"
+translationKey: "relative-links"
 ---
 
 # Exercise 6  - Relative links

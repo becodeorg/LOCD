@@ -1,8 +1,8 @@
 ---
 title: "Semantic"
-date: 2020-11-05T17:23:46+01:00
-draft: false
 editor: false
+layout: "single"
+translationKey: "semantic"
 ---
 
 # Semantic HTML
@@ -24,7 +24,6 @@ The HTML5 specification includes several semantic elements to help organize docu
 
 ### Other Semantic HTML elements used in Sectioning
 
-
 - **HTML Body Element** (`<body>`) defines all the content of a document. It contains all the content and HTML tags.
 - **HTML Header Element** (`<header>`) defines a page which typically contains the logo, title, and navigation. The header can also be used in other semantic elements such as `<article>` or `<section>` — or section header, containing perhaps the section's heading, author name, etc. `<article>`, `<section>`, `<aside>`, and `<nav>` can have their own `<header>`. Despite its name, it is not necessarily positioned at the beginning of the page or section.
 - **HTML Footer Element** (`<footer>`) defines a page footer which typically contains the copyright, legal notices and sometimes some links — or section footer, containing perhaps the section's publication date, license information, etc. `<article>`, `<section>`, `<aside>`, and `<nav>` can have their own `<footer>`. Despite its name, it is not necessarily positioned at the end of the page or section.
@@ -35,53 +34,36 @@ The example below is a layout for the body of blog page. There is a `<header>` w
 
 ```html
 <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </nav>
-      <h1>
-        Page Title
-      </h1>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+      </ul>
+    </nav>
+    <h1>Page Title</h1>
+  </header>
 
-    <section>
-      <h2>
-        My Blog Posts
-      </h2>
-      <article>
-        <header>
-          <p>
-            Article Title
-          </p>
-        </header>
-        <p>
-          content
-        </p>
-      </article>
-      <article>
-        <header>
-          <p>
-            Article Title
-          </p>
-        </header>
-        <p>
-          content
-        </p>
-      </article>
-      <aside>
-        <p>
-          Author info
-        </p>
-      </aside>
-    </section>
+  <section>
+    <h2>My Blog Posts</h2>
+    <article>
+      <header>
+        <p>Article Title</p>
+      </header>
+      <p>content</p>
+    </article>
+    <article>
+      <header>
+        <p>Article Title</p>
+      </header>
+      <p>content</p>
+    </article>
+    <aside>
+      <p>Author info</p>
+    </aside>
+  </section>
 
-    <footer>
-      Copyright Info
-    </footer>
-  </body>
+  <footer>Copyright Info</footer>
+</body>
 ```
-

@@ -1,9 +1,8 @@
 ---
 title: "Hello world"
-date: 2020-11-02T09:25:04+01:00
-draft: false
 editor: true
-editorContent: "Test"
+layout: "single"
+translationKey: "hello-world"
 ---
 
 # exercise 1 - Hello world
@@ -14,10 +13,8 @@ Read the documentation if you're not sure how to use these html elements.
 Finally add a `<p>` element with the text 'hello world' to your document. The text should be displayed in the browser.
 
 
-
 ## Starting content
 
 ```html 
 
 ```
-

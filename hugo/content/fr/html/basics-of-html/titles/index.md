@@ -1,9 +1,10 @@
 ---
 title: "Titles"
-date: 2020-11-05T17:23:46+01:00
-draft: false
 editor: true
+layout: "single"
+translationKey: "titles"
 ---
+
 
 # Exercise 2 - Titles
 
@@ -22,16 +23,3 @@ Time to start exploring more html elements. Look at the index.html file and the 
   <body></body>
 </html>
 ```
-||
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Exercise 2 - Titles</title>
-  </head>
-  <body></body>
-</html>
-||
-h1{
-  color:red;
-}

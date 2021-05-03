@@ -1,8 +1,9 @@
 ---
-title: Home
+title: Accueil
 editor: false
 layout: single
 translationKey: "home"
+
 ---
 
 
@@ -18,9 +19,10 @@ Vous pensez peut-être qu'il faut un diplôme universitaire en mathématiques et
 
 ## Ce que vous pouvez attendre
 
-L'objectif de cette formation est de vous permettre de vous essayer à la programmation et à la pensée logique, afin de voir si vous aussi, vous trouvez cela amusant et si c'est quelque chose que vous aimeriez poursuivre une fois sorti de prison.
+L'objectif de cette formation est de vous permettre de vous essayer à la programmation et à la pensée logique, pour voir si vous aussi vous trouvez cela amusant et si c'est quelque chose que vous aimeriez poursuivre une fois sorti de prison.
 
-Ce cours vous permettra d'apprendre les bases de la création et de la programmation de sites Web en utilisant les 3 principaux langages du Web : HTML, CSS et JavaScript. A la fin de la formation, vous serez plus que prêt à rejoindre un coding bootcamp qui vous aidera à atteindre un niveau vous permettant d'obtenir un véritable emploi en tant que programmeur !
+Ce cours vous permettra d'apprendre les bases de la création et de la programmation de sites Web en utilisant les 3 principaux langages du Web : HTML, CSS et JavaScript. À la fin de la formation, vous serez plus que prêt à rejoindre un camp d'entraînement au codage qui vous aidera à atteindre un niveau vous permettant d'obtenir un véritable emploi de programmeur !
+
 
 ## Apprendre par la pratique
 La meilleure façon d'apprendre le codage, c'est comme la cuisine... En le faisant ! C'est pourquoi le cours est organisé comme une série d'exercices que vous devez réussir pour passer à l'étape suivante. Ne vous inquiétez pas d'être rapide, ce n'est pas comme à l'école ! Le système mémorise vos progrès pour que vous n'ayez pas à recommencer d'une session à l'autre.

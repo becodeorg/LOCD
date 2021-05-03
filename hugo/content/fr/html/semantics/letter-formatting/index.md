@@ -1,8 +1,8 @@
 ---
 title: "Letter formatting"
-date: 2020-11-05T17:23:46+01:00
 draft: false
 editor: true
+translationKey: "letter-formatting"
 ---
 
 # Article to HTML

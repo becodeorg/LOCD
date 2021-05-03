@@ -1,9 +1,10 @@
 ---
 title: "Images"
-date: 2020-11-05T17:23:46+01:00
-draft: false
 editor: true
+layout: "single"
+translationKey: "images"
 ---
+
 
 # Exercise 7 - Images
 
@@ -19,3 +20,7 @@ Inside this tag we can add different attributes. The following attributes can be
 'height' attribute: sets the height of the image.
 
 Try adding the 'unicorns-and-cats.png' to this img tag, also fill in the other blank attributes.
+
+- 📁resources
+    - 📁img
+        - 🖼️ unicorns-and-cats.png

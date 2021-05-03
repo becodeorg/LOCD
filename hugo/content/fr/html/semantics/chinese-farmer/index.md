@@ -1,13 +1,13 @@
 ---
 title: "Chinese-farmer"
-date: 2020-11-05T17:23:46+01:00
 draft: false
 editor: true
+translationKey: "chinese-farmer"
 ---
 
 # Exercise 3 - Chinese farmer
 
-- Translate the html page into semantic html, using the right html tags : `h1`, `h2`, `blockquote`, `q`, `img`, `img`, `hr`, `figure` and `caption`, `table`, `th`, `tr`, `td`, `ul` or `ol` and`li`.
+Translate the html page into semantic html, using the right html tags : `h1`, `h2`, `blockquote`, `q`, `img`, `img`, `hr`, `figure` and `caption`, `table`, `th`, `tr`, `td`, `ul` or `ol` and `li`.
 
 - No `div` or `span`: they do not provide any semantics.
 
@@ -33,7 +33,7 @@ editor: true
 
 
 
-![](/home/nick/Documents/BeCode/prison-project/free2code/1.HTML/exercises/Semantics/exercise-3-chinese-farmer/resources/altatr.jpeg)
+![](altatr.jpeg)
 
 
 ## Done?
@@ -41,4 +41,4 @@ editor: true
 Well done! You just completed the first chapter! But you probably noticed that we still have not made something appealing for the eye.
 We will cover that on our next chapter: **CSS**.
 
-![](./resources/gordenReady.gif)
+![](./gordenReady.gif)

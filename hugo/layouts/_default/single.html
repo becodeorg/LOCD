@@ -189,11 +189,11 @@
 						<div id="dropdownList" class="dropdown__list">
 							<ul>
                                 {{ $SiteExercise := index .Site.Data.exercises .Lang }}
-								<li class="drop__chapter">0 - Start   </li>
+								<li class="drop__chapter">0 - {{ i18n "start" }}   </li>
 								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-								{{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
-								{{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
-                                {{ partial "dropdown" (dict "path" $SiteExercise.css "type" "css" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.css "type" "css" "lang" .Lang "title" .Title)}}
 							</ul>
 						</div>
 					</div>
