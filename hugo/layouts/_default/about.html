@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn offline coding by doing</title>
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
+	  <link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
+    <link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
+    
+  </head>
+  <body>
+    {{ partial "navbar" }}
+    <main>
+	<nav id="instructionNavMax" class="instructions__nav instructions__nav--max instructions__nav--top">
+		<div class="nav__wrapper">
+			<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+			<div class="view-navigation">
+				<button id="instructionsButton">Instructions</button>
+				<button id="editorButton">Editor</button>
+			</div>
+			<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+		</div>
+	</nav>
+  </main>
+    <section class="about__section">
+      <main class="about__intro">
+        {{.Content}}
+        
+      </main>
+    </section>
+    
+    <script>
+      let setupBurger = () => {
+        let burgerMenu = document.getElementById("menu__btn");
+        const burgerNav = document.querySelector(".nav__menu--hamburger");
+
+        burgerMenu.addEventListener("change", function () {
+          if (this.checked) {
+            burgerNav.classList.add("burger--active");
+          } else {
+            burgerNav.classList.remove("burger--active");
+          }
+        });
+      };
+      setupBurger();
+    </script>
+      
+    </body>
+</html>

@@ -7,6 +7,8 @@ let HTMLeditor = CodeMirror.fromTextArea(
       lineWrapping: true,
 		  smartIndent: false,
       addModeClass: true,
+      indentUnit: 1,
+      tabSize: 2,
       extraKeys: {
         'Tab': 'emmetExpandAbbreviation',
         'Esc': 'emmetResetAbbreviation',
@@ -29,6 +31,7 @@ let HTMLeditor = CodeMirror.fromTextArea(
       lineWrapping: true,
 		  smartIndent: false,
       addModeClass: true,
+      tabSize: 2,
       extraKeys: {
         'Tab': 'emmetExpandAbbreviation',
         'Esc': 'emmetResetAbbreviation',
@@ -51,6 +54,7 @@ let JSeditor = CodeMirror.fromTextArea(
       lineWrapping: true,
 		  smartIndent: false,
       addModeClass: true,
+      tabSize: 2,
       extraKeys: {
         'Tab': 'emmetExpandAbbreviation',
         'Esc': 'emmetResetAbbreviation',

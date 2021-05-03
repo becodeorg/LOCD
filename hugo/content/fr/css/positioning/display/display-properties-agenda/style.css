@@ -1,0 +1,27 @@
+body{
+    margin:0;  
+}
+.title{
+    height:200px;
+    text-align:center;
+
+    background-color:#dddd;
+    font-size:50px;
+    line-height:200px;
+}
+.date{
+    height:400px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    font-size:100px;
+    line-height:400px;
+    text-align:center;
+}
+.reminder{
+    height:100px;
+    background:grey;
+    color:white;
+    font-size:20px;
+    line-height:100px;
+    text-align:center;
+}

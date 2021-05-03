@@ -1,0 +1,16 @@
+##FR
+#NavBar Translation
+- id: "practice"
+  translation: "pratique"
+- id: "documentation"
+  translation: "Documentation"
+- id: "help"
+  translation: "Aide"
+- id: "about"
+  translation: "À propos de"
+- id: "start"
+  translation: "commencer"
+
+
+
+
