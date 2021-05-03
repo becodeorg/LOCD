@@ -80,52 +80,7 @@
     </style>
 
     <style>
-        .dropdown__title{
-            background-color: rgb(233, 233, 233);
-            border:none;
-            font-family: inherit;
-            padding: 1rem 2rem;
-            /* border-radius: .3rem; */
-        }
-
-        .dropdown__menu,.dropdown--lang{
-            list-style: none;
-        }
-
-        .dropdown--lang{
-            position: relative;
-        }
-
-        .dropdown--lang:hover .dropdown__menu,
-        .dropdown--lang:focus-within .dropdown__menu{
-            opacity: 1;
-            transform: rotateX(0) translateX(-50%);
-            visibility: visible;
-        }
-
-        .dropdown__menu{
-            background-color: rgb(233, 233, 233);
-            /* border-radius: 4px; */
-            box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
-            padding: 0.5em 0;
-            width: 100%;
-            position: absolute;         
-            top: calc(100% - 0.25rem);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-
-            transform: rotateX(-90deg) translateX(-50%);
-            transform-origin: top center;
-            opacity: 0.3;
-            transition: 280ms all ease-out;
-        }
-
-        .dropdown__menu a{
-            color: #444 !important; 
-            display: block;
-            padding: 0.5em;
-        }
+        
 
         
     </style>
@@ -145,7 +100,7 @@
 </head>
 <body>
     
-{{ partial "navbar" (dict "lang" .Lang)}}
+{{ partial "navbar" (dict "lang" .Lang "site" .Site "translations" .Translations)}}
 {{$cssFile := ""}}
 {{$htmlFile := ""}}
     
@@ -205,22 +160,8 @@
         
             
                 
-                {{ if .Site.IsMultiLingual }}
-                <li class="dropdown--lang">
-                    {{ range .Site.Languages }}
-                        {{ if eq . $.Site.Language }}
-                        <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown">{{ .LanguageName }}</button>
-                            
-                        {{ end }}
-                    {{ end }}
-                    <ul class="dropdown__menu">
-                        {{ range $.Translations }}
-                        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                    </ul>
-                        {{ end }}
-                   
-                {{ end }}
-                </li>
+              
+                
         
 
          

@@ -8,6 +8,29 @@
         </label>
 
         <ul class="nav__menu">
+            
+                <div class="dropdown--lang">
+                    {{ range .site.Languages }}
+                        {{ if eq . $.site.Language }}
+                        <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown">
+                            <img class="dropdown__img" src="https://www.countryflags.io/{{.Lang}}/flat/64.png">
+                            {{ .LanguageName }}
+                        </button>
+                            
+                        {{ end }}
+                    {{ end }}
+                    <ul class="dropdown__menu">
+                        {{ range $.translations }}
+                        
+                        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">
+                            <img class="dropdown__img" src="https://www.countryflags.io/{{.Lang}}/flat/64.png">
+                            {{ .Language.LanguageName }}</a>
+                        </li>
+                    
+                        {{ end }}
+                    </ul>
+                </div>
+                
             <li>
                 <a href="/{{.lang}}">{{ i18n "practice" }}</a>
             </li>
@@ -18,7 +41,7 @@
                 <a onclick="tutorial()">{{ i18n "help" }}</a>
             </li>
             <li>
-                <a href="/{{.lang}}/about">{{ i18n "about" }}{{.Translations}}</a>
+                <a href="/{{.lang}}/about">{{ i18n "about" }}</a>
             </li>
         </ul>
     </nav>

@@ -1,0 +1,20 @@
+---
+chapters:
+
+# -------Intro-------
+  intro: 
+    order: 1
+    folder : intro
+    subFolders: false
+
+    exercises:
+      - achtergrond-van-het-web
+      - How-does-the-internet-work
+      - the-internet
+
+    subChapters:
+      folder:
+      exercises:
+
+
+  
