@@ -6,7 +6,6 @@ header {
   position: relative;
   z-index: 11;
   box-shadow: 0 -0.4rem 0.9rem 0.2rem darken(#676778,20);
-
 }
 
 .nav {
@@ -17,6 +16,10 @@ header {
   height: var(--nav-height);
   max-height: none;
 
+   @media (max-width: 1000px) {
+    margin: 0 2rem;
+   }
+
   &__logo {
     background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
@@ -26,6 +29,11 @@ header {
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat;
+
+    @media (max-width: 500px) {
+    height: 4.3rem;
+    align-self: center;
+   }
 
     &:hover,
 &:focus,
@@ -45,13 +53,21 @@ header {
     display: flex;
     align-items: center;
     list-style: none;
+    margin-left: auto;
 
-    @media (max-width: 1000px) {
+    & > :not(:first-child){
+      @media (max-width: 1000px) {
       display: none;
     }
+    }
+
+    
 
     & > * {
       margin-left: 40px;
+      @media (max-width: 1000px) {
+        margin: 0;
+      }
     }
     a:hover, a:current{
       text-decoration: underline;
@@ -393,4 +409,8 @@ header {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+
+  @media (max-width: 500px) {
+    width: 25px;
+  }
 }      

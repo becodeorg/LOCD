@@ -46,7 +46,7 @@ body {
   font-family: "Overpass", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
-  line-height: 1.7; }
+  line-height: 1.5; }
 
 nav {
   font-size: 1.4rem; }
@@ -105,6 +105,10 @@ nav {
     transform: translate(-50%, -50%);
     opacity: 0.4; }
 
+.highlight {
+  display: grid;
+  width: 100%; }
+
 pre {
   overflow: auto; }
 
@@ -137,6 +141,9 @@ header {
   margin: 0 6rem;
   height: var(--nav-height);
   max-height: none; }
+  @media (max-width: 1000px) {
+    .nav {
+      margin: 0 2rem; } }
   .nav__logo {
     background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
@@ -145,6 +152,10 @@ header {
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat; }
+    @media (max-width: 500px) {
+      .nav__logo {
+        height: 4.3rem;
+        align-self: center; } }
     .nav__logo:hover, .nav__logo:focus, .nav__logo:active {
       -webkit-animation-name: buzz;
       animation-name: buzz;
@@ -157,12 +168,16 @@ header {
   .nav__menu {
     display: flex;
     align-items: center;
-    list-style: none; }
+    list-style: none;
+    margin-left: auto; }
     @media (max-width: 1000px) {
-      .nav__menu {
+      .nav__menu > :not(:first-child) {
         display: none; } }
     .nav__menu > * {
       margin-left: 40px; }
+      @media (max-width: 1000px) {
+        .nav__menu > * {
+          margin: 0; } }
     .nav__menu a:hover, .nav__menu a:current {
       text-decoration: underline; }
     .nav__menu--hamburger {
@@ -414,6 +429,9 @@ header {
   display: inline-block;
   height: 100%;
   vertical-align: middle; }
+  @media (max-width: 500px) {
+    .dropdown__img {
+      width: 25px; } }
 
 #instructionNavMax {
   display: none; }
@@ -459,6 +477,9 @@ header {
     flex: 1;
     height: 0;
     position: relative; }
+    @media (max-width: 500px) {
+      .instructions__info {
+        padding: 3.2rem 12px; } }
   .instructions__image {
     display: flex;
     justify-content: center; }

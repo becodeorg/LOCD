@@ -54,6 +54,9 @@
     flex: 1;
     height: 0;
     position: relative;
+    @media (max-width: 500px){
+      padding: 3.2rem 12px;
+    }
   }
 
   &__image {
