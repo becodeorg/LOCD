@@ -40,5 +40,5 @@ Translate the html page into semantic html, using the right html tags : `h1`, `h
 
 Well done! You just completed the first chapter! But you probably noticed that we still have not made something appealing for the eye.
 We will cover that on our next chapter: **CSS**.
-
+{{< image imageid="./gordenReady.gif" alt="first browser" >}}
 ![](./gordenReady.gif)

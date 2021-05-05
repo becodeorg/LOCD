@@ -127,6 +127,11 @@ pre {
 section {
   padding: 0.1px; }
 
+.responsive__image {
+  max-width: 900px;
+  width: 100%;
+  height: auto; }
+
 header {
   background-color: #235060;
   background-color: #dedede;
