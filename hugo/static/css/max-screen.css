@@ -4,8 +4,7 @@
 .instructions {
   height: calc(100vh - var(--nav-height) - 8rem); }
   .instructions__info {
-    max-width: 1200px;
-    margin: auto; }
+    max-width: 1000px; }
   .instructions__nav--max {
     width: 100%;
     position: absolute;
@@ -14,7 +13,7 @@
     z-index: 1; }
 
 .nav__wrapper {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
   width: 100%; }
 
@@ -26,15 +25,17 @@ main {
   position: relative; }
 
 .viewport {
-grid-template-columns: minmax(100%, var(--sidebar-large-w)) 100%;
+  grid-template-columns: minmax(100%, var(--sidebar-large-w)) 100%;
   grid-auto-rows: 100%;
   transform: translateX(0%);
   transition: transform 0.6s ease-in-out; }
 
-.editor, .instructions {
+.editor,
+.instructions {
   transform: translateX(0%);
   transition: transform 0.6s ease-in-out; }
-  .editor--max, .instructions--max {
+  .editor--max,
+  .instructions--max {
     transform: translateX(-100%); }
 
 .min {

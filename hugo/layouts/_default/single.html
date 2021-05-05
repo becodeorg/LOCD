@@ -182,7 +182,8 @@
                 
                
 				<!--START INSERT DATA-->
-				{{.Content}}
+                {{ replace .Content "disabled" ""| safeHTML }}
+				<!-- {{.Content}} -->
                 <!--END iNSERT DATA-->
 
 

@@ -58,8 +58,12 @@
       padding: 3.2rem 12px;
     }
 
-    ul{
+    ul,ol{
       margin-left: 2rem;
+    }
+
+    li{
+      margin-bottom: 2rem;
     }
   }
 
@@ -75,11 +79,12 @@
   }
 
   h1{
+    font-size: 2.6rem;
     line-height:1;
     margin-bottom:2rem;
   }
   h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 400;
 
     margin: 4rem 0 2rem 0;
@@ -88,6 +93,13 @@
     &:first-child {
       margin: 1rem 0 4rem 0;
     }
+  }
+
+  h3{
+    font-size: 2rem;
+    font-weight: 400;
+
+    margin: 4rem 0 2rem 0;
   }
 
   p {

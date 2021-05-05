@@ -110,8 +110,7 @@ nav {
   width: 100%; }
 
 pre {
-  white-space: pre-wrap;
-  word-wrap: break-word; }
+  overflow: auto; }
 
 .introjs-tooltiptext {
   font-size: 1.5rem; }
@@ -130,7 +129,9 @@ section {
 .responsive__image {
   max-width: 500px;
   width: 100%;
-  height: auto; }
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem; }
 
 header {
   background-color: #235060;
@@ -486,8 +487,10 @@ header {
     @media (max-width: 500px) {
       .instructions__info {
         padding: 3.2rem 12px; } }
-    .instructions__info ul {
+    .instructions__info ul, .instructions__info ol {
       margin-left: 2rem; }
+    .instructions__info li {
+      margin-bottom: 2rem; }
   .instructions__image {
     display: flex;
     justify-content: center; }
@@ -496,15 +499,20 @@ header {
       max-width: 400px;
       margin-bottom: 2rem; }
   .instructions h1 {
+    font-size: 2.6rem;
     line-height: 1;
     margin-bottom: 2rem; }
   .instructions h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 400;
     margin: 4rem 0 2rem 0;
     line-height: 1; }
     .instructions h2:first-child {
       margin: 1rem 0 4rem 0; }
+  .instructions h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 4rem 0 2rem 0; }
   .instructions p {
     margin-bottom: 2rem; }
 
@@ -735,9 +743,6 @@ figure {
   margin: auto;
   margin-top: 3.5rem;
   margin-bottom: 3rem; }
-
-.responsive__image {
-  width: 100%; }
 
 .button__default {
   background-color: #63c3d1;

@@ -38,8 +38,9 @@
 }
 
 pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  // white-space: pre-wrap;
+  // word-wrap: break-word;
+  overflow: auto;
 }
 
 .introjs-tooltiptext{
@@ -63,4 +64,6 @@ section{
   max-width: 500px;
   width: 100%;
   height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
 }
