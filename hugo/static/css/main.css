@@ -486,6 +486,8 @@ header {
     @media (max-width: 500px) {
       .instructions__info {
         padding: 3.2rem 12px; } }
+    .instructions__info ul {
+      margin-left: 2rem; }
   .instructions__image {
     display: flex;
     justify-content: center; }
