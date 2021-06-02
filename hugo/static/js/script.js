@@ -137,7 +137,12 @@ let init = () => {
   setDropdown();
   setupArrowNav();
   setupBurger();
-  viewportNavigation();
+
+  if(resizeButtons()){
+    viewportNavigation();
+  }
+  
 };
+
 
 init();
