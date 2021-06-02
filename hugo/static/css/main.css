@@ -633,6 +633,9 @@ header {
   .editor__input, .editor__output {
     height: 50%; }
 
+.html-editor {
+  z-index: 50; }
+
 .input__tab,
 .output__tab {
   background-color: #f3f3f3;
@@ -683,6 +686,12 @@ header {
 iframe {
   height: 100%;
   width: 100%; }
+
+#textareacontainer {
+  position: absolute; }
+
+.input__container {
+  position: relative; }
 
 #iframewrapper {
   position: relative; }

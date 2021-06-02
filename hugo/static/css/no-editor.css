@@ -1,0 +1,14 @@
+.viewport {
+  grid-template-columns: minmax(100%, 0%) 66.667%; }
+
+.instructions__info {
+  max-width: 1000px;
+  margin: auto; }
+
+#instructionNavMax {
+  display: block; }
+
+.nav__wrapper {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%; }

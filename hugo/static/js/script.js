@@ -124,6 +124,14 @@ let setupBurger = () => {
   });
 };
 
+let stylesheet = document.getElementById("maxViewer");
+
+stylesheet.disabled = true;
+
+if(sessionStorage.getItem('maxScreen') == "true"){
+    stylesheet.disabled = false;
+}
+
 let init = () => {
   resizeButtons();
   setDropdown();
