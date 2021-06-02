@@ -1,0 +1,1585 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.w3schools.com/css/css_grid.asp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Mar 2021 13:04:37 GMT -->
+<head>
+<title>CSS Grid Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Python,Java,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,exercises,source code,colors,demos,tips">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.">
+<link rel="icon" href="https://www.w3schools.com/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3schools23.css">
+<link href='https://fonts.googleapis.com/css?family=Source%20Code%20Pro' rel='stylesheet'>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'GTM-WJ88MZ5');
+ga('send', 'pageview');
+</script>
+
+<script type='text/javascript'>
+var k42 = false;
+var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+
+k42 = true;
+googletag.cmd.push(function() { googletag.pubads().setTargeting("page_section",(function () {
+    var folder = location.pathname;
+    folder = folder.replace("https://www.w3schools.com/", "");
+    folder = folder.substr(0, folder.indexOf("https://www.w3schools.com/"));
+    return folder;
+  })());
+});  
+(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+
+var snhb = snhb || {}; snhb.queue = snhb.queue || [];
+snhb.options = {
+               logOutputEnabled : false,
+               debugOutputEnabled: false,
+               PBJSDebugOutputEnabled: false,
+               auctionResultOutputEnabled: false,
+               allOutputEnabled: false,
+               autoStartAuction: false,
+               };
+
+</script>
+<script src="http://cdn.snigelweb.com/sncmp/latest/sncmp_stub.min.js"></script>
+<style>
+#snigel-cmp-framework .sn-b-def.sn-blue {color: #ffffff!important;background-color: #4CAF50!important;border-color: #4CAF50!important;}
+#snigel-cmp-framework .sn-b-def { border-color: #4CAF50!important;color: #4CAF50!important;}
+#snigel-cmp-framework .sn-selector ul li { color: #4CAF50!important}
+#snigel-cmp-framework .sn-selector ul li:after { background-color: #4CAF50!important; }
+#snigel-cmp-framework .sn-footer-tab .sn-privacy a {color:#4CAF50!important;}
+#snigel-cmp-framework .sn-arrow:after, #snigel-cmp-framework .sn-arrow:before { background-color: #4CAF50!important; }
+#snigel-cmp-framework .sn-switch input:checked+span::before { background-color: #4CAF50!important; }
+#adconsent-usp-link {border: 1px solid #4CAF50!important;color: #4CAF50!important;}
+#adconsent-usp-banner-optout input:checked+.adconsent-usp-slider {background-color:#4CAF50!important;}
+#adconsent-usp-banner-btn {color:#ffffff;border: solid 1px #4CAF50!important;background-color: #4CAF50!important;}
+</style>
+<script type="text/javascript">
+__cmp("setLogo", "https://www.w3schools.com/images/img_logo_small.png");
+__cmp("setPrivacyPolicy", "https://www.w3schools.com/about/about_privacy.asp");
+</script>
+<script async type="text/javascript" src="http://cdn.snigelweb.com/pub/w3schools.com/snhb-loader.min.js"></script>
+<script>
+  snhb.queue.push(function(){
+
+    snhb.startAuction(["main_leaderboard", "wide_skyscraper", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
+
+  });
+</script>
+<script src="https://www.w3schools.com/lib/my-learning.js?v=1.0.2"></script>
+<script type='text/javascript'>
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+<link rel="stylesheet" type="text/css" href="https://www.w3schools.com/browserref.css">
+<style>
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  text-align: center;
+}
+.grid-container2 {
+  display: grid;
+  background-color: #2196F3;
+  padding: 10px;
+  text-align: center;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.grid-item2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.item1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+.item2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+.item3 {
+  grid-row: 1;
+  grid-column: 3;
+}
+.item4 {
+  grid-row: 2;
+  grid-column: 1;
+}
+.item5 {
+  grid-row: 2;
+  grid-column: 2;
+}
+.item6 {
+  grid-row: 2;
+  grid-column: 3;
+}
+.item7 {
+  grid-row: 3;
+  grid-column: 1 / span 3;
+}
+
+.anchor-container {
+  position:relative;
+}
+.anchor-container a {
+  position:absolute;
+  top:-100px;
+}
+</style>
+</head>
+
+<body>
+<div class='w3-container top'>
+  <a class='w3schools-logo notranslate' href='http://www.w3schools.com/'>w3schools<span class='dotcom'>.com</span></a>
+
+<!--  <a href='//www.w3schools.com' class='fa fa-logo xw3-text-green' style="font-size:50px;margin-top:-30px" title='Home'></a> -->
+  <div id="loginactioncontainer" class='w3-right'>
+    <div id="mypagediv"></div>
+<!--    <button id="w3loginbtn" style="display:none;border:none;cursor:pointer" class="login w3-right" onclick='w3_open_nav("login")'>LOG IN</button>-->
+    <button id="w3loginbtn" style="display:none;border:none;cursor:pointer" class="login w3-right" onclick='window.open("https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com%2F")'>LOG IN</button>
+  </div>
+
+  <div id="theworldsgreatest" class='w3-right w3-hide-small w3-wide toptext' style="font-family:'Segoe UI',Arial,sans-serif">
+    THE WORLD'S LARGEST WEB DEVELOPER SITE
+  </div>
+
+</div>
+
+<div style='display:none;position:absolute;z-index:4;right:52px;height:44px;background-color:#5f5f5f;letter-spacing:normal;' id='googleSearch'>
+  <div class='gcse-search'></div>
+</div>
+<div style='display:none;position:absolute;z-index:3;right:111px;height:44px;background-color:#5f5f5f;text-align:right;padding-top:9px;' id='google_translate_element'></div>
+
+<div class='w3-card-2 topnav notranslate' id='topnav'>
+  <div style="overflow:auto;">
+    <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+      <a href='javascript:void(0);' class='topnav-icons fa fa-menu w3-hide-large w3-left w3-bar-item w3-button' onclick='open_menu()' title='Menu'></a>
+      <a href='https://www.w3schools.com/default.asp' class='topnav-icons fa fa-home w3-left w3-bar-item w3-button' title='Home'></a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/html/default.asp' title='HTML Tutorial'>HTML</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/css/default.asp' title='CSS Tutorial'>CSS</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/js/default.asp' title='JavaScript Tutorial'>JAVASCRIPT</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/sql/default.asp' title='SQL Tutorial'>SQL</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/default.asp' title='Python Tutorial'>PYTHON</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/php/default.asp' title='PHP Tutorial'>PHP</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap/bootstrap_ver.asp' title='Bootstrap Tutorial'>BOOTSTRAP</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/howto/default.asp' title='How To'>HOW TO</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/w3css/default.asp' title='W3.CSS Tutorial'>W3.CSS</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jquery/default.asp' title='jQuery Tutorial'>JQUERY</a>
+      <a class="w3-bar-item w3-button" href='https://www.w3schools.com/java/default.asp' title='Java Tutorial'>JAVA</a>
+      <a class="w3-bar-item w3-button" id='topnavbtn_tutorials' href='javascript:void(0);' onclick='w3_open_nav("tutorials")' title='Tutorials'>MORE <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+      <a href='javascript:void(0);' class='topnav-icons fa w3-right w3-bar-item w3-button' onclick='open_search(this)' title='Search W3Schools'>&#xe802;</a>
+      <a href='javascript:void(0);' class='topnav-icons fa w3-right w3-bar-item w3-button' onclick='open_translate(this)' title='Translate W3Schools'>&#xe801;</a>
+      <a href='javascript:void(0);' class='topnav-icons fa w3-right w3-bar-item w3-button' onclick='changecodetheme(this)' title='Toggle Dark Code'>&#xe80b;</a>
+      <a class="w3-bar-item w3-button w3-right" target="_blank" href='https://shop.w3schools.com/'>SHOP</a>
+
+      <a class="w3-bar-item w3-button w3-right" href='https://courses.w3schools.com/' target='blank' title='Courses' onclick="ga('send', 'event', 'Courses' , 'Clicked on courses in top navigation');">COURSES</a>
+
+      <!--
+      <a class="w3-bar-item w3-button w3-right" id='topnavbtn_exercises' href='javascript:void(0);' onclick='w3_open_nav("exercises")' title='Exercises'>EXERCISES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+      -->
+      
+      <a class="w3-bar-item w3-button w3-right" id='topnavbtn_references' href='javascript:void(0);' onclick='w3_open_nav("references")' title='References'>REFERENCES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+      <a class="w3-bar-item w3-button w3-right w3-hide-medium" id='topnavbtn_exercises' href='javascript:void(0);' onclick='w3_open_nav("exercises")' title='Exercises'>EXERCISES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a>
+    </div>
+    <div id='nav_tutorials' class='w3-bar-block w3-card-2' style="display:none;">
+      <span onclick='w3_close_nav("tutorials")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col l3 m6'>
+          <h3>HTML and CSS</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/html/default.asp'>Learn HTML</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/css/default.asp'>Learn CSS</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap/bootstrap_ver.asp'>Learn Bootstrap</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/w3css/default.asp'>Learn W3.CSS</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/colors/default.asp'>Learn Colors</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/icons/default.asp'>Learn Icons</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/graphics/default.asp'>Learn Graphics</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/graphics/svg_intro.asp'>Learn SVG</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/graphics/canvas_intro.asp'>Learn Canvas</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/howto/default.asp'>Learn How To</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/sass/default.php'>Learn Sass</a>          
+          <div class="w3-hide-large w3-hide-small">
+          <h3>Artificial Intelligence</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/ai/default.asp">Learn AI</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/python_ml_getting_started.asp'>Learn Machine Learning</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/datascience/default.asp'>Learn Data Science</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/pandas/default.asp'>Learn Pandas</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/numpy/default.asp'>Learn NumPy</a>          
+            <h3>XML</h3>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/default.asp'>Learn XML</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/ajax_intro.asp'>Learn XML AJAX</a>
+            <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/dom_intro.asp">Learn XML DOM</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xml_dtd_intro.asp'>Learn XML DTD</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/schema_intro.asp'>Learn XML Schema</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xsl_intro.asp'>Learn XSLT</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xpath_intro.asp'>Learn XPath</a>
+            <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xquery_intro.asp'>Learn XQuery</a>
+          </div>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/js/default.asp'>Learn JavaScript</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jquery/default.asp'>Learn jQuery</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/react/default.asp'>Learn React</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/angular/default.asp'>Learn AngularJS</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_json_intro.asp">Learn JSON</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/js/js_ajax_intro.asp'>Learn AJAX</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/appml/default.asp">Learn AppML</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3js/default.asp">Learn W3.JS</a>
+          <h3>Programming</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/default.asp'>Learn Python</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/java/default.asp'>Learn Java</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cpp/default.asp'>Learn C++</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cs/default.asp'>Learn C#</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/r/default.asp'>Learn R</a>
+          <div class="w3-hide-small"><br class="w3-hide-medium w3_hide-small"><br class="w3-hide-medium w3_hide-small"></div>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/sql/default.asp'>Learn SQL</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/php/default.asp'>Learn PHP</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/asp/default.asp'>Learn ASP</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/nodejs/default.asp'>Learn Node.js</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/nodejs/nodejs_raspberrypi.asp'>Learn Raspberry Pi</a>          
+          <h3>Web Building</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/w3css_templates.asp">Web Templates</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/browsers/default.asp'>Web Statistics</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cert/default.asp'>Web Certificates</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tryit/default.asp'>Web Editor</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/whatis/default.asp">Web Development</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/typingspeed/default.asp">Test Your Typing Speed</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/codegame/index.html" target="_blank">Play a Code Game</a>
+        </div>
+        <div class='w3-col l3 m6 w3-hide-medium'>
+          <h3>Artificial Intelligence</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/ai/default.asp">Learn AI</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/python_ml_getting_started.asp'>Learn Machine Learning</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/datascience/default.asp'>Learn Data Science</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/pandas/default.asp'>Learn Pandas</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/numpy/default.asp'>Learn NumPy</a>          
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/default.asp'>Learn XML</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/ajax_intro.asp'>Learn XML AJAX</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/dom_intro.asp">Learn XML DOM</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xml_dtd_intro.asp'>Learn XML DTD</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/schema_intro.asp'>Learn XML Schema</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xsl_intro.asp'>Learn XSLT</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xpath_intro.asp'>Learn XPath</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xquery_intro.asp'>Learn XQuery</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_references' class='w3-bar-block w3-card-2'>
+      <span onclick='w3_close_nav("references")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col l3 m6'>
+          <h3>HTML</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tags/default.asp'>HTML Tag Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tags/ref_html_browsersupport.asp'>HTML Browser Support</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tags/ref_eventattributes.asp'>HTML Event Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/colors/default.asp'>HTML Color Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tags/ref_attributes.asp'>HTML Attribute Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/tags/ref_canvas.asp'>HTML Canvas Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/graphics/svg_reference.asp'>HTML SVG Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/default.asp'>HTML Character Sets</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/graphics/google_maps_reference.asp'>Google Maps Reference</a>
+          <h3>CSS</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cssref/default.asp'>CSS Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cssref/css3_browsersupport.asp'>CSS Browser Support</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cssref/css_selectors.asp'>CSS Selector Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp'>Bootstrap 3 Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp'>Bootstrap 4 Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/w3css/w3css_references.asp'>W3.CSS Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/icons/icons_reference.asp'>Icon Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/sass/sass_functions_string.php'>Sass Reference</a>
+       </div>
+        <div class='w3-col l3 m6'>
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jsref/default.asp'>JavaScript Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jsref/default.asp'>HTML DOM Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jquery/jquery_ref_overview.asp'>jQuery Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/angular/angular_ref_directives.asp'>AngularJS Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/appml/appml_reference.asp">AppML Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3js/w3js_references.asp">W3.JS Reference</a>
+          <h3>Programming</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/python_reference.asp'>Python Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/java/java_ref_keywords.asp'>Java Reference</a>
+        </div>
+        <div class='w3-col l3 m6'>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/sql/sql_ref_keywords.asp'>SQL Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/php/php_ref_overview.asp'>PHP Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/asp/asp_ref_response.asp'>ASP Reference</a>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/dom_nodetype.asp'>XML Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/dom_http.asp'>XML Http Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xsl_elementref.asp'>XSLT Reference</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/schema_elements_ref.asp'>XML Schema Reference</a>
+        </div>
+        <div class='w3-col l3 m6 w3-hide-medium w3-hide-small'>
+          <h3>Character Sets</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/default.asp'>HTML Character Sets</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_ascii.asp'>HTML ASCII</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_ansi.asp'>HTML ANSI</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_ansi.asp'>HTML Windows-1252</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_8859.asp'>HTML ISO-8859-1</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_symbols.asp'>HTML Symbols</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/charsets/ref_html_utf8.asp'>HTML UTF-8</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id='nav_exercises' class='w3-bar-block w3-card-2'>
+      <span onclick='w3_close_nav("exercises")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class='w3-row-padding' style="padding:24px 48px">
+        <div class='w3-col l4 m6'>
+          <h3>Exercises</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/html/html_exercises.asp">HTML Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/css/css_exercises.asp">CSS Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_exercises.asp">JavaScript Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/sql/sql_exercises.asp">SQL Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/php/php_exercises.asp">PHP Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/python/python_exercises.asp">Python Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jquery/jquery_exercises.asp">jQuery Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/bootstrap/bootstrap_exercises.asp">Bootstrap Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/bootstrap4/bootstrap_exercises.asp">Bootstrap 4 Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/java/java_exercises.asp">Java Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cpp/cpp_exercises.asp">C++ Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cs/cs_exercises.asp">C# Exercises</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/r/r_exercises.asp">R Exercises</a>
+        </div>
+        <div class='w3-col l4 m6'>
+          <h3>Quizzes</h3>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/html/html_quiz.asp' target='_top'>HTML Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/css/css_quiz.asp' target='_top'>CSS Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/js/js_quiz.asp' target='_top'>JavaScript Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/sql/sql_quiz.asp" target="_top">SQL Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/php/php_quiz.asp' target='_top'>PHP Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/python/python_quiz.asp' target='_top'>Python Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/jquery/jquery_quiz.asp' target='_top'>jQuery Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap/bootstrap_quiz.asp' target='_top'>Bootstrap Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/bootstrap4/bootstrap_quiz.asp' target='_top'>Bootstrap 4 Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/java/java_quiz.asp' target='_top'>Java Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cpp/cpp_quiz.asp' target='_top'>C++ Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/cs/cs_quiz.asp' target='_top'>C# Quiz</a>
+          <a class="w3-bar-item w3-button" href='https://www.w3schools.com/xml/xml_quiz.asp' target='_top'>XML Quiz</a>
+        </div>
+        <div class='w3-col l4 m12'>
+         <h3><a style="padding-left:0!important;text-decoration:none;" href="https://www.w3schools.com/cert/default.asp">Certificates</a></h3>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_html_new.asp" target="_top">HTML Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_css.asp" target="_top">CSS Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_javascript.asp" target="_top">JavaScript Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_frontend.asp" target="_top">Front End Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_sql.asp" target="_top">SQL Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_php.asp" target="_top">PHP Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_python.asp" target="_top">Python Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_java.asp" target="_top">Java Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_jquery.asp" target="_top">jQuery Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_bootstrap.asp" target="_top">Bootstrap Certificate</a>
+         <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/cert_xml.asp" target="_top">XML Certificate</a>
+        </div>
+      </div>
+      <br>
+    </div>
+
+
+
+    <div id='nav_login' class='w3-bar-block w3-card-2' style="display:none">
+      <span onclick='w3_close_nav("login")' class='w3-button w3-xlarge w3-right' style="position:absolute;right:0;font-weight:bold;">&times;</span>
+      <div class="loginmodaldiv" style="padding:48px 16px 1px 16px;text-align:center;">
+        <h2>LOG IN</h2>
+        <div style="font-size:15px"><a href="https://mypage.w3schools.com/mypage/index.php">Why Log In?</a></div>
+        <div class="loginmodalform">
+          <form id="loginform" name="loginform" autocomplete="off" method="post">
+            <div><label>Username</label></div>
+            <div><input type="email" name="n" placeholder="Enter your e-mail address" onfocus="login_inputGetsFocus(this)"></div>
+            <br>
+            <div><label>Password</label></div>
+            <div><input type="password" name="p" placeholder="Enter Your Password" onfocus="login_inputGetsFocus(this)"></div>
+            <br>
+            <div id="loginerrordiv" style="display:none" class="w3-text-red"></div>
+            <div class="login_submit_container"><button id="login_submit_button" type="submit" onclick="login_user(event)">LOG IN</button></div>
+            <div style="overflow:auto;margin-top:10px;font-size:15px;">
+            <div class="login_newusertext">New User? <a href="https://mypage.w3schools.com/mypage/login.php?logintyp=1" target="_blank">Sign Up For Free!</a></div>
+            <div class="login_forgotpasswordtext"><a href="https://mypage.w3schools.com/mypage/forgot_password.php">Forgot password?</a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <br>
+    </div>
+
+
+  </div>
+</div>
+
+<script>
+
+</script>
+
+
+<div class='w3-sidebar w3-collapse' id='sidenav'>
+  <div id='leftmenuinner'>
+    <div class='w3-light-grey' id='leftmenuinnerinner'>
+<!--  <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>-->
+<h2 class="left"><span class="left_h2">CSS</span> Tutorial</h2>
+<a target="_top" href="https://www.w3schools.com/css/default.asp">CSS HOME</a>
+<a target="_top" href="https://www.w3schools.com/css/css_intro.asp">CSS Introduction</a>
+<a target="_top" href="https://www.w3schools.com/css/css_syntax.asp">CSS Syntax</a>
+<a target="_top" href="https://www.w3schools.com/css/css_selectors.asp">CSS Selectors</a>
+<a target="_top" href="https://www.w3schools.com/css/css_howto.asp">CSS How To</a>
+<a target="_top" href="https://www.w3schools.com/css/css_comments.asp">CSS Comments</a>
+<a target="_top" href="https://www.w3schools.com/css/css_colors.asp">CSS Colors</a>
+<div class="tut_overview">
+  <a target="_top" href="https://www.w3schools.com/css/css_colors.asp">Colors</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_colors_rgb.asp">RGB</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_colors_hex.asp">HEX</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_colors_hsl.asp">HSL</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_background.asp">CSS Backgrounds</a>
+<div class="tut_overview">
+  <a target="_top" href="https://www.w3schools.com/css/css_background.asp">Background Color</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_background_image.asp">Background Image</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_background_repeat.asp">Background Repeat</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_background_attachment.asp">Background Attachment</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_background_shorthand.asp">Background Shorthand</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_border.asp">CSS Borders</a>
+<div class="tut_overview">
+  <a target="_top" href="https://www.w3schools.com/css/css_border.asp">Borders</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_border_width.asp">Border Width</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_border_color.asp">Border Color</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_border_sides.asp">Border Sides</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_border_shorthand.asp">Border Shorthand</a>
+  <a target="_top" href="https://www.w3schools.com/css/css_border_rounded.asp">Rounded Borders</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_margin.asp">CSS Margins</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_margin.asp">Margins</a>
+<a target="_top" href="https://www.w3schools.com/css/css_margin_collapse.asp">Margin Collapse</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_padding.asp">CSS Padding</a>
+<a target="_top" href="https://www.w3schools.com/css/css_dimension.asp">CSS Height/Width</a>
+<a target="_top" href="https://www.w3schools.com/css/css_boxmodel.asp">CSS Box Model</a>
+<a target="_top" href="https://www.w3schools.com/css/css_outline.asp">CSS Outline</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_outline.asp">Outline</a>
+<a target="_top" href="https://www.w3schools.com/css/css_outline_width.asp">Outline Width</a>
+<a target="_top" href="https://www.w3schools.com/css/css_outline_color.asp">Outline Color</a>
+<a target="_top" href="https://www.w3schools.com/css/css_outline_shorthand.asp">Outline Shorthand</a>
+<a target="_top" href="https://www.w3schools.com/css/css_outline_offset.asp">Outline Offset</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_text.asp">CSS Text</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_text.asp">Text Color</a>
+<a target="_top" href="https://www.w3schools.com/css/css_text_align.asp">Text Alignment</a>
+<a target="_top" href="https://www.w3schools.com/css/css_text_decoration.asp">Text Decoration</a>
+<a target="_top" href="https://www.w3schools.com/css/css_text_transformation.asp">Text Transformation</a>
+<a target="_top" href="https://www.w3schools.com/css/css_text_spacing.asp">Text Spacing</a>
+<a target="_top" href="https://www.w3schools.com/css/css_text_shadow.asp">Text Shadow</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_font.asp">CSS Fonts</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_font.asp">Font Family</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_websafe.asp">Font Web Safe</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_fallbacks.asp">Font Fallbacks</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_style.asp">Font Style</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_size.asp">Font Size</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_google.asp">Font Google</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_pairings.asp">Font Pairings</a>
+<a target="_top" href="https://www.w3schools.com/css/css_font_shorthand.asp">Font Shorthand</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_icons.asp">CSS Icons</a>
+<a target="_top" href="https://www.w3schools.com/css/css_link.asp">CSS Links</a>
+<a target="_top" href="https://www.w3schools.com/css/css_list.asp">CSS Lists</a>
+<a target="_top" href="https://www.w3schools.com/css/css_table.asp">CSS Tables</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_table.asp">Table Borders</a>
+<a target="_top" href="https://www.w3schools.com/css/css_table_size.asp">Table Size</a>
+<a target="_top" href="https://www.w3schools.com/css/css_table_align.asp">Table Alignment</a>
+<a target="_top" href="https://www.w3schools.com/css/css_table_style.asp">Table Style</a>
+<a target="_top" href="https://www.w3schools.com/css/css_table_responsive.asp">Table Responsive</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_display_visibility.asp">CSS Display</a>
+<a target="_top" href="https://www.w3schools.com/css/css_max-width.asp">CSS Max-width</a>
+<a target="_top" href="https://www.w3schools.com/css/css_positioning.asp">CSS Position</a>
+<a target="_top" href="https://www.w3schools.com/css/css_overflow.asp">CSS Overflow</a>
+<a target="_top" href="https://www.w3schools.com/css/css_float.asp">CSS Float</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_float.asp">Float</a>
+<a target="_top" href="https://www.w3schools.com/css/css_float_clear.asp">Clear</a>
+<a target="_top" href="https://www.w3schools.com/css/css_float_examples.asp">Float Examples</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_inline-block.asp">CSS Inline-block</a>
+<a target="_top" href="https://www.w3schools.com/css/css_align.asp">CSS Align</a>
+<a target="_top" href="https://www.w3schools.com/css/css_combinators.asp">CSS Combinators</a>
+<a target="_top" href="https://www.w3schools.com/css/css_pseudo_classes.asp">CSS Pseudo-class</a>
+<a target="_top" href="https://www.w3schools.com/css/css_pseudo_elements.asp">CSS Pseudo-element</a>
+<a target="_top" href="https://www.w3schools.com/css/css_image_transparency.asp">CSS Opacity</a>
+<a target="_top" href="https://www.w3schools.com/css/css_navbar.asp">CSS Navigation Bar</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css_navbar.asp">Navbar</a>
+<a target="_top" href="https://www.w3schools.com/css/css_navbar_vertical.asp">Vertical Navbar</a>
+<a target="_top" href="https://www.w3schools.com/css/css_navbar_horizontal.asp">Horizontal Navbar</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css_dropdowns.asp">CSS Dropdowns</a>
+<a target="_top" href="https://www.w3schools.com/css/css_image_gallery.asp">CSS Image Gallery</a>
+<a target="_top" href="https://www.w3schools.com/css/css_image_sprites.asp">CSS Image Sprites</a>
+<a target="_top" href="https://www.w3schools.com/css/css_attribute_selectors.asp">CSS Attr Selectors</a>
+<a target="_top" href="https://www.w3schools.com/css/css_form.asp">CSS Forms</a>
+<a target="_top" href="https://www.w3schools.com/css/css_counters.asp">CSS Counters</a>
+<a target="_top" href="https://www.w3schools.com/css/css_website_layout.asp">CSS Website Layout</a>
+<a target="_top" href="https://www.w3schools.com/css/css_units.asp">CSS Units</a>
+<a target="_top" href="https://www.w3schools.com/css/css_specificity.asp">CSS Specificity</a>
+<a target="_top" href="https://www.w3schools.com/css/css_important.asp">CSS !important</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS Advanced</span></h2>
+<a target="_top" href="https://www.w3schools.com/css/css3_borders.asp">CSS Rounded Corners</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_border_images.asp">CSS Border Images</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_backgrounds.asp">CSS Backgrounds</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_colors.asp">CSS Colors</a>
+<a target="_top" href="https://www.w3schools.com/css/css_colors_keywords.asp">CSS Color Keywords</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_gradients.asp">CSS Gradients</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css3_gradients.asp">Linear Gradients</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_gradients_radial.asp">Radial Gradients</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css3_shadows.asp">CSS Shadows</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css3_shadows.asp">Shadow Effects</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_shadows_box.asp">Box Shadow</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css3_text_effects.asp">CSS Text Effects</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_fonts.asp">CSS Web Fonts</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_2dtransforms.asp">CSS 2D Transforms</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_3dtransforms.asp">CSS 3D Transforms</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_transitions.asp">CSS Transitions</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_animations.asp">CSS Animations</a>
+<a target="_top" href="https://www.w3schools.com/css/css_tooltip.asp">CSS Tooltips</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_images.asp">CSS Style Images</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_image_reflection.asp">CSS Image Reflection</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_object-fit.asp">CSS object-fit</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_object-position.asp">CSS object-position</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_buttons.asp">CSS Buttons</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_pagination.asp">CSS Pagination</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_multiple_columns.asp">CSS Multiple Columns</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_user_interface.asp">CSS User Interface</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_variables.asp">CSS Variables</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css3_variables.asp">The var() Function</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_variables_overriding.asp">Overriding Variables</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_variables_javascript.asp">Variables and JavaScript</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_variables_mediaqueries.asp">Variables in Media Queries</a>
+</div>
+<a target="_top" href="https://www.w3schools.com/css/css3_box-sizing.asp">CSS Box Sizing</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_mediaqueries.asp">CSS Media Queries</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp">CSS MQ Examples</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_flexbox.asp">CSS Flexbox</a>
+<div class="tut_overview">
+<a target="_top" href="https://www.w3schools.com/css/css3_flexbox.asp">CSS Flexbox</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_flexbox_container.asp">CSS Flex Container</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_flexbox_items.asp">CSS Flex Items</a>
+<a target="_top" href="https://www.w3schools.com/css/css3_flexbox_responsive.asp">CSS Flex Responsive</a>
+</div>
+
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> Responsive</h2>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_intro.asp">RWD Intro</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_viewport.asp">RWD Viewport</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_grid.asp">RWD Grid View</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">RWD Media Queries</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_images.asp">RWD Images</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_videos.asp">RWD Videos</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_frameworks.asp">RWD Frameworks</a>
+<a target="_top" href="https://www.w3schools.com/css/css_rwd_templates.asp">RWD Templates</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> Grid</h2>
+<a target="_top" href="https://www.w3schools.com/css/css_grid.asp">Grid Intro</a>
+<a target="_top" href="https://www.w3schools.com/css/css_grid_container.asp">Grid Container</a>
+<a target="_top" href="https://www.w3schools.com/css/css_grid_item.asp">Grid Item</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> Examples</h2>
+<a target="_top" href="https://www.w3schools.com/css/css_templates.asp">CSS Templates</a>
+<a target="_top" href="https://www.w3schools.com/css/css_examples.asp">CSS Examples</a>
+<a target="_top" href="https://www.w3schools.com/css/css_quiz.asp">CSS Quiz</a>
+<a target="_top" href="https://www.w3schools.com/css/css_exercises.asp">CSS Exercises</a>
+<a target="_top" href="https://www.w3schools.com/css/css_exam.asp">CSS Certificate</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> References</h2>
+<a target="_top" href="https://www.w3schools.com/cssref/default.asp">CSS Reference</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_functions.asp">CSS Functions</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_ref_aural.asp">CSS Reference Aural</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">CSS Web Safe Fonts</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_animatable.asp">CSS Animatable</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_units.asp">CSS Units</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_pxtoemconversion.asp">CSS PX-EM Converter</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_colors.asp">CSS Colors</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_colors_legal.asp">CSS Color Values</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css_default_values.asp">CSS Default Values</a>
+<a target="_top" href="https://www.w3schools.com/cssref/css3_browsersupport.asp">CSS Browser Support</a>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class='w3-main w3-light-grey' id='belowtopnav' style='margin-left:220px;'>
+  <div class='w3-row w3-white'>
+    <div class='w3-col l10 m12' id='main'>
+      <div id='mainLeaderboard' style='overflow:hidden;'>
+        <!-- MainLeaderboard-->
+
+        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+        <div id="snhb-main_leaderboard-0"></div>
+        <!-- adspace leaderboard -->
+       
+      </div>
+<h1>CSS <span class="color_h1">Grid Layout Module</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="https://www.w3schools.com/css/css_rwd_templates.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="https://www.w3schools.com/css/css_grid_container.asp">Next &#10095;</a>
+</div>
+<hr>
+<div class="grid-container" style="grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';">
+  <div class="grid-item" style="grid-area: header"><h3>Header</h3></div>
+  <div class="grid-item" style="grid-area: menu"><h3>Menu</h3></div>
+  <div class="grid-item" style="grid-area: main"><h3>Main</h3></div>
+  <div class="grid-item" style="grid-area: right"><h3>Right</h3></div>
+  <div class="grid-item" style="grid-area: footer"><h3>Footer</h3></div>
+</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named">Try it Yourself &raquo;</a>
+</p>
+
+<!--
+<div class="grid-container">
+  <div class="grid-item item1"><h1>1</h1></div>
+  <div class="grid-item item2"><h1>2</h1></div>
+  <div class="grid-item item3"><h1>3</h1></div>  
+  <div class="grid-item item4"><h1>4</h1></div>
+  <div class="grid-item item5"><h1>5</h1></div>
+  <div class="grid-item item6"><h1>6</h1></div>  
+  <div class="grid-item item7"><h1>7</h1></div>
+</div>
+<p>
+<a class="w3-btn" target="_blank" href="tryit.asp?filename=trycss_grid_layout">Try it Yourself &raquo;</a>
+</p>
+-->
+
+<hr>
+<h2>Grid Layout</h2>
+<p>The CSS Grid Layout Module offers a grid-based layout system, with rows and 
+columns, making it easier to design web pages without having to use floats and 
+positioning.</p>
+<hr>
+<h2>Browser Support</h2>
+<p>The grid properties are supported in all modern browsers.</p>
+<div class="w3-responsive">
+<table class="browserref notranslate">
+  <tr>
+    <th style="width:20%;height:50px;" class="bsChrome" title="Chrome"></th>
+    <th style="width:20%;" class="bsEdge" title="Internet Explorer / Edge"></th>
+    <th style="width:20%;" class="bsFirefox" title="Firefox"></th>
+    <th style="width:20%;" class="bsSafari" title="Safari"></th>
+    <th style="width:20%;" class="bsOpera" title="Opera"></th>                
+  </tr>
+  <tr>
+    <td>57.0</td>
+    <td>16.0</td>
+    <td>52.0</td>
+    <td>10</td>
+    <td>44</td>
+  </tr>
+  </table>
+</div>  
+<hr>
+
+<h2>Grid Elements</h2>
+<p>A grid layout consists of a parent element, with one or more child elements.</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;div 
+  class=&quot;grid-container&quot;&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;1&lt;/div&gt;<br>&nbsp; &lt;div 
+  class=&quot;grid-item&quot;&gt;2&lt;/div&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;3&lt;/div&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;4&lt;/div&gt;<br>&nbsp; &lt;div 
+  class=&quot;grid-item&quot;&gt;5&lt;/div&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;6&lt;/div&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;7&lt;/div&gt;<br>&nbsp; &lt;div 
+  class=&quot;grid-item&quot;&gt;8&lt;/div&gt;<br>&nbsp; &lt;div class=&quot;grid-item&quot;&gt;9&lt;/div&gt;<br>&lt;/div&gt;
+</div>
+
+<div class="w3-white notranslate w3-padding">
+<div class="grid-container2" style="grid-template-columns:auto auto auto">
+  <div class="grid-item2"><h1>1</h1></div>
+  <div class="grid-item2"><h1>2</h1></div>
+  <div class="grid-item2"><h1>3</h1></div>  
+  <div class="grid-item2"><h1>4</h1></div>
+  <div class="grid-item2"><h1>5</h1></div>
+  <div class="grid-item2"><h1>6</h1></div>  
+  <div class="grid-item2"><h1>7</h1></div>
+  <div class="grid-item2"><h1>8</h1></div>
+  <div class="grid-item2"><h1>9</h1></div>  
+</div>
+</div>
+
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<hr>
+<h2>Display Property</h2>
+<p>An HTML element becomes a grid container when its <code class="w3-codespan">display</code> property 
+is set to
+<code class="w3-codespan">grid</code> or <code class="w3-codespan">inline-grid</code>.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: grid;<br>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_display_grid">Try it Yourself &raquo;</a>
+</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: inline-grid;<br>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_display_inline-grid">Try it Yourself &raquo;</a>
+</p>
+</div>
+<p>All direct children of the grid container automatically become <em>grid items</em>.</p>
+<hr>
+<h2>Grid Columns</h2>
+<p>The vertical lines of grid items are called <em>columns</em>.</p>
+
+<img src="https://www.w3schools.com/css/grid_columns.png" style="max-width:100%">
+<hr>
+<h2>Grid Rows</h2>
+<p>The horizontal lines of grid items are called <em>rows</em>.</p>
+
+<img src="https://www.w3schools.com/css/grid_rows.png" style="max-width:100%">
+<hr>
+
+<h2>Grid Gaps</h2>
+<p>The spaces between each column/row are called <em>gaps</em>.</p>
+
+<img src="https://www.w3schools.com/css/grid_gaps.png" style="max-width:100%">
+
+<p>You can adjust the gap size by using one of the following properties:</p>
+<ul>
+  <li><code class="w3-codespan">grid-column-gap</code></li>
+  <li><code class="w3-codespan">grid-row-gap</code></li>
+  <li><code class="w3-codespan">grid-gap</code> </li>
+</ul>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">grid-column-gap</code> property sets the gap between the columns:</p>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: grid;<br><strong>&nbsp; grid-column-gap: 50px;</strong><br>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-column-gap">Try it Yourself &raquo;</a>
+</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">grid-row-gap</code> property sets the gap between the rows:</p>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: grid;<br><strong>&nbsp; grid-row-gap: 50px;<br></strong>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-row-gap">Try it Yourself &raquo;</a>
+</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">grid-gap</code> property is a shorthand property for the 
+<code class="w3-codespan">grid-row-gap</code> and the 
+<code class="w3-codespan">grid-column-gap</code> properties:</p>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: grid;<br><strong>&nbsp; grid-gap: 50px 100px;<br></strong>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-gap2">Try it Yourself &raquo;</a>
+</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>The <code class="w3-codespan">grid-gap</code> property can also be used to set both the row gap and the 
+column gap in one value:</p>
+<div class="w3-code notranslate cssHigh">
+  .grid-container {<br>&nbsp; 
+  display: grid;<br><strong>&nbsp; grid-gap: 50px;<br></strong>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-gap">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<hr>
+<h2>Grid Lines</h2>
+<p>The lines between columns are called <em>column lines</em>.</p>
+<p>The lines between rows are called <em>row lines</em>.</p>
+
+<img src="https://www.w3schools.com/css/grid_lines.png" style="max-width:100%">
+
+<p>Refer to line numbers when placing a grid item in a grid container:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Place a grid item at column line 1, and let it end on column line 3:</p>
+<div class="w3-code notranslate cssHigh">
+  .item1 {<br><strong>
+  &nbsp; </strong>grid-column-start: 1;<br>&nbsp; grid-column-end: 3;<br>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_lines">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Place a grid item at row line 1, and let it end on row line 3:</p>
+<div class="w3-code notranslate cssHigh">
+  .item1 {<br><strong>
+  &nbsp; </strong>grid-row-start: 1;<br>&nbsp; grid-row-end: 3;<br>}</div>
+<p>
+<a class="w3-btn" target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_lines2">Try it Yourself &raquo;</a>
+</p>
+</div>
+<hr>
+
+<h2>All CSS Grid Properties</h2>
+
+<table class="w3-table-all notranslate">
+  <tr>
+    <th style="width:30%">Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/css3_pr_column-gap.asp">column-gap</a></td>
+    <td>Specifies the gap between the columns</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/css3_pr_gap.asp">gap</a></td>
+    <td>A shorthand property for the <em>row-gap</em> and the <em>column-gap</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid.asp">grid</a></td>
+    <td>A shorthand property for the <em>grid-template-rows, 
+    grid-template-columns, grid-template-areas, grid-auto-rows, 
+    grid-auto-columns</em>, and the <em>grid-auto-flow</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-area.asp">grid-area</a></td>
+    <td>Either specifies a name for the grid item, or this property is a shorthand property for the <em>grid-row-start</em>, <em>grid-column-start</em>, <em>grid-row-end</em>, and <em>grid-column-end</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-auto-columns.asp">grid-auto-columns</a></td>
+    <td>Specifies a default column size</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-auto-flow.asp">grid-auto-flow</a></td>
+    <td>Specifies how auto-placed items are inserted in the grid</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-auto-rows.asp">grid-auto-rows</a></td>
+    <td>Specifies a default row size</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-column.asp">grid-column</a></td>
+    <td>A shorthand property for the <em>grid-column-start</em> and the <em>grid-column-end</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-column-end.asp">grid-column-end</a></td>
+    <td>Specifies where to end the grid item</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-column-gap.asp">grid-column-gap</a></td>
+    <td>Specifies the size of the gap between columns</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-column-start.asp">grid-column-start</a></td>
+    <td>Specifies where to start the grid item</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-gap.asp">grid-gap</a></td>
+    <td>A shorthand property for the <em>grid-row-gap</em> and <em>grid-column-gap</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-row.asp">grid-row</a></td>
+    <td>A shorthand property for the <em>grid-row-start</em> and the <em>grid-row-end</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-row-end.asp">grid-row-end</a></td>
+    <td>Specifies where to end the grid item</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-row-gap.asp">grid-row-gap</a></td>
+    <td>Specifies the size of the gap between rows</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-row-start.asp">grid-row-start</a></td>
+    <td>Specifies where to start the grid item</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-template.asp">grid-template</a></td>
+    <td>A shorthand property for the <em>grid-template-rows</em>, <em>grid-template-columns</em> 
+    and <em>grid-areas</em> properties</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp">grid-template-areas</a></td>
+    <td>Specifies how to display columns and rows, using named grid items</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-template-columns.asp">grid-template-columns</a></td>
+    <td>Specifies the size of the columns, and how many columns in a grid layout</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/pr_grid-template-rows.asp">grid-template-rows</a></td>
+    <td>Specifies the size of the rows in a grid layout</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/css3_pr_row-gap.asp">row-gap</a></td>
+    <td>Specifies the gap between the grid rows</td>
+  </tr>
+</table>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="https://www.w3schools.com/css/css_rwd_templates.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="https://www.w3schools.com/css/css_grid_container.asp">Next &#10095;</a>
+</div>
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&amp;display=swap" rel="stylesheet">
+
+<div id="mypagediv2" style="position:relative;text-align:center;"></div>
+<br>
+
+</div>
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+  <div id="skyscraper">
+  
+    <!--<pre>wide_skyscraper, all: [160,600][300,600][320,50][120,600][300,1050]</pre>-->
+    <div id="snhb-wide_skyscraper-0"></div>
+    <!-- adspace wide-->
+  
+  </div>
+</div>
+
+<div class="sidesection">
+<h4><a href="https://www.w3schools.com/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="https://www.w3schools.com/colors/colors_picker.asp">
+<img src="https://www.w3schools.com/images/colorpicker.gif" alt="colorpicker"></a>
+</div>
+
+<div class="sidesection">
+  <h4>LIKE US</h4>
+  <div class="w3-text-grey sharethis">
+    <a href="https://www.facebook.com/w3schoolscom/" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a>
+    <a href="https://www.instagram.com/w3schools.com_official/" target="_blank" title="Instagram"><span class="fa fa-instagram fa-2x"></span></a>
+    <a href="https://www.linkedin.com/company/w3schools.com/" target="_blank" title="LinkedIn"><span class="fa fa-linkedin-square fa-2x"></span></a>
+  </div>
+</div>
+
+<!--
+<div class="sidesection" style="border-radius:5px;color:#555;padding-top:1px;padding-bottom:8px;margin-left:auto;margin-right:auto;max-width:230px;background-color:#d4edda">
+<p>Get your<br>certification today!</p>
+<a href="/cert/default.asp" target="_blank">
+<img src="/images/w3certified_logo_250.png" style="margin:0 12px 20px 10px;max-width:80%">
+</a>
+<a class="w3-btn w3-margin-bottom" style="text-decoration:none;border-radius:5px;"
+href="/cert/default.asp" target="_blank">View options</a>
+</div>
+-->
+
+<style>
+#courses_get_started_btn {
+text-decoration:none !important;
+background-color:#04AA6D;
+width:100%;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+padding-top:10px;
+padding-bottom:10px;
+font-family: 'Source Sans Pro', sans-serif;
+}
+#courses_get_started_btn:hover {
+background-color:#059862!important;
+}
+</style>
+
+<div class="sidesection" style="font-size:18px;font-family: 'Source Sans Pro', sans-serif;border-radius:5px;color:#FFC0C7;padding-top:1px;xpadding-bottom:8px;margin-left:auto;margin-right:auto;max-width:230px;background-color:#282A35">
+<p style="font-size:18px;padding-left:2px;padding-right:2px;">Get certified<br>by completing<br>a course today!</p>
+<a href="https://courses.w3schools.com/" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on courses banner in ads column');">
+<div style="padding:0 20px 20px 20px">
+<svg id="w3_cert_badge2" style="margin:auto;width:85%" data-name="w3_cert_badge2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><style>.cls-1{fill:#04aa6b;}.cls-2{font-size:23px;}.cls-2,.cls-3,.cls-4{fill:#fff;}.cls-2,.cls-3{font-family:RobotoMono-Medium, Roboto Mono;font-weight:500;}.cls-3{font-size:20.08px;}</style></defs><circle class="cls-1" cx="150" cy="150" r="146.47" transform="translate(-62.13 150) rotate(-45)"/><text class="cls-2" transform="translate(93.54 63.89) rotate(-29.5)">w</text><text class="cls-2" transform="translate(107.13 56.35) rotate(-20.8)">3</text><text class="cls-2" transform="matrix(0.98, -0.21, 0.21, 0.98, 121.68, 50.97)">s</text><text class="cls-2" transform="translate(136.89 47.84) rotate(-3.47)">c</text><text class="cls-2" transform="translate(152.39 47.03) rotate(5.12)">h</text><text class="cls-2" transform="translate(167.85 48.54) rotate(13.72)">o</text><text class="cls-2" transform="translate(182.89 52.35) rotate(22.34)">o</text><text class="cls-2" transform="matrix(0.86, 0.52, -0.52, 0.86, 197.18, 58.36)">l</text><text class="cls-2" transform="matrix(0.77, 0.64, -0.64, 0.77, 210.4, 66.46)">s</text><text class="cls-3" transform="translate(35.51 186.66) rotate(69.37)"> </text><text class="cls-3" transform="matrix(0.47, 0.88, -0.88, 0.47, 41.27, 201.28)">C</text><text class="cls-3" transform="matrix(0.58, 0.81, -0.81, 0.58, 48.91, 215.03)">E</text><text class="cls-3" transform="matrix(0.67, 0.74, -0.74, 0.67, 58.13, 227.36)">R</text><text class="cls-3" transform="translate(69.16 238.92) rotate(39.44)">T</text><text class="cls-3" transform="matrix(0.85, 0.53, -0.53, 0.85, 81.47, 248.73)">I</text><text class="cls-3" transform="translate(94.94 256.83) rotate(24.36)">F</text><text class="cls-3" transform="translate(109.34 263.09) rotate(16.83)">I</text><text class="cls-3" transform="translate(124.46 267.41) rotate(9.34)">E</text><text class="cls-3" transform="translate(139.99 269.73) rotate(1.88)">D</text><text class="cls-3" transform="translate(155.7 270.01) rotate(-5.58)"> </text><text class="cls-3" transform="translate(171.32 268.24) rotate(-13.06)"> </text><text class="cls-2" transform="translate(187.55 266.81) rotate(-21.04)">.</text><text class="cls-3" transform="translate(203.27 257.7) rotate(-29.24)"> </text><text class="cls-3" transform="translate(216.84 249.83) rotate(-36.75)"> </text><text class="cls-3" transform="translate(229.26 240.26) rotate(-44.15)">2</text><text class="cls-3" transform="translate(240.39 229.13) rotate(-51.62)">0</text><text class="cls-3" transform="translate(249.97 216.63) rotate(-59.17)">2</text><text class="cls-3" transform="matrix(0.4, -0.92, 0.92, 0.4, 257.81, 203.04)">1</text><path class="cls-4" d="M196.64,136.31s3.53,3.8,8.5,3.8c3.9,0,6.75-2.37,6.75-5.59,0-4-3.64-5.81-8-5.81h-2.59l-1.53-3.48,6.86-8.13a34.07,34.07,0,0,1,2.7-2.85s-1.11,0-3.33,0H194.79v-5.86H217.7v4.28l-9.19,10.61c5.18.74,10.24,4.43,10.24,10.92s-4.85,12.3-13.19,12.3a17.36,17.36,0,0,1-12.41-5Z"/><path class="cls-4" d="M152,144.24l30.24,53.86,14.94-26.61L168.6,120.63H135.36l-13.78,24.53-13.77-24.53H77.93l43.5,77.46.15-.28.16.28Z"/></svg>
+</div>
+
+</a>
+<a class="w3-btn" id="courses_get_started_btn" 
+href="https://courses.w3schools.com/" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on courses banner in ads column');">Get started</a>
+</div>
+
+<!--
+<div class="sidesection" style="margin-left:auto;margin-right:auto;max-width:230px">
+<a href="https://shop.w3schools.com/" target="_blank" title="Buy W3Schools Merchandize">
+  <img src="/images/tshirt.jpg" style="max-width:100%;">
+</a>
+</div>
+-->
+
+<div class="sidesection" id="moreAboutSubject">
+</div>
+
+<!--
+<div id="sidesection_exercise" class="sidesection" style="background-color:#555555;max-width:200px;margin:auto;margin-bottom:32px">
+  <div class="w3-container w3-text-white">
+    <h4>Exercises</h4>
+  </div>
+  <div>
+    <div class="w3-light-grey">
+      <a target="_blank" href="/html/exercise.asp" style="padding-top:8px">HTML</a>
+      <a target="_blank" href="/css/exercise.asp">CSS</a>
+      <a target="_blank" href="/js/exercise_js.asp">JavaScript</a>
+      <a target="_blank" href="/sql/exercise.asp">SQL</a>
+      <a target="_blank" href="/php/exercise.asp">PHP</a>
+      <a target="_blank" href="/python/exercise.asp">Python</a>
+      <a target="_blank" href="/bootstrap/exercise_bs3.asp">Bootstrap</a>
+      <a target="_blank" href="/jquery/exercise_jq.asp" style="padding-bottom:8px">jQuery</a>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="sidesection codegameright">
+<style>
+.codegameright .w3-btn:link,.codegameright .w3-btn:visited {
+  background-color:#04AA6D;
+  border-radius:5px;
+}
+.codegameright .w3-btn:hover,.codegameright .w3-btn:active {
+  background-color:#059862!important;
+  text-decoration:none!important;
+}
+</style>
+  <h4><a href="https://www.w3schools.com/colors/colors_picker.asp">CODE GAME</a></h4>
+  <a href="https://www.w3schools.com/codegame/index.html" target="_blank" class="w3-hover-opacity"><img style="max-width:100%;margin:16px 0;" src="https://www.w3schools.com/images/w3lynx_200.png" alt="Code Game"></a>
+  <p><a class="w3-btn" href="https://www.w3schools.com/codegame/index.html" target="_blank">Play Game</a></p>
+</div>
+
+<!--
+
+<div class="sidesection w3-light-grey" style="margin-left:auto;margin-right:auto;max-width:230px">
+  <div class="w3-container w3-dark-grey">
+    <h4><a href="/howto/default.asp" class="w3-hover-text-white">HOW TO</a></h4>
+  </div>
+  <div class="w3-container w3-left-align w3-padding-16">
+    <a href="/howto/howto_js_tabs.asp">Tabs</a><br>
+    <a href="/howto/howto_css_dropdown.asp">Dropdowns</a><br>
+    <a href="/howto/howto_js_accordion.asp">Accordions</a><br>
+    <a href="/howto/howto_js_sidenav.asp">Side Navigation</a><br>
+    <a href="/howto/howto_js_topnav.asp">Top Navigation</a><br>
+    <a href="/howto/howto_css_modals.asp">Modal Boxes</a><br>
+    <a href="/howto/howto_js_progressbar.asp">Progress Bars</a><br>
+    <a href="/howto/howto_css_parallax.asp">Parallax</a><br>
+    <a href="/howto/howto_css_login_form.asp">Login Form</a><br>
+    <a href="/howto/howto_html_include.asp">HTML Includes</a><br>
+    <a href="/howto/howto_google_maps.asp">Google Maps</a><br>
+    <a href="/howto/howto_js_rangeslider.asp">Range Sliders</a><br>
+    <a href="/howto/howto_css_tooltip.asp">Tooltips</a><br>
+    <a href="/howto/howto_js_slideshow.asp">Slideshow</a><br>
+    <a href="/howto/howto_js_sort_list.asp">Sort List</a><br>
+  </div>
+</div>
+-->
+
+<div class="sidesection" style="margin-left:auto;margin-right:auto;max-width:230px">
+  <div class="w3-container w3-dark-grey">
+    <h5><a href="https://www.w3schools.com/cert/default.asp" class="w3-hover-text-white">Certificates</a></h5>
+  </div>
+  <div class="w3-border">
+  <a href="https://www.w3schools.com/cert/cert_html.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">HTML</a>
+  <a href="https://www.w3schools.com/cert/cert_css.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">CSS</a>
+  <a href="https://www.w3schools.com/cert/cert_javascript.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">JavaScript</a>
+  <a href="https://www.w3schools.com/cert/cert_frontend.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">Front End</a>
+  <a href="https://www.w3schools.com/cert/cert_python.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">Python</a>
+  <a href="https://www.w3schools.com/cert/cert_sql.asp" class="w3-button w3-light-grey w3-block w3-border-bottom" style="text-decoration:none">SQL</a>
+  <a href="https://www.w3schools.com/cert/default.asp" class="w3-button w3-light-grey w3-block" style="text-decoration:none">And more</a>
+  </div>
+</div>
+
+<div id="stickypos" class="sidesection" style="text-align:center;position:sticky;top:50px;">
+  <div id="stickyadcontainer">
+    <div style="position:relative;margin:auto;">
+      
+      <!--<pre>sidebar_sticky, desktop: [120,600][160,600][300,600][300,250]</pre>-->
+      <div id="snhb-sidebar_sticky-0"></div>
+      <script>
+          if (Number(w3_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
+            // adspace sticky
+            if (document.getElementById("snhb-mid_content-0")) {
+              snhb.queue.push(function(){  snhb.startAuction(["sidebar_sticky", "mid_content" ]); });
+            }
+            else {
+              snhb.queue.push(function(){  snhb.startAuction(["sidebar_sticky"]); });
+            }
+          }
+          else {
+              if (document.getElementById("snhb-mid_content-0")) {
+                snhb.queue.push(function(){  snhb.startAuction(["mid_content"]); });
+              }
+          }
+      </script>  
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("scroll", fix_stickyad);
+  window.addEventListener("resize", fix_stickyad);
+</script>
+
+</div>
+</div>
+<div id="footer" class="footer w3-container w3-white">
+
+<hr>
+
+<div style="overflow:auto">
+  <div class="bottomad">
+    <!-- BottomMediumRectangle -->
+    <!--<pre>bottom_medium_rectangle, all: [970,250][300,250][336,280]</pre>-->
+    <div id="snhb-bottom_medium_rectangle-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+    <!-- adspace bmr -->
+    <!-- RightBottomMediumRectangle -->
+    <!--<pre>right_bottom_medium_rectangle, desktop: [300,250][336,280]</pre>-->
+    <div id="snhb-right_bottom_medium_rectangle-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+  </div>
+</div>
+
+<hr>
+<div class="w3-row-padding w3-center w3-small" style="margin:0 -16px">
+<div class="w3-col l3 m3 s12">
+<a class="w3-button w3-light-grey w3-block" href="javascript:void(0);" onclick="displayError();return false" style="white-space:nowrap;text-decoration:none;margin-top:1px;margin-bottom:1px">REPORT ERROR</a>
+</div>
+<!--
+<div class="w3-col l3 m3 s12">
+<a class="w3-button w3-light-grey w3-block" href="javascript:void(0);" target="_blank" onclick="printPage();return false;" style="text-decoration:none;margin-top:1px;margin-bottom:1px">PRINT PAGE</a>
+</div>
+-->
+<div class="w3-col l3 m3 s12">
+<a class="w3-button w3-light-grey w3-block" href="https://www.w3schools.com/forum/default.asp" target="_blank" style="text-decoration:none;margin-top:1px;margin-bottom:1px">FORUM</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a class="w3-button w3-light-grey w3-block" href="https://www.w3schools.com/about/default.asp" target="_top" style="text-decoration:none;margin-top:1px;margin-bottom:1px">ABOUT</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a class="w3-button w3-light-grey w3-block" href="https://shop.w3schools.com/" target="_blank" style="text-decoration:none;margin-top:1px;margin-bottom:1px">SHOP</a>
+</div>
+
+</div>
+<hr>
+<div class="w3-light-grey w3-padding w3-margin-bottom" id="err_form" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
+
+<h2>Report Error</h2>
+
+<p>If you want to report an error, or if you want to make a suggestion, do not hesitate to send us an e-mail:</p>
+<p>help@w3schools.com</p>
+<br>
+
+<!--
+<h2>Your Suggestion:</h2>
+<form>
+<div class="w3-section">      
+<label for="err_email">Your E-mail:</label>
+<input class="w3-input w3-border" type="text" style="margin-top:5px;width:100%" id="err_email" name="err_email">
+</div>
+<div class="w3-section">      
+<label for="err_email">Page address:</label>
+<input class="w3-input w3-border" type="text" style="width:100%;margin-top:5px" id="err_url" name="err_url" disabled="disabled">
+</div>
+<div class="w3-section">
+<label for="err_email">Description:</label>
+<textarea rows="10" class="w3-input w3-border" id="err_desc" name="err_desc" style="width:100%;margin-top:5px;resize:vertical;"></textarea>
+</div>
+<div class="form-group">        
+<button type="button" class="w3-button w3-dark-grey" onclick="sendErr()">Submit</button>
+</div>
+<br>
+</form>
+-->
+
+</div>
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright">&times;</span>     
+<h2>Thank You For Helping Us!</h2>
+<p>Your message has been sent to W3Schools.</p>
+</div>
+
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top Tutorials</h4>
+<a href="https://www.w3schools.com/html/default.asp">HTML Tutorial</a><br>
+<a href="https://www.w3schools.com/css/default.asp">CSS Tutorial</a><br>
+<a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial</a><br>
+<a href="https://www.w3schools.com/howto/default.asp">How To Tutorial</a><br>
+<a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial</a><br>
+<a href="https://www.w3schools.com/python/default.asp">Python Tutorial</a><br>
+<a href="https://www.w3schools.com/w3css/default.asp">W3.CSS Tutorial</a><br>
+<a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap Tutorial</a><br>
+<a href="https://www.w3schools.com/php/default.asp">PHP Tutorial</a><br>
+<a href="https://www.w3schools.com/java/default.asp">Java Tutorial</a><br>
+<a href="https://www.w3schools.com/cpp/default.asp">C++ Tutorial</a><br>
+<a href="https://www.w3schools.com/jquery/default.asp">jQuery Tutorial</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top References</h4>
+<a href="https://www.w3schools.com/tags/default.asp">HTML Reference</a><br>
+<a href="https://www.w3schools.com/cssref/default.asp">CSS Reference</a><br>
+<a href="https://www.w3schools.com/jsref/default.asp">JavaScript Reference</a><br>
+<a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">SQL Reference</a><br>
+<a href="https://www.w3schools.com/python/python_reference.asp">Python Reference</a><br>
+<a href="https://www.w3schools.com/w3css/w3css_references.asp">W3.CSS Reference</a><br>
+<a href="https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp">Bootstrap Reference</a><br>
+<a href="https://www.w3schools.com/php/php_ref_overview.asp">PHP Reference</a><br>
+<a href="https://www.w3schools.com/colors/colors_names.asp">HTML Colors</a><br>
+<a href="https://www.w3schools.com/java/java_ref_keywords.asp">Java Reference</a><br>
+<a href="https://www.w3schools.com/angular/angular_ref_directives.asp">Angular Reference</a><br>
+<a href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">jQuery Reference</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top Examples</h4>
+<a href="https://www.w3schools.com/html/html_examples.asp">HTML Examples</a><br>
+<a href="https://www.w3schools.com/css/css_examples.asp">CSS Examples</a><br>
+<a href="https://www.w3schools.com/js/js_examples.asp">JavaScript Examples</a><br>
+<a href="https://www.w3schools.com/howto/default.asp">How To Examples</a><br>
+<a href="https://www.w3schools.com/sql/sql_examples.asp">SQL Examples</a><br>
+<a href="https://www.w3schools.com/python/python_examples.asp">Python Examples</a><br>
+<a href="https://www.w3schools.com/w3css/w3css_examples.asp">W3.CSS Examples</a><br>
+<a href="https://www.w3schools.com/bootstrap/bootstrap_examples.asp">Bootstrap Examples</a><br>
+<a href="https://www.w3schools.com/php/php_examples.asp">PHP Examples</a><br>
+<a href="https://www.w3schools.com/java/java_examples.asp">Java Examples</a><br>
+<a href="https://www.w3schools.com/xml/xml_examples.asp">XML Examples</a><br>
+<a href="https://www.w3schools.com/jquery/jquery_examples.asp">jQuery Examples</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<!--
+<h4>Web Certificates</h4>
+<a href="/cert/default.asp">HTML Certificate</a><br>
+<a href="/cert/default.asp">CSS Certificate</a><br>
+<a href="/cert/default.asp">JavaScript Certificate</a><br>
+<a href="/cert/default.asp">SQL Certificate</a><br>
+<a href="/cert/default.asp">Python Certificate</a><br>
+<a href="/cert/default.asp">PHP Certificate</a><br>
+<a href="/cert/default.asp">Bootstrap Certificate</a><br>
+<a href="/cert/default.asp">XML Certificate</a><br>
+<a href="/cert/default.asp">jQuery Certificate</a><br>
+<a href="//www.w3schools.com/cert/default.asp" class="w3-button w3-margin-top w3-dark-grey" style="text-decoration:none">
+Get Certified &raquo;</a>
+-->
+
+<h4>Web Courses</h4>
+<a href="https://courses.w3schools.com/courses/html" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on html course link in footer');">HTML Course</a><br>
+<a href="https://courses.w3schools.com/courses/css" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on css course link in footer');">CSS Course</a><br>
+<a href="https://courses.w3schools.com/courses/javascript" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on javascript course link in footer');">JavaScript Course</a><br>
+<a href="https://courses.w3schools.com/programs/front-end" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on Front End course link in footer');">Front End Course</a><br>
+<a href="https://courses.w3schools.com/courses/sql" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on sql course link in footer');">SQL Course</a><br>
+<a href="https://courses.w3schools.com/courses/python" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on python course link in footer');">Python Course</a><br>
+<a href="https://courses.w3schools.com/courses/php" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on php course link in footer');">PHP Course</a><br>
+<a href="https://courses.w3schools.com/courses/jquery" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on jquery course link in footer');">jQuery Course</a><br>
+<a href="https://courses.w3schools.com/courses/java" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on Java course link in footer');">Java Course</a><br>
+<a href="https://courses.w3schools.com/courses/cplusplus" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on C++ course link in footer');">C++ Course</a><br>
+<a href="https://courses.w3schools.com/courses/c-sharp" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on bootstrap C# link in footer');">C# Course</a><br>
+<a href="https://courses.w3schools.com/courses/xml" target="_blank" onclick="ga('send', 'event', 'Courses' , 'Clicked on xml course link in footer');">XML Course</a><br>
+<a href="https://courses.w3schools.com/" target="_blank" class="w3-button w3-margin-top w3-dark-grey w3-round" style="text-decoration:none" onclick="ga('send', 'event', 'Courses' , 'Clicked on get certified button in footer');">
+Get Certified &raquo;</a>
+
+
+</div>
+</div>        
+</div>        
+
+<hr>
+<div class="w3-center w3-small w3-opacity">
+W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning.
+Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
+While using W3Schools, you agree to have read and accepted our <a href="https://www.w3schools.com/about/about_copyright.asp">terms of use</a>, 
+<a href="https://www.w3schools.com/about/about_privacy.asp">cookie and privacy policy</a>.<br><br>
+<a href="https://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2021</a> by Refsnes Data. All Rights Reserved.<br>
+<a href="http://www.w3schools.com/w3css/default.asp">W3Schools is Powered by W3.CSS</a>.<br><br>
+<a href="http://www.w3schools.com/">
+<img style="width:150px;height:28px;border:0" src="https://www.w3schools.com/images/w3schoolscom_gray.gif" alt="W3Schools.com"></a>
+</div>
+<br><br>
+</div>
+
+</div>
+<script src="https://www.w3schools.com/lib/w3schools_footer.js"></script>
+
+<script>
+
+loadUser();
+//activateElse();
+function loadUser() {
+  var x, y, pos, foldername, filename, typ, pathname = window.location.pathname;
+  if (pathname.substr(0,1) == "https://www.w3schools.com/") {pathname = pathname.substr(1);}
+  pos = pathname.indexOf("https://www.w3schools.com/");
+  foldername = pathname.substr(0, pos);
+  if (pathname.indexOf("pandas") > -1) {foldername = "python/pandas";}
+  filename = pathname.substr(pos + 1);
+  typ = foldername;
+  if (foldername == "quiztest") {
+    cc = window.location.href;
+    pos = cc.indexOf("qtest=");
+    typ = cc.substr(pos + 6);
+  }
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      y = this.responseText;
+      x = y.substr(0, 1);
+      if (x == "A" || x == "B" || x == "C" || x == "D" || x == "E") {
+        console.log(x);
+        activateElse();
+      } else if (x == "F" || x == "G" || x == "H" || x == "I" || x == "J" || x == "K"  || x == "L" || x == "M" || x == "Q") {
+        console.log(x);
+        activateMYPAGE(x, y);
+      } else {
+        activateElse();
+        console.log("Z");
+      }
+    }
+  };
+  xhttp.open("https://www.w3schools.com/css/POST", MyLearning.getUrl('api.meta'), true);
+//xhttp.open("POST", "https://mypage.w3schools.com/mypage/beta.php", true);
+  xhttp.withCredentials = true;
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("a=" + foldername + "&b=" + filename + "&c=" + typ + "&d=0");
+}
+function finishedPage() {
+  var x, y, pos, foldername, filename, typ, pathname = window.location.pathname;
+  if (pathname.substr(0,1) == "https://www.w3schools.com/") {pathname = pathname.substr(1);}
+  pos = pathname.indexOf("https://www.w3schools.com/");
+  foldername = pathname.substr(0, pos);
+  if (pathname.indexOf("pandas") > -1) {foldername = "python/pandas";}
+  filename = pathname.substr(pos + 1);
+  typ = foldername;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      y = this.responseText;
+      x = y.substr(0, 1);
+      if (x == "O") {
+        console.log(x);
+        registerPoint(x);
+      } else {
+        console.log("Z");
+      }
+    }
+  };
+  xhttp.open("https://www.w3schools.com/css/POST", MyLearning.getUrl('api.meta'), true);
+//xhttp.open("POST", "https://mypage.w3schools.com/mypage/beta.php", true);
+  xhttp.withCredentials = true;
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("a=" + foldername + "&b=" + filename + "&c=" + typ + "&d=1");
+}
+function activateElse() {
+  var a = document.getElementById("mypagediv");
+  var b = document.getElementById("w3loginbtn");
+  if (a) a.style.display = "none";
+  if (b) b.style.display = "inline";
+}
+var mp_pagesread = 0, mp_totalpages = 0;
+function activateMYPAGE(cc, obj) {
+  var x, degrees = 0, txt = "", txt2 = "", color1 = "rgba(76, 175, 80, 0.1)", color2 = "rgba(76, 175, 80, 1)";
+  var a = document.getElementById("w3loginbtn");
+  var b = document.getElementById("mypagediv");
+  var c = document.getElementById("mypagediv2");
+  if (a) a.style.display = "none";
+  if (b) {
+    if (cc == "I" || cc == "J" || cc == "O" || cc == "Q") {
+      jsonobj = JSON.parse(obj.substr(1));
+      mp_pagesread = jsonobj.b;
+      mp_totalpages = jsonobj.a;
+      x = Math.round((mp_pagesread/mp_totalpages) * 100);
+      degrees = x * 3.6;
+      if (degrees > 359) degrees = 359.99;
+    }
+    if (cc == "Q") {
+      color1 = "rgba(44, 156, 202, 0.1)";
+      color2 = "rgba(44, 156, 202, 1)";
+    }
+    b.style.display = "block";
+    txt += "<a href='https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com%2F'>";
+//  txt += "<a href='https://mypage.w3schools.com/mypage/default.php'>";
+    txt2 = txt;
+    txt += "<img src='/images/mypagelogo32x32.png' alt='MYPAGE' style='position:absolute;top:18px;right:28px'>";
+    txt2 += "<img src='/images/mypagelogo32x32.png' alt='MYPAGE' style='position:absolute;top:18px;margin-left:10px;xright:28px'>";
+    if (cc != "F") {
+      txt += '<svg style="position:absolute;top:0;right:0;height:70px;width:70px">';
+      txt += '<path id="mypage_circle1" fill="none" stroke="' + color1 + '" stroke-width="4"/>';
+      txt += '<path id="mypage_circle2" fill="none" stroke="' + color2 + '" stroke-width="4"/>';
+      txt += '</svg>';
+      txt2 += '<svg style="position:absolute;xtop:0;xright:0;height:70px;width:70px">';
+      txt2 += '<path id="mypage2_circle1" fill="none" stroke="' + color1 + '" stroke-width="4"/>';
+      txt2 += '<path id="mypage2_circle2" fill="none" stroke="' + color2 + '" stroke-width="4"/>';
+      txt2 += '</svg>';
+    }
+    if (cc == "J") {
+      checkIfMypage2IsInView();
+      window.addEventListener("scroll", checkIfMypage2IsInView);
+    }
+    if (cc == "Q") {
+      if (degrees == 359.99) {
+        txt += "<span id='usergetsstar'>&#x2605;</span>";
+      }
+    }
+    txt += '</a>';
+    txt2 += '</a>';
+    b.innerHTML = "&nbsp;" + txt;
+    c.innerHTML = "&nbsp;" + txt2;
+    if (cc != "L") {
+      document.getElementById("mypage_circle1").setAttribute("d", loginDrawCircle(26, 35, 24, 0, 359.99));
+      document.getElementById("mypage_circle2").setAttribute("d", loginDrawCircle(26, 35, 24, 0, degrees));
+      document.getElementById("mypage2_circle1").setAttribute("d", loginDrawCircle(26, 35, 24, 0, 359.99));
+      document.getElementById("mypage2_circle2").setAttribute("d", loginDrawCircle(26, 35, 24, 0, degrees));
+    }
+  }
+  ga('send', 'event', 'user', 'login');
+}
+function checkIfMypage2IsInView() {
+  var a = document.getElementById("mypagediv2");
+  if (isinviewport(a) || isaboveviewport(a)) {
+    finishedPage();
+    window.removeEventListener("scroll", checkIfMypage2IsInView);
+  }
+}
+function isinviewport(x) {
+  var rect = x.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+  );
+}
+function isaboveviewport(x) {
+  var rect = x.getBoundingClientRect();
+  if (rect.top < 0) return true;
+  return false;
+}
+function registerPoint(cc) {
+  var x, degrees = 0, txt = "", txt2 = "", completed = 0, color1 = "rgba(76, 175, 80, 0.1)", color2 = "rgba(76, 175, 80, 1)";
+  var a = document.getElementById("w3loginbtn");
+  var b = document.getElementById("mypagediv");
+  var c = document.getElementById("mypagediv2");
+  if (c) {
+    mp_pagesread++;
+    x = Math.round((mp_pagesread/mp_totalpages) * 100);
+    degrees = x * 3.6;
+    if (degrees > 359) degrees = 359.99;
+    txt += "<span class='usergetspoint' id='usergetstutpoint'>+1</span>";
+    if (degrees == 359.99) {completed = 1;}
+    if (completed == 1) {
+      txt += "<span id='usergetsstar'>&#x2605;</span>";
+    }
+    c.innerHTML += txt;
+    document.getElementById("mypage_circle1").setAttribute("d", loginDrawCircle(26, 35, 24, 0, 359.99));
+    document.getElementById("mypage_circle2").setAttribute("d", loginDrawCircle(26, 35, 24, 0, degrees));
+    document.getElementById("mypage2_circle1").setAttribute("d", loginDrawCircle(26, 35, 24, 0, 359.99));
+    document.getElementById("mypage2_circle2").setAttribute("d", loginDrawCircle(26, 35, 24, 0, degrees));
+  }
+}
+
+
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/css_grid.asp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Mar 2021 13:04:37 GMT -->
+</html>
