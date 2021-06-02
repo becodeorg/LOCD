@@ -35,6 +35,7 @@
 .highlight{
   display: grid;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 pre {
@@ -66,4 +67,12 @@ section{
   height: auto;
   display: block;
   margin-bottom: 1.5rem;
+
+  &--big{
+    max-width: 1000px;
+  }
+
+  &--small{
+    max-width: 300px;
+  }
 }

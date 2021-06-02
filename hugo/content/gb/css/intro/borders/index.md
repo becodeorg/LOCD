@@ -17,7 +17,7 @@ Look at this stylish double underline below : the blue thick line spreads the wo
 
 **Tip 3:** Color: #2A99FB.
 
-![Double underline exercise](exercise-doubleUnderline.png)
+{{< image imageid="exercise-doubleUnderline.png" alt="Double underline exercise" >}}
 
 **Content in the editor**
 

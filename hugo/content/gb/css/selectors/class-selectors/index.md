@@ -12,11 +12,9 @@ Note that you can also add more HTML tags if you want to (especially for FedEx, 
 
 Here is the result you should try to reach (or as close as possible).
 
-![toyota](toyota.png)
-
-![fedex](fedex.png)
-
-![facebook](facebook.png)
+{{< image imageid="toyota.png" alt="toyota" >}}
+{{< image imageid="fedex.png" alt="fedex" >}}
+{{< image imageid="facebook.png" alt="facebook" >}}
 
 **Content in the editor**
 

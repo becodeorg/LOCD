@@ -107,7 +107,8 @@ nav {
 
 .highlight {
   display: grid;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 2rem; }
 
 pre {
   overflow: auto; }
@@ -132,6 +133,10 @@ section {
   height: auto;
   display: block;
   margin-bottom: 1.5rem; }
+  .responsive__image--big {
+    max-width: 1000px; }
+  .responsive__image--small {
+    max-width: 300px; }
 
 header {
   background-color: #235060;
@@ -275,7 +280,7 @@ header {
     background-color: #202026;
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 1.4rem;
     border: none;
     cursor: pointer;
     outline: none;

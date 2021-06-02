@@ -56,6 +56,6 @@ Copy the following code in your editor:
 
 Now re-create this styling as good as possible:
 
-![sections.png](sections.png)
+{{< bigImage imageid="sections.png" alt="sections.png" >}}
 
 Now make it so that if we scroll down, each case collapses onto eachother. (Leave 20px space between the **top** and the cases.)

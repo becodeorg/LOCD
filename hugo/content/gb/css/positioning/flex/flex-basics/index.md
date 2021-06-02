@@ -230,4 +230,4 @@ Copy and past this entire code in your editor:
 ```
 
 #### You have to make a exact copy of this by just using flex-box:
-{{< addImage imageid="exercise-flex-example.png" alt="exercise-example" >}}
+{{< bigImage imageid="exercise-flex-example.png" alt="exercise-example" >}}

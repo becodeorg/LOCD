@@ -76,11 +76,11 @@ Copy this code in your editor:
 
 You should see something like this:
 
-![agenda not styled](agendabad.png)
+{{< bigImage imageid="agendabad.png" alt="agenda not styled" >}}
 
 Find a way to display it like this:
 
-![agenda style](agendagood.png)
+{{< bigImage imageid="agendagood.png" alt="agenda style" >}}
 
 **NOTE:** Do not change the HTML tags or content.
 

@@ -21,12 +21,12 @@ That's because on top of their HTML, these pages are using another language, cal
 
 In other words, CSS allows us to turn this:
 
-![without css](without-css.png)
+{{< image imageid="without-css.png" alt="without css" >}}
 
 
 Into that:
 
-![with css](with-css.png)
+{{< image imageid="with-css.png" alt="with css" >}}
 
 ## What is CSS?
 
@@ -41,7 +41,7 @@ It's a must-have skill for any web developer out there.
 
 Look at this schematic, which sums all how to write CSS in a way that the browser understands it.
 
-!['selector'](selector.gif)
+{{< addImage imageid="selector.gif" alt="selector" >}}
 
 As you can see, there are fancy words here. Don't panick, there won't be much more :-)
 
@@ -79,7 +79,7 @@ As you see, the css instructs the browser to use the color blue to render the `h
 <h1 style="color:blue;font-weight:bold">Hello world!</h1>
 ```
 
-!['output inline-style'](output-inline-style.png)
+{{< addImage imageid="output-inline-style.png" alt="output inline-style" >}}
 
 Easy again! As you can see, you can add up properties using a semicolon (the character `;`) to separate them so the browser does not get confused.
 
@@ -131,7 +131,7 @@ Having an external CSS file is the most recommended way to do, because it "separ
 
 #### Here is an example of our folder structure:
 
-!['linking'](linking02.png)
+{{< bigImage imageid="linking02.png" alt="linking" >}}
 
 Inside of our CSS file we have written the following:
 
@@ -200,7 +200,7 @@ div {
 
 ### The Hexadecimal system
 
-For your information, there is yet another way to express the colour values, using the Hexadecimal system. In that system, `red` for example is expressed as `#FF0000`  , `black`is `#000000`and white : `#FFFFFF`.
+For your information, there is yet another way to express the colour values, using the Hexadecimal system. In that system, `red` for example is expressed as `#FF0000`  , `black` is `#000000` and white : `#FFFFFF`.
 
 Hexadecimal system functions from values going from 0 to 9 and continues to A up to F for a total of 16 values. By using 6 Hexadecimal values, you are able to express 256 millions of colours.
 
@@ -214,7 +214,7 @@ By default, without styling, each tag is rendered as a rectangle which backgroun
 
 Here is a visual representation of that rectangle, called the "box model".
 
-![css-block](css-block.png)
+{{< image imageid="css-block.png" alt="block" >}}
 
 This image represents how you can play with `border`, `margin`, `padding` to style any HTML tag!
 
@@ -282,11 +282,10 @@ Play with it's values, we will discuss this in group later on.
 
 As you learn CSS, you will see that CSS is full of hacks and tricks. One really useful one is that you can turn an image like this:
 
-![Chief Hopper](chiefhopper.jpg) 
+{{< smallImage imageid="chiefhopper.jpg" alt="Hopper" >}}
 
   into that:
-
-  ![Chief Hopper, rounded!](chiefhopper-rounded.jpg)
+{{< smallImage imageid="chiefhopper-rounded.jpg" alt="Chief Hopper, rounded!" >}}
 
   Here is the one property that makes it possible:
 

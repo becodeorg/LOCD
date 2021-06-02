@@ -4,7 +4,9 @@
 .instructions {
   height: calc(100vh - var(--nav-height) - 8rem); }
   .instructions__info {
-    max-width: 1000px; }
+    max-width: 1000px;
+    align-self: center;
+    width: 100%; }
   .instructions__nav--max {
     width: 100%;
     position: absolute;
