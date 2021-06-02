@@ -6,7 +6,6 @@ header {
   position: relative;
   z-index: 11;
   box-shadow: 0 -0.4rem 0.9rem 0.2rem darken(#676778,20);
-
 }
 
 .nav {
@@ -17,6 +16,10 @@ header {
   height: var(--nav-height);
   max-height: none;
 
+   @media (max-width: 1000px) {
+    margin: 0 2rem;
+   }
+
   &__logo {
     background-image: url("../img/locdLogo-rect.svg");
     display: inline-block;
@@ -26,6 +29,11 @@ header {
     background-size: auto 100%;
     background-position: left center;
     background-repeat: no-repeat;
+
+    @media (max-width: 500px) {
+    height: 4.3rem;
+    align-self: center;
+   }
 
     &:hover,
 &:focus,
@@ -45,13 +53,21 @@ header {
     display: flex;
     align-items: center;
     list-style: none;
+    margin-left: auto;
 
-    @media (max-width: 1000px) {
+    & > :not(:first-child){
+      @media (max-width: 1000px) {
       display: none;
     }
+    }
+
+    
 
     & > * {
       margin-left: 40px;
+      @media (max-width: 1000px) {
+        margin: 0;
+      }
     }
     a:hover, a:current{
       text-decoration: underline;
@@ -179,7 +195,7 @@ header {
     //background-color:white;
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 1.4rem;
     border: none;
     cursor: pointer;
     outline: none;
@@ -338,3 +354,63 @@ header {
     transform: translateX(-3px) rotate(-2deg);
   }
 }
+
+
+
+.dropdown__title{
+  background-color: transparent;
+  border:none;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  /* border-radius: .3rem; */
+}
+
+.dropdown__menu,.dropdown--lang{
+    list-style: none;
+}
+
+.dropdown--lang{
+    position: relative;
+}
+
+.dropdown--lang:hover .dropdown__menu,
+.dropdown--lang:focus-within .dropdown__menu{
+    opacity: 1;
+    transform: rotateX(0) translateY(0%) translateX(-33%);
+    visibility: visible;
+}
+
+.dropdown__menu{
+    background-color: rgb(233, 233, 233);
+    /* border-radius: 4px; */
+    box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
+    padding: 0.5em 0;
+    width: max-content;
+    position: absolute;         
+    top: calc(100% - 0.25rem);
+    left: 50%;
+    z-index: 10;
+    transform: rotateX(-90deg) translateY(0%) translateX(-33%);
+    transform-origin: top center;
+    
+    transition: 280ms all ease-out;
+}
+
+.dropdown__menu li{
+    margin: 1rem 0;
+}
+
+.dropdown__menu a{
+    padding: 1rem;
+}
+
+.dropdown__img{
+  width: 30px;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+
+  @media (max-width: 500px) {
+    width: 25px;
+  }
+}      

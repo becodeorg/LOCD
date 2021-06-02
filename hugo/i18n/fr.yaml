@@ -8,6 +8,8 @@
   translation: "Aide"
 - id: "about"
   translation: "À propos de"
+- id: "start"
+  translation: "commencer"
 
 
 

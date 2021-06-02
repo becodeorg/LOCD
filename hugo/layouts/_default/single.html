@@ -12,19 +12,18 @@
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 
-    
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
     <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/javascript/javascript.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/css/css.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/xml/xml.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
 
     <script src="{{.Site.BaseURL}}/js/split.js"></script>
     <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
 
-    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
-    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
     {{end}}
 
@@ -33,119 +32,20 @@
 	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
 
     {{ if eq .Params.Editor true}}
-    <!--IntoJS import-->
     
     <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
     {{end}}
     
+    <!--IntoJS import-->
     <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
     {{ if eq .Params.Editor false}}
-    <style>
-        .viewport{
-            grid-template-columns: minmax(100%,0%) 66.667%;  
-        }
-        
-        .instructions__info{
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        #instructionNavMax{
-            display: block;
-        }
-
-        .nav__wrapper{
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
-        }
-
-    </style>
+    	<link id="maxViewer" href="{{.Site.BaseURL}}/css/no-editor.css" rel="stylesheet">
     {{end}}
-    
-
-    <style>
-        #textareacontainer{
-            position: absolute;
-        }
-
-        .input__container{
-            position: relative;
-        }
-
-        .html-editor{
-            z-index: 50;
-        }
-    </style>
-
-    <style>
-        .dropdown__title{
-            background-color: rgb(233, 233, 233);
-            border:none;
-            font-family: inherit;
-            padding: 1rem 2rem;
-            /* border-radius: .3rem; */
-        }
-
-        .dropdown__menu,.dropdown--lang{
-            list-style: none;
-        }
-
-        .dropdown--lang{
-            position: relative;
-        }
-
-        .dropdown--lang:hover .dropdown__menu,
-        .dropdown--lang:focus-within .dropdown__menu{
-            opacity: 1;
-            transform: rotateX(0) translateX(-50%);
-            visibility: visible;
-        }
-
-        .dropdown__menu{
-            background-color: rgb(233, 233, 233);
-            /* border-radius: 4px; */
-            box-shadow: 0 0.15em 0.25em rgba(black, 0.25);
-            padding: 0.5em 0;
-            width: 100%;
-            position: absolute;         
-            top: calc(100% - 0.25rem);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-
-            transform: rotateX(-90deg) translateX(-50%);
-            transform-origin: top center;
-            opacity: 0.3;
-            transition: 280ms all ease-out;
-        }
-
-        .dropdown__menu a{
-            color: #444 !important; 
-            display: block;
-            padding: 0.5em;
-        }
-
-        
-    </style>
-
-    {{ if eq .Params.Editor true}}
-    <script>
-        let stylesheet = document.getElementById("maxViewer");
-
-        stylesheet.disabled = true;
-
-        if(sessionStorage.getItem('maxScreen') == "true"){
-            stylesheet.disabled = false;
-        }
-    </script>
-    {{end}}
-
 </head>
 <body>
     
-{{ partial "navbar" (dict "lang" .Lang)}}
+{{ partial "navbar" (dict "lang" .Lang "site" .Site "translations" .Translations)}}
 {{$cssFile := ""}}
 {{$htmlFile := ""}}
     
@@ -163,7 +63,6 @@
 	</nav>
     {{end}}
     
-
     <div id="viewport" class="viewport">
 
         <div class="reset">
@@ -189,11 +88,11 @@
 						<div id="dropdownList" class="dropdown__list">
 							<ul>
                                 {{ $SiteExercise := index .Site.Data.exercises .Lang }}
-								<li class="drop__chapter">0 - Start   </li>
+								<li class="drop__chapter">0 - {{ i18n "start" }}   </li>
 								<li><a class="drop__exercise"  href="{{.Site.Home.Permalink}}index.html">{{.Site.Home.Title}}</a></li>
-								{{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title "slug" .Site.Pages)}}
-								{{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
-                                {{ partial "dropdown" (dict "path" $SiteExercise.css "type" "css" "lang" .Lang "title" .Title "slug" .Page.Params.Slug)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.general "type" "general" "lang" .Lang "title" .Title)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.html "type" "html" "lang" .Lang "title" .Title)}}
+                                {{ partial "dropdown" (dict "path" $SiteExercise.css "type" "css" "lang" .Lang "title" .Title)}}
 							</ul>
 						</div>
 					</div>
@@ -201,30 +100,6 @@
                     <i id="tourHandler" class=" question far fa-question-circle"></i>
                     {{end}}
 					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
-                    <div>
-        
-            
-                
-                {{ if .Site.IsMultiLingual }}
-                <li class="dropdown--lang">
-                    {{ range .Site.Languages }}
-                        {{ if eq . $.Site.Language }}
-                        <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown">{{ .LanguageName }}</button>
-                            
-                        {{ end }}
-                    {{ end }}
-                    <ul class="dropdown__menu">
-                        {{ range $.Translations }}
-                        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                    </ul>
-                        {{ end }}
-                   
-                {{ end }}
-                </li>
-        
-
-         
-    </div>
 				</div>
             </nav>
 
@@ -249,7 +124,8 @@
                 
                
 				<!--START INSERT DATA-->
-				{{.Content}}
+                {{ replace .Content "disabled" ""| safeHTML }}
+				<!-- {{.Content}} -->
                 <!--END iNSERT DATA-->
 
 
@@ -265,8 +141,6 @@
 				</div>
 			</nav>
             
-            
-
 		</section>
         {{ if eq .Params.Editor true}}
         
@@ -286,7 +160,6 @@
             {{end}}
             
             
-
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div  id="editorInput" class="editor__input">
                 <div id="inputTab" class="input__tab">
@@ -449,10 +322,7 @@
             message.classList.remove("activeMessage");
         });
     }
-
     loadEditor();
-
-
 </script>
 
 <script>
@@ -480,7 +350,6 @@
         }
     });
 </script>
-
 <script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>

@@ -32,7 +32,15 @@
   }
 }
 
+.highlight{
+  display: grid;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 pre {
+  // white-space: pre-wrap;
+  // word-wrap: break-word;
   overflow: auto;
 }
 
@@ -51,4 +59,20 @@ pre {
 
 section{
   padding: 0.1px;
+}
+
+.responsive__image{
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+
+  &--big{
+    max-width: 1000px;
+  }
+
+  &--small{
+    max-width: 300px;
+  }
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "sass:compile": "node-sass static/scss/main.scss static/css/main.css -w",
     "sass:max": "node-sass static/scss/max-screen.scss static/css/max-screen.css -w",
-    "watch:sass": "npm-run-all sass:compile sass:max",
+    "sass:noEditor": "node-sass static/scss/no-editor.scss static/css/no-editor.css -w",
+    "watch:sass": "npm-run-all --parallel sass:compile sass:max sass:noEditor",
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass static/scss/main.scss static/css/style.comp.css",

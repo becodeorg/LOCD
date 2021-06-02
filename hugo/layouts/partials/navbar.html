@@ -1,39 +1,58 @@
 <header>
     <nav id="nav" class="nav">
-        <a href="/" class="nav__logo"></a>
+        
+        <a href="/{{.lang}}" class="nav__logo"></a>
+
+        <ul class="nav__menu">
+            {{$siteURL := .Site.BaseURL}}
+                <div class="dropdown--lang">
+                    {{ range .site.Languages }}
+                        {{ if eq . $.site.Language }}
+                        <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown">
+                            <img class="dropdown__img" src="{{$siteURL}}/img/flags/{{upper .Lang}}/flat/64.png">
+                            {{ .LanguageName }}
+                        </button>
+                            
+                        {{ end }}
+                    {{ end }}
+                    <ul class="dropdown__menu">
+                        {{ range $.translations }}
+                        
+                        <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">
+                            <img class="dropdown__img" src="{{$siteURL}}/img/flags/{{upper .Lang}}/flat/64.png">
+                            {{ .Language.LanguageName }}</a>
+                        </li>
+                    
+                        {{ end }}
+                    </ul>
+                </div>
+            <li>
+                <a href="/{{.lang}}">{{ i18n "practice" }}</a>
+            </li>
+            <li>
+                <a href="{{.Site.BaseURL}}/w3schools.com/www.w3schools.com">{{ i18n "help" }}</a>
+            </li>
+            <li>
+                <a href="/{{.lang}}/about">{{ i18n "about" }}</a>
+            </li>
+        </ul>
 
         <input class="menu__btn" type="checkbox" id="menu__btn" />
         <label class="menu__icon" for="menu__btn">
             <span class="nav__icon"></span>
         </label>
-
-        <ul class="nav__menu">
-            <li>
-                <a href="/{{.lang}}">{{ i18n "practice" }}</a>
-            </li>
-            <li>
-                <a href="#">{{ i18n "documentation" }}</a>
-            </li>
-            <li>
-                <a onclick="tutorial()">{{ i18n "help" }}</a>
-            </li>
-            <li>
-                <a href="/{{.lang}}/about">{{ i18n "about" }}{{.Translations}}</a>
-            </li>
-        </ul>
     </nav>
 </header>
 <div class="nav__backlayer"></div>
 <nav>
+    <div class="dropdown--lang">
+            
     <ul class="nav__menu--hamburger">
         <li>
             <a href="#">Practice</a>
         </li>
         <li>
-            <a href="#">Documentation</a>
-        </li>
-        <li>
-            <a onclick="tutorial()">Help</a>
+            <a href="{{.Site.BaseURL}}/w3schools.com/www.w3schools.com">Help</a>
         </li>
         <li>
             <a href="about">About</a>
