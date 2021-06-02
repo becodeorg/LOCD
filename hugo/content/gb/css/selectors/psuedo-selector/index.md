@@ -21,7 +21,7 @@ Add the necessary style so that when the mouse hover on the word below, it chang
 
 Here is an illustration of the result to achieve:
 
-![hover animation](hover-animated.gif)
+{{< image imageid="hover-animated.gif" alt="hover animation" >}}
 
 ```html
 <!DOCTYPE html>

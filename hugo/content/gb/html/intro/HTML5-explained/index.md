@@ -35,7 +35,7 @@ There are also applications created specifically to write code. These applicatio
 
 ## File Structure
 
-{{< addImage imageid="html.png" alt="first-html" >}}
+{{< image imageid="html.png" alt="first-html" >}}
 _example of a simple html document_
 
 Let's take a look at the above example of an HTML document.

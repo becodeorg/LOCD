@@ -59,4 +59,4 @@ Now re-create this styling as good as possible:
 
 *Don't forget to use display! (Sometimes even on parents...)*
 
-![squares.png](squares.png)
+{{< bigImage imageid="squares.png" alt="squares example" >}}

@@ -1,0 +1,332 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-left-radius: $radius;
+    -moz-border-left-radius: $radius;
+    -ms-border-left-radius: $radius;
+    border-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-right-radius: $radius;
+    -moz-border-right-radius: $radius;
+    -ms-border-right-radius: $radius;
+    border-right-radius: $radius;
+}
+
+
+@mixin border-top-radius($radius) {
+    -webkit-border-top-radius: $radius;
+    -moz-border-top-radius: $radius;
+    -ms-border-top-radius: $radius;
+    border-top-radius: $radius;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($transition) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform-origin ($origin) {
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+
+
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+
+
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+ @if $inset {
+   -webkit-box-shadow:inset $top $left $blur $color;
+   -moz-box-shadow:inset $top $left $blur $color;
+   box-shadow:inset $top $left $blur $color;
+ } @else {
+   -webkit-box-shadow: $top $left $blur $color;
+   -moz-box-shadow: $top $left $blur $color;
+   box-shadow: $top $left $blur $color;
+ }
+}
+
+
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+
+
+
+@mixin degrade{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;1+37,0+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 37%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(37%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(255,255,255,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+
+
+
+
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+
+$heartbeat-color: #636363;
+$heartbeat-size: 10px; // must be divisible by 2 and 3
+$heartbeat-rotation: rotate(45deg);
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content }
+  @-moz-keyframes #{$name} { @content }
+  @-o-keyframes #{$name} { @content }
+  @keyframes #{$name} { @content }
+}
+
+@mixin experimental($property, $value, $moz: true, $webkit: true, $o: true, $ms: true, $khtml: true, $official: true) {
+  @if $webkit   { -webkit-#{$property} : $value; }
+  @if $khtml    {  -khtml-#{$property} : $value; }
+  @if $moz      {    -moz-#{$property} : $value; }
+  @if $ms       {     -ms-#{$property} : $value; }
+  @if $o        {      -o-#{$property} : $value; }
+  @if $official {         #{$property} : $value; }
+}
+
+@mixin animation($value) {
+  @include experimental(animation, $value);
+}
+
+@include keyframes(heartbeat) {
+  0%  { @include transform($heartbeat-rotation scale(1));   }
+  14% { @include transform($heartbeat-rotation scale(1.3)); }
+  28% { @include transform($heartbeat-rotation scale(1));   }
+  42% { @include transform($heartbeat-rotation scale(1.3)); }
+  70% { @include transform($heartbeat-rotation scale(1));   }
+}
+
+
+
+/* Styles for old versions of IE */
+.heartbeat {
+  font-family: sans-serif;
+  font-weight: 100;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* :not(:required) hides this rule from IE9 and below */
+.heartbeat:not(:required) {
+  @include animation(heartbeat 2300ms ease 0s infinite normal);
+  
+  display: inline-block;
+  position: relative;  
+  overflow: hidden;
+  text-indent: -9999px;
+  width: $heartbeat-size;  
+  height: $heartbeat-size;
+  @include transform($heartbeat-rotation scale(1));
+  @include transform-origin(50%); 
+  
+  &:after, &:before {
+    position: absolute;
+    content: "";  
+    background: $heartbeat-color;
+  }
+  
+  &:before {
+    @include border-left-radius($heartbeat-size / 3);
+    top: ($heartbeat-size/3);
+    left: 0;
+    width: $heartbeat-size;
+    height: (2 * $heartbeat-size / 3);
+  }
+  
+  &:after {
+    @include border-top-radius($heartbeat-size / 3);
+    top: 0;
+    left: ($heartbeat-size / 3);
+    width: (2 * $heartbeat-size / 3);
+    height: ($heartbeat-size / 3);
+  }
+}
+
+
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+//HEART BEAT ==================================================================
+
+
+
+
+// margin et padding ==========================================================
+
+
+
+/*
+  Margins
+
+  provides utility class such as:
+
+    .mb5  : margin-bottom 5px
+    .mt15 : margin-top 15px
+    etc.
+
+*/
+
+.margin0{
+    margin: 0px;
+}
+
+.padding0{
+    padding: 0px;
+}
+
+@for $i from 0 through 20{
+  .mb#{$i*5}{
+    margin-bottom: #{$i*5}px !important;
+  }
+  .mt#{$i*5}{
+    margin-top: #{$i*5}px !important;
+  }
+  .mr#{$i*5}{
+    margin-right: #{$i*5}px !important;
+    &:hover{
+      margin-right: #{$i*5}px !important;
+    }
+  }
+  .ml#{$i*5}{
+    margin-left: #{$i*5}px !important;
+  }
+
+  .pl#{$i*5}{
+    padding-left: #{$i*5}px !important;
+  }
+  .pr#{$i*5}{
+    padding-right: #{$i*5}px !important;
+  }
+  .pt#{$i*5}{
+    padding-top: #{$i*5}px !important;
+  }
+  .pb#{$i*5}{
+    padding-bottom: #{$i*5}px !important;
+  }
+
+  // img.img#{$i*5}{
+  //   height: #{$i*5}px !important;
+  //   width:  #{$i*5}px !important;
+  // }
+}
+
+
+// end margin et padding ==========================================================

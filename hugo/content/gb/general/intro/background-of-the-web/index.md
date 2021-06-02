@@ -18,7 +18,7 @@ With the creation of the web, there was also the need for a way to consult the f
 
 ### WorldWideWeb
 
-{{< addImage imageid="worldwideweb-browser.jpeg" alt="first browser" >}}
+{{< image imageid="worldwideweb-browser.jpeg" alt="first browser" >}}
 *Screen capture of the first browser developed by Sir Tim Berners-Lee*
 
 The concept of **hypertext** preceded the World Wide Web by decades. But nearly all hypertext systems worked on local files. Tim Berners-Lee wanted to create a system that would work across networks so that people could link from a file on one machine to another file on another machine.
@@ -35,7 +35,7 @@ There was one major downside to the WorldWideWeb browser: it could only be used 
 
 To make the Web more widely accessible, a second browser project was developed at CERN: the Line Mode browser. The Line Mode browser was first released in 1991 and was compatible with most unix / linux systems. Thereby instantly bring the Web to commonly used, much lower powered devices, such as the "line mode" terminals that were used to access mini computers, still common at the time.
 
-{{< addImage imageid="linemode-browser.png" alt="first browser" >}}
+{{< image imageid="line-mode-browser.png" alt="first browser" >}}
 *Screen capture of the Line Mode browser*
 
 ## Language of the Internet

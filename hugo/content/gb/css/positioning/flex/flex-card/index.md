@@ -12,7 +12,7 @@ What are we going to make?
 
 A card that could be used on a application for a pizza delivery service!  🔥🍕⏲️⭐
 
-![pizzacard.png](pizzacard.png)
+{{< bigImage imageid="pizzacard.png" alt="Pizza card example" >}}
 
 Colors: 
 

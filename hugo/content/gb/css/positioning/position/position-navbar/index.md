@@ -58,6 +58,6 @@ Copy the following code in your editor:
 
 As a refreshment of everything we have currently seen so far. I want you to re-create this simpel navbar.
 
-![navbar.png](navbar.png)
+{{< bigImage imageid="navbar.png" alt="navbar.png" >}}
 
 After this, find a way to let the navbar stick to the top of the screen.

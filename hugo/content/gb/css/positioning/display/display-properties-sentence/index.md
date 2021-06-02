@@ -55,11 +55,12 @@ Code in editor:
 
 You should see something like this:
 
-![](sentencebad.png)
+{{< bigImage imageid="sentencebad.png" alt="Sentence not styled" >}}
 
 Find a way to display it like this:
 
-![agendagoodpng](sentencegood.png)
+{{< bigImage imageid="sentencegood.png" alt="Sentence styled" >}}
+
 
 **NOTE:** Do not change the HTML tags or content.
 

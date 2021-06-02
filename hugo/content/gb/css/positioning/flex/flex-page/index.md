@@ -18,14 +18,13 @@ Does his name not ring a bell? Don't worry, You will get to know him during this
 
 Recreate the following structure in HTML:
 
-
-![html-example.png](html-example.png)
+{{< bigImage imageid="html-example.png" alt="Html page with out style" >}}
 
 ## Flex those containers!
 
 Great work! Now style this page into this:
 
-![endgoal.png](endgoal.png)
+{{< bigImage imageid="endgoal.png" alt="Eng goal target" >}}
 
 The images required for this exercise are located inside the resources\images folder.
 

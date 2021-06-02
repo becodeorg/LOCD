@@ -12,19 +12,18 @@
     <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
 
-    
     <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
     <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/javascript/javascript.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/css/css.js"></script>
     <script src="{{.Site.BaseURL}}/codemirror/mode/xml/xml.js"></script>
 	<script src="{{.Site.BaseURL}}/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
+    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
 
     <script src="{{.Site.BaseURL}}/js/split.js"></script>
     <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
 
-    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
-    <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
     {{end}}
 
@@ -33,70 +32,16 @@
 	<link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
 
     {{ if eq .Params.Editor true}}
-    <!--IntoJS import-->
     
     <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
     <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
     {{end}}
     
+    <!--IntoJS import-->
     <script src="{{.Site.BaseURL}}/js/intro.min.js"></script>
     {{ if eq .Params.Editor false}}
-    <style>
-        .viewport{
-            grid-template-columns: minmax(100%,0%) 66.667%;  
-        }
-        
-        .instructions__info{
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        #instructionNavMax{
-            display: block;
-        }
-
-        .nav__wrapper{
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
-        }
-
-    </style>
+    	<link id="maxViewer" href="{{.Site.BaseURL}}/css/no-editor.css" rel="stylesheet">
     {{end}}
-    
-
-    <style>
-        #textareacontainer{
-            position: absolute;
-        }
-
-        .input__container{
-            position: relative;
-        }
-
-        .html-editor{
-            z-index: 50;
-        }
-    </style>
-
-    <style>
-        
-
-        
-    </style>
-
-    {{ if eq .Params.Editor true}}
-    <script>
-        let stylesheet = document.getElementById("maxViewer");
-
-        stylesheet.disabled = true;
-
-        if(sessionStorage.getItem('maxScreen') == "true"){
-            stylesheet.disabled = false;
-        }
-    </script>
-    {{end}}
-
 </head>
 <body>
     
@@ -118,7 +63,6 @@
 	</nav>
     {{end}}
     
-
     <div id="viewport" class="viewport">
 
         <div class="reset">
@@ -156,16 +100,6 @@
                     <i id="tourHandler" class=" question far fa-question-circle"></i>
                     {{end}}
 					<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
-                    <div>
-        
-            
-                
-              
-                
-        
-
-         
-    </div>
 				</div>
             </nav>
 
@@ -190,7 +124,8 @@
                 
                
 				<!--START INSERT DATA-->
-				{{.Content}}
+                {{ replace .Content "disabled" ""| safeHTML }}
+				<!-- {{.Content}} -->
                 <!--END iNSERT DATA-->
 
 
@@ -206,8 +141,6 @@
 				</div>
 			</nav>
             
-            
-
 		</section>
         {{ if eq .Params.Editor true}}
         
@@ -227,7 +160,6 @@
             {{end}}
             
             
-
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
             <div  id="editorInput" class="editor__input">
                 <div id="inputTab" class="input__tab">
@@ -390,10 +322,7 @@
             message.classList.remove("activeMessage");
         });
     }
-
     loadEditor();
-
-
 </script>
 
 <script>
@@ -421,7 +350,6 @@
         }
     });
 </script>
-
 <script src="{{.Site.BaseURL}}/js/introSetup.js"></script>
 <script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>

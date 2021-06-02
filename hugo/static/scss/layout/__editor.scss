@@ -10,6 +10,10 @@
   }
 }
 
+.html-editor{
+  z-index: 50;
+}
+
 .input,
 .output {
   &__tab {
@@ -76,6 +80,14 @@
 iframe {
   height: 100%;
   width: 100%;
+}
+
+#textareacontainer{
+  position: absolute;
+}
+
+.input__container{
+  position: relative;
 }
 
 #iframewrapper {
