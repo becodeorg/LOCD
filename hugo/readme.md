@@ -8,24 +8,22 @@ This means it brings certain limitations with it, but nothing is impossible. The
 
 That being said, let's dive into what we use inside this project, and where to find all it's logic.
 
-
-
 ## Content
 
 - [Tools used in Hello world!](#Tools-used-in-Hello-world!)
-   - [Hugo](#Hugo)
-   - [CodeMirror](#CodeMirror)
-   - [Intro.js](#Intro.js)
- - [Folder structures](#Folder structures)
-    - [Content](#Content)
-       - [Front-matter](#Front-matter)
-    - [Data](#Data)
-    - [i18n](#i18n)
-    - [Layouts](#Layouts)
-       - [_default](#_default)
-       - [Partials](#Partials)
-       - [ShortCodes](#ShortCodes)
-    - [Static folder](#Static folder)
+  - [Hugo](#Hugo)
+  - [CodeMirror](#CodeMirror)
+  - [Intro.js](#Intro.js)
+- [Folder structures](#Folder-structures)
+  - [Content](#Content)
+    - [Front-matter](#Front-matter)
+  - [Data](#Data)
+  - [i18n](#i18n)
+  - [Layouts](#Layouts)
+    - [\_default](#_default)
+    - [Partials](#Partials)
+    - [ShortCodes](#ShortCodes)
+  - [Static folder](#Static-folder)
 
 ## Tools used in Hello world!
 
@@ -33,9 +31,9 @@ That being said, let's dive into what we use inside this project, and where to f
 
 <img src="./resources/hugo-static-site-generator.jpg" width="800px">
 
-We wanted it to be easy for low/high skilled people to add exercises that they collected. This would mean the process has to be as easy and straightforward as possible (more about this later..). 
+We wanted it to be easy for low/high skilled people to add exercises that they collected. This would mean the process has to be as easy and straightforward as possible.
 
-All the contributor has to do is create a README file, that contains the instructions/content of the exercise. If the exercise needs an HTML/CSS starters file, they can easily put it next to the README.
+All the contributor has to do is create a README file, that contains the instructions/content of the exercise and list it inside a collective list of all exercises. If the exercise needs an HTML/CSS starters file, they can easily put it next to the README.
 
 Knowing this, we had chosen **Hugo** as our _static site generator_. Hugo generates pages, by looking at the README files and template files.
 This way we easily could put the exercises next to each other and Hugo would do the rest.
@@ -54,8 +52,6 @@ If you want to dive into the documentation, you can find it [here](https://codem
 
 In this project there is a little `"Joy-ride"` which navigates the user through the application in case they are lost. For more info look [here](https://introjs.com/docs).
 
-
-
 ## Folder structures
 
 Hello world is located inside the "Hugo" folder. As you can see there are multiple folders that play an important role. We will cover each folder and the important files in this section.
@@ -72,13 +68,13 @@ Take this for instance:
   - html
     - basics-of-html
       - boldcusive
-        - index.md 
+        - index.md
         - style.css
         - exercise.html
 
-You can see that there are 3 files inside the `boldcursive` exercise. 
+You can see that there are 3 files inside the `boldcursive` exercise.
 
-Let's loop over the main files that could be located inside the exercise folder.
+Lets loop over the main files that could be located inside the exercise folder.
 
 - **index.md** &#8594; Instructions/lecture written in markdown
 - **image files** &#8594; Images that are used **Only** inside the Readme
@@ -89,17 +85,15 @@ Let's loop over the main files that could be located inside the exercise folder.
 
 > The subject, chapter and exercise folders naming is important, you will see more about this in the "Data" chapter.
 
-
-
 #### Front-matter
 
 Hugo uses Front-matter variables that you declare and later use in your HTML (We'll see more about this later.)
 Front-matters can be found inside the `index.md`, there are 4 important ones that we HAVE to declare.
 
-- __Title__ &#8594; Instructions/lecture written in markdown
-- __Editor__ &#8594; Does the page have an editor? [false/true]
-- __Layout__ &#8594; Which layout should the page use? (Currently standard should single.html)
-- __TranslationKey__  &#8594; A string that connects translated pages together. Hugo will check if there is a README with the same string. This makes it so people can change language on the page itself.
+- **Title** &#8594; Instructions/lecture written in markdown
+- **Editor** &#8594; Does the page have an editor? [false/true]
+- **Layout** &#8594; Which layout should the page use? (Currently standard should single.html)
+- **TranslationKey** &#8594; A string that connects translated pages together. Hugo will check if there is a README with the same string. This makes it so people can change language on the page itself.
 
 ### Data
 
@@ -112,29 +106,26 @@ Let's take a look at the YAML structure from css.yaml
 ```yaml
 ---
 chapters:
-# -------Positioning-------
+  # -------Positioning-------
   positioning: # -----> Just a name to make it clear.
-    order: 3   # -----> Will be displayed as the 3rd element in the list.
-    folder : positioning # -----> Folder name
+    order: 3 # -----> Will be displayed as the 3rd element in the list.
+    folder: positioning # -----> Folder name
     subFolders: true # -----> Are there third level of folders?
-    
-	# -----> If there are no third levels, list the exercises down here
+    # If there are no third levels, list the exercises down here like this:
     exercises:
-	# ---> like this
-	- intro-to-css 
-	# ---> Note, this should not belong here since subfolders is not false.
-	
+      - intro-to-css
+    # Note, this should not belong here since subfolders is not false.
     subChapters:
       1-display: # -----> Just a name to make it clear.
         folder: display # -----> Second level folder name
         exercises:
-        - display-properties-agenda  # -----> Third level folder name, aka. the exercise.
-        - display-properties-sentence # -----> Third level folder name, aka. the exercise.
+          - display-properties-agenda # -----> Third level folder name, aka. the exercise.
+          - display-properties-sentence # -----> Third level folder name, aka. the exercise.
 ```
 
 This will target the following folders:
 
- ![](./resources/folderStructure.png)
+![](./resources/folderStructure.png)
 
 ### i18n
 
@@ -144,7 +135,7 @@ For making translations easier, words that need to be translate in the html file
 
 Just like the name gives it away, this is where we build our HTML layouts, those can be pages, components, ... anything that is related to HTML should be written here.
 
-#### _default
+#### \_default
 
 Inside the `_default` folder, you will find the important html files that Hugo should use. Currently there are only two files:
 
@@ -155,7 +146,7 @@ Inside the `_default` folder, you will find the important html files that Hugo s
 
 These a HTML snippets/components that you can use within other HTML pages/components.
 
-You can call partials like this : 
+You can call partials like this :
 
 ```go
 {{ partial "navbar" (dict "lang" .Lang "site" .Site "translations" .Translations)}}
@@ -167,13 +158,8 @@ You can call partials like this :
 
 Shortcodes are HTML snippets that can be used inside your markdown files. If certain elements need a styling for example centering and image.
 
-
-
 ### Static folder
 
 Inside the static folder you will find all static files like images, css , JavaScript, ...
 
-
-
 ![](./resources/locd-logo.png)
-
