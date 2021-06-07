@@ -16,7 +16,16 @@ That being said, let's dive into what we use inside this project, and where to f
    - [Hugo](#Hugo)
    - [CodeMirror](#CodeMirror)
    - [Intro.js](#Intro.js)
- - Folder structures
+ - [Folder structures](#Folder structures)
+    - [Content](#Content)
+       - [Front-matter](#Front-matter)
+    - [Data](#Data)
+    - [i18n](#i18n)
+    - [Layouts](#Layouts)
+       - [_default](#_default)
+       - [Partials](#Partials)
+       - [ShortCodes](#ShortCodes)
+    - [Static folder](#Static folder)
 
 ## Tools used in Hello world!
 
@@ -78,7 +87,7 @@ Let's loop over the main files that could be located inside the exercise folder.
 - **script.js** &#8594; The JavaScript that will be used inside the JS editor.
 - **Resources folder** &#8594; This folder will contain all resources the junior will use inside their exercises.
 
-> The subject,chapter and exercise folders naming is important, you will see more about this in the "Data" chapter.
+> The subject, chapter and exercise folders naming is important, you will see more about this in the "Data" chapter.
 
 
 
@@ -87,7 +96,84 @@ Let's loop over the main files that could be located inside the exercise folder.
 Hugo uses Front-matter variables that you declare and later use in your HTML (We'll see more about this later.)
 Front-matters can be found inside the `index.md`, there are 4 important ones that we HAVE to declare.
 
-- Title &#8594; Instructions/lecture written in markdown
-- Editor
-- Layout
-- translationKey
+- __Title__ &#8594; Instructions/lecture written in markdown
+- __Editor__ &#8594; Does the page have an editor? [false/true]
+- __Layout__ &#8594; Which layout should the page use? (Currently standard should single.html)
+- __TranslationKey__  &#8594; A string that connects translated pages together. Hugo will check if there is a README with the same string. This makes it so people can change language on the page itself.
+
+### Data
+
+For each language there are a series of YAML files, that collects which exercises are located inside the application, if done correctly they will be displayed in the user interface.
+
+> Not assigning the right folders/file names will result in not displaying the exercise in the navigation menu
+
+Let's take a look at the YAML structure from css.yaml
+
+```yaml
+---
+chapters:
+# -------Positioning-------
+  positioning: # -----> Just a name to make it clear.
+    order: 3   # -----> Will be displayed as the 3rd element in the list.
+    folder : positioning # -----> Folder name
+    subFolders: true # -----> Are there third level of folders?
+    
+	# -----> If there are no third levels, list the exercises down here
+    exercises:
+	# ---> like this
+	- intro-to-css 
+	# ---> Note, this should not belong here since subfolders is not false.
+	
+    subChapters:
+      1-display: # -----> Just a name to make it clear.
+        folder: display # -----> Second level folder name
+        exercises:
+        - display-properties-agenda  # -----> Third level folder name, aka. the exercise.
+        - display-properties-sentence # -----> Third level folder name, aka. the exercise.
+```
+
+This will target the following folders:
+
+ ![](./resources/folderStructure.png)
+
+### i18n
+
+For making translations easier, words that need to be translate in the html file can be found here. If done correctly, Hugo will change this for each i18n element that has the same id.
+
+### Layouts
+
+Just like the name gives it away, this is where we build our HTML layouts, those can be pages, components, ... anything that is related to HTML should be written here.
+
+#### _default
+
+Inside the `_default` folder, you will find the important html files that Hugo should use. Currently there are only two files:
+
+- **single.html** &#8594; This is the default layout for all the exercises
+- **about.html** &#8594; This is the default about layout
+
+#### Partials
+
+These a HTML snippets/components that you can use within other HTML pages/components.
+
+You can call partials like this : 
+
+```go
+{{ partial "navbar" (dict "lang" .Lang "site" .Site "translations" .Translations)}}
+```
+
+> Note: dict is used to pass more than one value to the partial template.
+
+#### ShortCodes
+
+Shortcodes are HTML snippets that can be used inside your markdown files. If certain elements need a styling for example centering and image.
+
+
+
+### Static folder
+
+Inside the static folder you will find all static files like images, css , JavaScript, ...
+
+
+
+![](./resources/locd-logo.png)
+
