@@ -100,6 +100,29 @@ let userType = () => {
   }
 };
 
-//execute at start to view the page
+
+
+function loadEditor(){
+  let htmlContent = localStorage.getItem(`${ fetchTitle() }-html`);
+  let cssContent = localStorage.getItem(`${ fetchTitle() }-css`);
+  let jsContent = localStorage.getItem(`${ fetchTitle() }-js`);
+  console.log(htmlContent)
+  if(htmlContent){
+      // document.getElementById("textareaCodeHTML").value = htmlContent;
+      HTMLeditor.setValue(htmlContent);
+      CSSeditor.setValue(cssContent);
+      JSeditor.setValue(jsContent);
+  }
+}
+
+
+
+
+
+
+
+loadEditor();
+
+    //execute at start to view the page
 viewContent();
 userType();

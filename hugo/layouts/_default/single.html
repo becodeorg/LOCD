@@ -242,6 +242,13 @@
 
 {{ if eq .Params.Editor true}}
 <script>
+    
+
+    const fetchTitle = () =>{
+        return {{.Title}}
+    }
+
+    
 
     let htmlStartContent = document.getElementById("textareaCodeHTML").value;
     let cssStartContent = document.getElementById("textareaCodeCSS").value;
@@ -272,16 +279,7 @@
         localStorage.setItem(`${ {{.Title}} }-js`,jsContent);
     }
 
-    function loadEditor(){
-        let htmlContent = localStorage.getItem(`${ {{.Title}} }-html`);
-        let cssContent = localStorage.getItem(`${ {{.Title}} }-css`);
-        let jsContent = localStorage.getItem(`${ {{.Title}} }-js`);
-        if(htmlContent){
-            document.getElementById("textareaCodeHTML").value = htmlContent;
-            document.getElementById("textareaCodeCSS").value = cssContent;
-            document.getElementById("textareaCodeJS").value = jsContent;
-        }
-    }
+    
 
     function resetEditor(){
         let resetModal = document.querySelector(".reset");
@@ -329,7 +327,7 @@
             message.classList.remove("activeMessage");
         });
     }
-    loadEditor();
+    
 
 
     const confirmExit = (e) =>{
