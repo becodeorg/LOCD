@@ -242,6 +242,13 @@
 
 {{ if eq .Params.Editor true}}
 <script>
+
+    let htmlStartContent = document.getElementById("textareaCodeHTML").value;
+    let cssStartContent = document.getElementById("textareaCodeCSS").value;
+    let jsStartContent = document.getElementById("textareaCodeJS").value;
+
+    let startContent = [htmlStartContent,cssStartContent,jsStartContent]
+
     //handle bar in the editor to increase the viewports.
     Split([".editor__input", ".editor__output"], {
     direction: "vertical",
@@ -323,6 +330,37 @@
         });
     }
     loadEditor();
+
+
+    const confirmExit = (e) =>{
+        viewContent();
+        let storedHTML = localStorage.getItem(`${ {{.Title}} }-html`);
+        let storedCSS = localStorage.getItem(`${ {{.Title}} }-css`);
+        let storedJS = localStorage.getItem(`${ {{.Title}} }-css`);
+
+        let textHTML = document.getElementById("textareaCodeHTML").value
+        let textCSS = document.getElementById("textareaCodeCSS").value
+        let textJS = document.getElementById("textareaCodeJS").value
+
+
+        let textStored = [storedHTML,storedCSS, storedJS];
+        let textArea = [textHTML,textCSS, textJS];
+        
+        for(i = 0; i < textArea.length; i++){
+            console.log(textArea[i])
+            console.log(textStored[i])
+            
+
+            let value = textStored[i] == textArea[i]
+            if(textStored[i] !== textArea[i] && startContent[i] !== textArea[i]){
+                return "";
+            }
+        }
+    }
+        
+
+    window.onbeforeunload = confirmExit;
+
 </script>
 
 <script>
