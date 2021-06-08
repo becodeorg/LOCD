@@ -47,6 +47,7 @@
 {{ partial "navbar" (dict "lang" .Lang "site" .Site "translations" .Translations)}}
 {{$cssFile := ""}}
 {{$htmlFile := ""}}
+{{$jsFile := ""}}
     
 <main>
     {{ if eq .Params.Editor true}}
@@ -141,6 +142,8 @@
             {{ $cssPath := path.Join "./content" $css}}
             {{ $html := path.Join $path "exercise.html"}}
             {{ $htmlPath := path.Join "./content" $html}}
+            {{ $js := path.Join $path "script.js"}}
+            {{ $jsPath := path.Join "./content" $js}}
 
             {{ if(fileExists $htmlPath)}}
                 {{ $htmlFile = readFile $htmlPath}}
@@ -148,6 +151,10 @@
 
             {{ if(fileExists $cssPath)}}
                 {{ $cssFile = readFile $cssPath}}
+            {{end}}
+
+            {{ if(fileExists $jsPath)}}
+                {{ $jsFile = readFile $jsPath}}
             {{end}}
             
             <!--^^^^^^^^^^^^EDITOR^^^^^^^^^^^^-->
@@ -179,7 +186,7 @@
                     <div id="textareacontainer" class="js-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
-								<textarea autocomplete="off" id="textareaCodeJS" wrap="logical" spellcheck="false" style="display:none"></textarea>
+								<textarea autocomplete="off" id="textareaCodeJS" wrap="logical" spellcheck="false" style="display:none">{{$jsFile}}</textarea>
 							</div>
 						</div>
 					</div>
@@ -229,6 +236,10 @@
 
         const fetchCSSFile = () =>{
             return {{$cssFile}}
+        }
+
+        const fetchJSFile = () =>{
+            return {{$jsFile}}
         }
 
         //handle bar in the editor to increase the viewports.
