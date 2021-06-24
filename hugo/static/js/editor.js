@@ -100,6 +100,138 @@ let userType = () => {
   }
 };
 
+function loadEditor() {
+  let htmlContent = localStorage.getItem(`${fetchTitle()}-html`);
+  let cssContent = localStorage.getItem(`${fetchTitle()}-css`);
+  let jsContent = localStorage.getItem(`${fetchTitle()}-js`);
+  console.log(htmlContent);
+  if (htmlContent) {
+    HTMLeditor.setValue(htmlContent);
+    CSSeditor.setValue(cssContent);
+    JSeditor.setValue(jsContent);
+  }
+}
+
+let saveButton = document.getElementById("saveButton");
+saveButton.addEventListener("click", saveEditor);
+
+function saveEditor() {
+  viewContent();
+  let htmlContent = HTMLeditor.getValue();
+  let cssContent = CSSeditor.getValue();
+  let jsContent = JSeditor.getValue();
+  messagePop("Succesfully saved!");
+  localStorage.setItem(`${fetchTitle()}-html`, htmlContent);
+  localStorage.setItem(`${fetchTitle()}-css`, cssContent);
+  localStorage.setItem(`${fetchTitle()}-js`, jsContent);
+}
+
+let resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetEditor);
+
+function resetEditor() {
+  let resetModal = document.querySelector(".reset");
+  let confirmButtons = resetModal.querySelector(".reset__selection");
+  let acceptButton = confirmButtons.firstElementChild;
+  let declineButton = confirmButtons.lastElementChild;
+
+  resetModal.style = "display:block";
+
+  acceptButton.addEventListener("click", () => {
+    console.log("clicked!");
+    let htmlView = document.getElementById("textareaCodeHTML");
+    messagePop("Succesfully reset!");
+
+    HTMLeditor.setValue(fetchHTMLFile());
+    CSSeditor.setValue(fetchCSSFile());
+    JSeditor.setValue("");
+
+    CSSeditor.refresh();
+
+    localStorage.removeItem(`${fetchTitle()}-html`);
+    localStorage.removeItem(`${fetchTitle()}-css`);
+    localStorage.removeItem(`${fetchTitle()}-js`);
+    viewContent();
+    resetModal.style = "display:none";
+  });
+
+  declineButton.addEventListener("click", () => {
+    resetModal.style = "display:none";
+  });
+
+  resetModal.addEventListener("click", () => {
+    if (!resetModal.firstElementChild.contains(event.target)) {
+      resetModal.style = "display:none";
+    }
+  });
+}
+
+function messagePop(text) {
+  let message = document.querySelector(".successMessage");
+  message.firstElementChild.innerHTML = text;
+  message.classList.add("activeMessage");
+
+  message.addEventListener("animationend", () => {
+    message.classList.remove("activeMessage");
+  });
+}
+
+let htmlStartContent = document.getElementById("textareaCodeHTML").value;
+let cssStartContent = document.getElementById("textareaCodeCSS").value;
+let jsStartContent = document.getElementById("textareaCodeJS").value;
+
+let startContent = [htmlStartContent, cssStartContent, jsStartContent];
+
+const confirmExit = (e) => {
+  viewContent();
+  let storedHTML = localStorage.getItem(`${fetchTitle()}-html`);
+  let storedCSS = localStorage.getItem(`${fetchTitle()}-css`);
+  let storedJS = localStorage.getItem(`${fetchTitle()}-css`);
+
+  console.log(HTMLeditor.getValue());
+
+  let textHTML = HTMLeditor.getValue();
+  let textCSS = CSSeditor.getValue();
+  let textJS = JSeditor.getValue();
+
+  let textStored = [storedHTML, storedCSS, storedJS];
+  let textArea = [textHTML, textCSS, textJS];
+
+  for (i = 0; i < textArea.length; i++) {
+    if (textStored[i] !== textArea[i] && startContent[i] !== textArea[i]) {
+      return "";
+    }
+  }
+};
+
+window.onbeforeunload = confirmExit;
+
+let inputButtons = Array.from(document.getElementById("inputTab").children);
+
+inputButtons.forEach((element) => {
+  if (element.tagName === "DIV") {
+    element.addEventListener("click", () => {
+      let parent = element.parentElement;
+      let views = [...document.querySelector(".input__container").children];
+      console.log(parent);
+
+      let currentActive = parent.querySelector(".tab--selected");
+      currentActive.classList.remove("tab--selected");
+      element.classList.add("tab--selected");
+
+      views.forEach((view) => {
+        if (view.className !== element.dataset.link) {
+          view.style.zIndex = "0";
+        } else {
+          view.style.zIndex = "1";
+        }
+      });
+    });
+  }
+});
+
+loadEditor();
+
 //execute at start to view the page
 viewContent();
 userType();
