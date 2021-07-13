@@ -62,5 +62,4 @@ HTML consists of a **series of elements**, which you use to enclose, or wrap, di
 HTML is very easy to learn... So, let's start with that!
 
 ---
-
 [How does the Internet work?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work) by [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work/contributors.txt) and is licensed under CC-BY-SA 2.5.
