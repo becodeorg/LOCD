@@ -13,7 +13,8 @@ You work in a Web Design agency as Frontend Integrator. The UI Designer provides
 
 Your job is to reproduce in html and CSS each of these components. Each UI component has been validated by your customer. It's therefore really important that the end-result looks as close as possible to the mockups.
 
-Look at this image: ![](integration-challenge-7.png)
+Look at this image: 
+{{< bigImage imageid="integration-challenge-7.png" alt="challenge image" >}}
 
 Reproduce this interface as close as possible using html and CSS. You have to reach the closest "pixel-perfect" version you can. Ideally, we should not see any difference between the image mockup and your result, without using any image. Images are only accepted for illustrations, when there is no CSS alternative.
 

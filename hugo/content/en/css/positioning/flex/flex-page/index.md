@@ -38,4 +38,4 @@ Try to use flex-box as much as possible!
 
 **Note:** You will not find the correct font, try to use something that gets "close enough".
 
-**Tip**: always start with the content: so focus on the html first, without worrying to much about CSS. When your HTML is good, the move on to CSS. This way, you will only add classes when required by the CSS, which is a good practice.
+**Tip**: always start with the content: so focus on the html first, without worrying to much about CSS. When your HTML is _"good"_, move on to CSS. This way, you will only add classes when required by the CSS, which is a good practice.

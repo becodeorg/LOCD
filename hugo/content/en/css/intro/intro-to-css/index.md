@@ -15,7 +15,7 @@ In our previous journey, we have discovered the power of HTML. As you've seen, H
 <p>This is a paragraph.</p>
 ```
 
-But you might have noticed that there is no color at all, it just looks like a plain word document. Which is boring to look at.
+But you might have noticed that there is no colour at all, it just looks like a plain word document. Which is boring to look at.
 
 That's because on top of their HTML, these pages are using another language, called CSS, which job is to make the html look visually better.
 
@@ -31,27 +31,30 @@ Into that:
 ## What is CSS?
 
 - **CSS** Stands for **C**ascading **S**tyle **S**heets
-- CSS describes how HTML **Elements** are to be displayed on screen.
-- It can control the layout of multiple pages at once.
+- CSS describes how HTML **Elements** are to be rendered visually on computer screens or mobile phone, but also on paper (if you print the page).
+- The same CSS code can control the layout of multiple pages at once to ensure visual coherence.
 
 In short, CSS is what makes our web pages look good and presentable.
 It's a must-have skill for any web developer out there.
+
+(Information adapted from https://www.w3schools.com/Css/css_intro.asp)
 
 ## The CSS Syntax
 
 Look at this schematic, which sums all how to write CSS in a way that the browser understands it.
 
-{{< addImage imageid="selector.gif" alt="selector" >}}
+{{< bigImage imageid="selector.png" alt="selector" >}}
 
 As you can see, there are fancy words here. Don't panick, there won't be much more :-)
 
-"**selector**" indicates which element(s) of your HTML file should receive the instructions. It points to the HTML element you want to style. In this example, all `<h1>` tags on the html page will receive the CSS properties assigned to the `h1`css selector. 
 
-The **declaration** block contains one or more declarations separated by semicolons.
+"**selector**" indicates which element(s) of your HTML file should receive the instructions. It tells which HTML element you want to style. In this example, all `<p>` tags on the html page will receive the CSS properties assigned to the `p` css selector.
 
-Each declaration includes a CSS **property name** and a **value**, separated by a colon (this character `:`).
+The **declaration** block encloses one (or several declarations) separated by the semicolon character (`;`).
 
-A CSS declaration always ends with a semicolon (`;`), and declaration blocks are surrounded by curly braces. Example:
+Each CSS declaration includes a CSS **property name** and a **value**, separated by a colon (this character `:`).
+
+A CSS declaration always ends with a semicolon (`;`), and declaration parts are surrounded by curly braces. Example:
 
 ```css
 h1 {
@@ -66,8 +69,7 @@ There are three  ways of implementing CSS in our web-pages.
 
 ### 1. Inline CSS
 
-Firstly we can include CSS directly in our HTML elements.
-To accomplish this, we make use of the `style` attribute, and write CSS code inside its value (the part in between the quotes). Example :
+We can include CSS directly in our HTML elements. To achieve to this result, we use the `style` attribute, and write CSS code inside its value (the part in between the quotes). Example :
 
 ```html
 <h1 style="color: blue"> Hello world! </h1>
@@ -83,7 +85,7 @@ As you see, the css instructs the browser to use the color blue to render the `h
 
 Easy again! As you can see, you can add up properties using a semicolon (the character `;`) to separate them so the browser does not get confused.
 
-We could add many more properties inside of this method but  it can get really messy in our HTML file so it's not really recommanded. The next two methods are much cleaner...
+We could add many more properties inside of this method but it can get really messy in our HTML file so it's not really recommanded. The next two methods are much cleaner...
 
 ### 2. The `<style>` block
 
@@ -104,7 +106,7 @@ Another way to include CSS is by using the `<style>` tag inside of our `head` se
 </head>
 ```
 
-We just found a solution to not mix our HTML with our CSS, but our styling is still inside of our HTML file.   
+We just found a solution to not mix our HTML with our CSS, but our styling is still inside of our HTML file.
 Maybe, there is a better way to include our CSS..? Well, yes there is!
 
 ### 3. External CSS
@@ -125,7 +127,7 @@ Like the name gives it away, we will have some **external** CSS file(s), which w
 As you can see, we use a `<link>` tag this time to make a connection with our CSS file.
 This link tag will need a few attributes to work, the `rel=" stylesheet"` specifies the relationship between the HTML and CSS file, the browser knows now that we are trying to link a Stylesheet (CSS file).
 The `type=" text/CSS"` will tell the browser what kind of resource we are linking. It's not an obligation to use this, but we recommend using it to avoid any problems in the future.
-Last but not least, the `href="resources/css/style.css"` is our path that the link will use to find the document.   
+Last but not least, the `href="resources/css/style.css"` is our path that the link will use to find the document.
 
 Having an external CSS file is the most recommended way to do, because it "separates concerns" : the HTML file is for content, the CSS file is for decoration !
 
@@ -145,19 +147,19 @@ This will give the same output as our result in example 1, the benefit of this i
 
 ## Working with colours
 
-Colours are a big part of how things look. And we, humans, love colour ! 
+Colours are a big part of how things look. And we, humans, love colour !
 
-There are many millions of colours available in Nature.... Which was quite a challenge to transfer in the digital world of computers.  First, there were only a few colours available, using predefined colour names (like "red", "blue", "beige", "chocolate")... 
+There are many millions of colours available in Nature.... Which was quite a challenge to transfer in the digital world of computers. First, there were only a few colours available, using predefined colour names (like "red", "blue", "beige", "chocolate")...
 
 ### Named colours
 
-A set of standard color names have been defined, letting you use these keywords instead of numeric representations of colors if you choose to do so and there's a keyword representing the exact color you want to use. Color keywords include the standard primary and secondary colors (such as `red`, `blue`, or `orange`), shades of gray (from `black` to `white`, including colors like `darkgray` and `lightgrey`), and a variety of other blended colors including `lightseagreen`, `cornflowerblue`, and `rebeccapurple`.
+The easiest way to start using colours is... by their keyword names! They are easy to remember for us humans, especially for English speakers, since they are in English.  There are currently 140 colour keywords, including primary and secondary colours (such as `red`, `blue`, or `orange`), shades of gray (from `black` to `white`, including `darkgray` and `lightgrey`), and a variety of other blended colours including `AliceBlue`, `DarkOrchid`, and `rebeccapurple`. The full list is available on W3Schools: https://www.w3schools.com/colors/colors_names.asp
 
-It's nice to know they exist, but you will feel fastly limited by having only 140 colours.. So let's rather move on to the next way to express colour values...
+It's nice to know they exist, but you will fastly feel limited by having only 140 colours... So let's rather move on to the next way to express colour values!
 
 ### The RGB system
 
-Quickly computers became more powerful and able to manipulate millions of different colors, using a mix of the fundamental 3 colours of the screen: Red, Green and Blue, which is known as the "RGB system". 
+Quickly computers became more powerful and able to manipulate millions of different colours, using a mix of the fundamental 3 colours of the screen: Red, Green and Blue, which is known as the "RGB system".
 
 ```css
 p{
@@ -185,8 +187,8 @@ color: rgb(0, 182, 255);
 
 ### Transparency !
 
-You can also use a fourth value, to set the "alpha", which means "transparency" (or "opacity" if you prefer). Its value goes from 0 (totally transparent, the tag would be invisible) to 1 (fully opaque). 
-Instead of `RGB` we use `RGBA` to add the transparent layer to our colour. 
+You can also use a fourth value, to set the "alpha", which means "transparency" (or "opacity" if you prefer). Its value goes from 0 (totally transparent, the tag would be invisible) to 1 (fully opaque).
+Instead of `RGB` we use `RGBA` to add the transparent layer to our colour.
 
 So let's say you want an orange square with 60% transparency, you would do this:
 
@@ -200,7 +202,7 @@ div {
 
 ### The Hexadecimal system
 
-For your information, there is yet another way to express the colour values, using the Hexadecimal system. In that system, `red` for example is expressed as `#FF0000`  , `black` is `#000000` and white : `#FFFFFF`.
+For your information, there is yet another way to express the colour values, using the Hexadecimal system. In that system, `red` for example is expressed as `#FF0000` , `black`is `#000000`and white : `#FFFFFF`.
 
 Hexadecimal system functions from values going from 0 to 9 and continues to A up to F for a total of 16 values. By using 6 Hexadecimal values, you are able to express 256 millions of colours.
 
@@ -214,7 +216,7 @@ By default, without styling, each tag is rendered as a rectangle which backgroun
 
 Here is a visual representation of that rectangle, called the "box model".
 
-{{< image imageid="css-block.png" alt="block" >}}
+![](resources/images/css-block.png)
 
 This image represents how you can play with `border`, `margin`, `padding` to style any HTML tag!
 
@@ -231,7 +233,7 @@ Okay to explain this a little deeper, let's get our hands dirty!
 </div>
 ```
 
-**Next create an CSS file and copy the following lines inside of this:**
+**Next copy paste the following snippet in the CSS editor**
 
 ```css
 .box1{
@@ -271,9 +273,9 @@ Okay to explain this a little deeper, let's get our hands dirty!
 }
 ```
 
-That sure won't look *exactly* pretty, but that's not the concern yet.
+That sure won't look _exactly_ pretty, but that's not the concern yet.
 
-As you can see, you can specify each border of the rectangle using 3 parameters: the **thickness** of the line (here, in pixels), the line **type** (`solid`,  `dashed`, `dotted`), and its **colour**.
+As you have seen, you can specify each border of the rectangle using 3 parameters: the **thickness** of the line (here, in pixels), the line **type** (`solid`, `dashed`, `dotted`), and its **colour**.
 
 Now while you are at it, try to figure out the difference between `padding` and `margin`.
 Play with it's values, we will discuss this in group later on.
@@ -285,6 +287,7 @@ As you learn CSS, you will see that CSS is full of hacks and tricks. One really 
 {{< smallImage imageid="chiefhopper.jpg" alt="Hopper" >}}
 
   into that:
+
 {{< smallImage imageid="chiefhopper-rounded.jpg" alt="Chief Hopper, rounded!" >}}
 
   Here is the one property that makes it possible:
@@ -293,11 +296,11 @@ As you learn CSS, you will see that CSS is full of hacks and tricks. One really 
     border-radius:50%;
 ```
 
-You'll get a chance to experiment with it in the exercises....
+You'll get a chance to experiment with it in the exercises...
 
 ## Comments in CSS
 
-Comments are used to explain the code, and may help when you edit the source code at a later date.  Comments are **ignored by browsers**.
+Comments are used to explain the code, and may help when you edit the source code at a later date. Comments are **ignored by browsers**.
 
 A CSS comment starts with `/*` and ends with `*/`:
 
