@@ -20,14 +20,15 @@ Of course, when done, remove the background image for a cleaner look.
 <div id="stage" style="background: transparent url(./css_animation_exercise_stage.png) 0 0 no-repeat;">
 ```
 
+
 - Create the stage: add a div with the id "stage", style it so that it appears exactly like this image, and in the horizontal middle of your index page.   
 
-![](./css_animation_exercise_stage.png)
+{{< bigImage imageid="./css_animation_exercise_stage.png" alt="challenge image" >}}
 
 - Add a div with an id "hero".
 - Style the `#hero` so it looks exactly like this: 
 
-![](./css_animation_exercise_square.png)
+{{< bigImage imageid="./css_animation_exercise_square.png" alt="challenge image" >}}
 
 Now, construct the animation step by step.
 
@@ -35,29 +36,29 @@ Now, construct the animation step by step.
 
 Move the hero to the right, one time.  
 
-![](./css_animation_exercise_1.png)
+{{< bigImage imageid="./css_animation_exercise_1.png" alt="challenge image" >}}
 
 ## Step 2
 
 Move the hero to the right, in 5 seconds, indefinitely (loop animation).  
 
-[](./css_animation_exercise_2.png)
+{{< bigImage imageid="./css_animation_exercise_2.png" alt="challenge image" >}}
 
 ## Step 3
 
 Move the hero to the right, then to the left, in 2 seconds, indefinitely (loop animation).  
 
-[](./css_animation_exercise_3.png)
+{{< bigImage imageid="./css_animation_exercise_3.png" alt="challenge image" >}}
 
 ## Step 4
 
-[](./css_animation_exercise_2.png)
+{{< bigImage imageid="./css_animation_exercise_2.png" alt="challenge image" >}}
 
 ## Step 5-7
 
 You got it ? Ok, now follow these instructions. Think "pixel-perfect".  
 
-[](./css_animation_exercise_4.png)
+{{< bigImage imageid="./css_animation_exercise_4.png" alt="challenge image" >}}
 
 ## 
 

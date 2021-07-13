@@ -8,7 +8,7 @@ publishDir: "../build"
 layout: "bundle"
 
 languages:
-  en:
+  gb:
     languageName: English
     weight: 1
     contentDir: "content/en"

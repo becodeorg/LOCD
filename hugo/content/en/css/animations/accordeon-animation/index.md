@@ -76,4 +76,4 @@ Please copy and paste this code inside your editor:
 
 ## Animated component:
 
-![](./07accordeon.gif)
+{{< bigImage imageid="./07accordeon.gif" alt="challenge image" >}}

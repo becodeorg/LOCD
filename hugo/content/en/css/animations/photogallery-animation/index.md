@@ -45,4 +45,4 @@ Please copy and paste this code inside your editor:
 
 ## Animated component:
 
-![exercise example](./06fotogalerij.gif)
+{{< bigImage imageid="./06fotogalerij.gif" alt="challenge image" >}}

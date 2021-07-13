@@ -32,8 +32,4 @@ Remember:
 
 - font family: **Roboto**
 
-![](Banana_Foundation_Challenge.jpg)
-
-**Starting content in the Editor**
-
-nothing
+{{< bigImage imageid="Banana_Foundation_Challenge.jpg" alt="challenge image" >}}

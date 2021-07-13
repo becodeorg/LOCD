@@ -34,5 +34,4 @@ Please copy and paste this code inside your editor:
 ```
 
 ## Animated component:
-
-![exercise example](./05button.gif)
+{{< bigImage imageid="./05button.gif" alt="challenge image" >}}

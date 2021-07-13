@@ -15,7 +15,7 @@ Make an exact copy of the examples and write your own HTML and CSS!
 
 For this one we are going to create a series of checkbox that will have this animation when getting checked:
 
-![example exercise](./08checkboxes.gif)
+{{< bigImage imageid="./08checkboxes.gif" alt="challenge image" >}}
 
 ## Before you start
 

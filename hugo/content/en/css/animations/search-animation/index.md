@@ -32,4 +32,4 @@ Please copy and paste this code inside your editor:
 
 ## Animated component:
 
-![exercise example](./03search.gif)
+{{< bigImage imageid="./03search.gif" alt="challenge image" >}}
