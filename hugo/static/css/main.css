@@ -143,7 +143,7 @@ header {
   background-color: #dedede;
   background-color: white;
   position: relative;
-  z-index: 11;
+  z-index: 50;
   box-shadow: 0 -0.4rem 0.9rem 0.2rem #383841; }
 
 .nav {
@@ -425,7 +425,7 @@ header {
   position: absolute;
   top: calc(100% - 0.25rem);
   left: 50%;
-  z-index: 10;
+  z-index: 600;
   transform: rotateX(-90deg) translateY(0%) translateX(-33%);
   transform-origin: top center;
   transition: 280ms all ease-out; }
@@ -634,7 +634,7 @@ header {
     height: 50%; }
 
 .html-editor {
-  z-index: 50; }
+  z-index: 10; }
 
 .input__tab,
 .output__tab {

@@ -128,9 +128,10 @@ let stylesheet = document.getElementById("maxViewer");
 
 stylesheet.disabled = true;
 
-if(sessionStorage.getItem('maxScreen') == "true"){
-    stylesheet.disabled = false;
+if (sessionStorage.getItem("maxScreen") == "true") {
+  stylesheet.disabled = false;
 }
+
 
 let init = () => {
   resizeButtons();
@@ -138,11 +139,9 @@ let init = () => {
   setupArrowNav();
   setupBurger();
 
-  if(resizeButtons()){
+  if (resizeButtons) {
     viewportNavigation();
   }
-  
 };
-
 
 init();
