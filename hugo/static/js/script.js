@@ -139,7 +139,7 @@ let init = () => {
   setupArrowNav();
   setupBurger();
 
-  if (resizeButtons()) {
+  if (resizeButtons) {
     viewportNavigation();
   }
 };
